@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urbangaon AI Legal Search Platform | Enterprise Legal Intelligence</title>
+  <meta name="description" content="AI-Powered enterprise legal search tool for Acts, Landmark Judgements, Contracts, and YouTube video lectures with exact citations, timestamp seeking, and admin feedback loop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="brand-container">
+      <div class="brand-logo">⚖️</div>
+      <div class="brand-text">
+        <h1>URBANGAON AI LEGAL</h1>
+        <p>Intelligent Legal Search & Advisory</p>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Admin Unanswered Alert Badge -->
+      <div id="adminNotificationBadge" class="admin-alert-badge" onclick="switchTab('admin-desk')">
+        <span class="pulsing-dot"></span>
+        <span>Admin Desk: <strong id="unansweredCountBadge">3</strong> Pending</span>
+      </div>
+
+      <!-- Role Switcher -->
+      <div class="role-switcher-wrap">
+        <label for="userRoleSelect">Active Role:</label>
+        <select id="userRoleSelect" class="role-select" onchange="handleRoleChange()">
+          <option value="Employee">Employee / Associate</option>
+          <option value="Contributor">Contributor / Paralegal</option>
+          <option value="Admin" selected>Legal Admin / Lead Counsel</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs-container">
+    <button class="nav-tab active" data-tab="search-workspace" onclick="switchTab('search-workspace')">
+      🔍 AI Legal Search & Research
+    </button>
+    <button class="nav-tab" data-tab="knowledge-repo" onclick="switchTab('knowledge-repo')">
+      📚 Knowledge Base & Ingestion <span id="docCountBadge" class="badge-count">10</span>
+    </button>
+    <button class="nav-tab" data-tab="admin-desk" id="tabAdminDesk" onclick="switchTab('admin-desk')">
+      🛡️ Admin Resolution Desk <span id="adminPendingBadge" class="badge-count">3</span>
+    </button>
+    <button class="nav-tab" data-tab="analytics-insights" onclick="switchTab('analytics-insights')">
+      📊 Analytics & Gap Insights
+    </button>
+    <button class="nav-tab" data-tab="audit-compliance" onclick="switchTab('audit-compliance')">
+      📜 Compliance & Audit Trail
+    </button>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="main-wrapper">
+
+    <!-- TAB 1: AI LEGAL SEARCH WORKSPACE -->
+    <section id="pane-search-workspace" class="tab-pane active">
+      <div class="search-hero">
+        <div class="hero-tag">✨ Hybrid Vector & Semantic Legal Retrieval Engine</div>
+        <h2>Natural Language Legal Intelligence</h2>
+        <p>Ask complex questions across Central Acts, Supreme Court Precedents, Contracts & Video Webcasts.</p>
+      </div>
+
+      <!-- Search Input Box -->
+      <div class="search-box-wrap">
+        <div class="search-inner">
+          <span class="search-icon">🔍</span>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="e.g., What is the notice period required to terminate an employee under the Industrial Disputes Act?"
+            onkeydown="if(event.key==='Enter') executeSearchQuery()"
+          />
+          <button id="btnSearchSubmit" class="btn-search" onclick="executeSearchQuery()">
+            <span>Ask AI</span> ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Sample Queries -->
+      <div class="sample-queries">
+        <span>Try searching:</span>
+        <button class="query-pill" onclick="setQuery('What is the notice period required to terminate an employee under the Industrial Disputes Act?')">
+          💼 Retrenchment Notice Period (IDA 1947)
+        </button>
+        <button class="query-pill" onclick="setQuery('Why was Section 66A IT Act struck down by Supreme Court?')">
+          ⚖️ Section 66A Shreya Singhal Case
+        </button>
+        <button class="query-pill" onclick="setQuery('What is the formula for 15 days severance pay in video lecture?')">
+          🎥 Video Timestamp: 15-Day Severance Formula
+        </button>
+        <button class="query-pill" onclick="setQuery('What is the quorum and composition for Internal Complaints Committee under POSH Act?')">
+          🛡️ POSH ICC Committee Constitution
+        </button>
+        <button class="query-pill" onclick="setQuery('Are post-employment non-compete clauses valid under Indian Contract Act?')">
+          📑 Non-Compete Validity (Sec 27)
+        </button>
+        <button class="query-pill" onclick="setQuery('What is the mandatory CSR spending percentage under Companies Act 2013?')">
+          🏢 CSR Mandate (Companies Act)
+        </button>
+        <button class="query-pill" onclick="setQuery('What is the penalty for non-compliance with the new Digital Personal Data Protection Act 2023 for data breaches?')">
+          ⚠️ Unknown Query (Admin Routing Demo)
+        </button>
+      </div>
+
+      <!-- Facet Filters Bar -->
+      <div class="search-filters-bar">
+        <div class="filter-group">
+          <label>Document Type:</label>
+          <select id="filterDocType" class="filter-select" onchange="executeSearchQuery()">
+            <option value="All">All Types (Acts, Cases, Contracts, Videos)</option>
+            <option value="Act">Statutory Acts</option>
+            <option value="Judgement">Supreme Court / HC Judgements</option>
+            <option value="Contract">Corporate Contracts & MSAs</option>
+            <option value="YouTube Video">YouTube Video Transcripts</option>
+            <option value="Administrative Clarification">Admin Verified FAQ</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Jurisdiction / Forum:</label>
+          <select id="filterJurisdiction" class="filter-select" onchange="executeSearchQuery()">
+            <option value="All">All Jurisdictions</option>
+            <option value="India (Central)">India (Central)</option>
+            <option value="Supreme Court of India">Supreme Court of India</option>
+            <option value="Urbangaon Corporate Legal">Corporate Legal</option>
+          </select>
+        </div>
+
+        <div class="filter-actions">
+          <button class="btn-secondary-sm" onclick="saveCurrentSearch()">
+            ⭐ Save Query
+          </button>
+          <button class="btn-secondary-sm" onclick="exportResearchBrief()">
+            📄 Export Legal Brief
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Output Display -->
+      <div id="searchResultsContainer" class="search-results-section" style="display: none;">
+        
+        <!-- Left: AI Synthesized Answer & Citations -->
+        <div class="results-main">
+          
+          <!-- AI Answer Box -->
+          <div id="aiAnswerCard" class="ai-answer-card">
+            <div class="answer-header">
+              <div class="answer-title-wrap">
+                <div class="ai-icon-badge">✨</div>
+                <h3>AI Legal Research Synthesis</h3>
+              </div>
+              <div id="confidenceBadge" class="confidence-indicator high">
+                <span>●</span> <span id="confidenceText">High Confidence (94%)</span>
+              </div>
+            </div>
+
+            <!-- Answer text -->
+            <div id="aiAnswerBody" class="answer-content">
+              <!-- Rendered synthesized response -->
+            </div>
+
+            <!-- Statutory Legal Disclaimer -->
+            <div class="legal-disclaimer">
+              <strong>⚖️ Statutory Research Disclaimer:</strong> <span id="disclaimerText">This AI output is a research aid and does not constitute formal legal advice. Please verify exact statutory provisions, case citations, and judicial supersession before legal filings.</span>
+            </div>
+
+            <div class="answer-toolbar">
+              <span id="matchStats" style="font-size: 0.8rem; color: var(--text-muted);">Matches retrieved: 2 verified sources</span>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn-pill" onclick="copyAnswerText()">📋 Copy Synthesis</button>
+                <button class="btn-pill" onclick="bookmarkTopCitation()">⭐ Bookmark Clause</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Cited Sources & Clauses List -->
+          <div class="citations-wrapper">
+            <div class="section-subtitle">
+              <span>📑 Exact Source Citations & Authorities</span>
+            </div>
+            <div id="citationsList" class="citation-cards-list">
+              <!-- Rendered citation cards -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Related Suggestions & History -->
+        <div class="search-sidebar">
+          
+          <!-- Related Search Suggestions -->
+          <div class="sidebar-card">
+            <h4>💡 Related Legal Queries</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem;">Users researching this topic also explored:</p>
+            <div id="relatedQueriesList" class="related-queries-list">
+              <!-- Related queries pills -->
+            </div>
+          </div>
+
+          <!-- User Bookmarks & Saved Searches -->
+          <div class="sidebar-card">
+            <h4>⭐ Saved Clauses & Queries</h4>
+            <div id="savedItemsList" style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <!-- Rendered saved queries -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- TAB 2: KNOWLEDGE BASE & INGESTION REPOSITORY -->
+    <section id="pane-knowledge-repo" class="tab-pane">
+      <div class="repo-header">
+        <div>
+          <h2>Legal Knowledge Base Repository</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Central index of Statutes, Case Precedents, Corporate Agreements, and Timestamped YouTube Webinars.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+          <div class="repo-stats-pills">
+            <div class="repo-pill">Active Docs: <strong id="repoTotalDocs">10</strong></div>
+            <div class="repo-pill">Indexed Chunks: <strong id="repoTotalChunks">28</strong></div>
+          </div>
+          <button class="btn-primary" onclick="openIngestionModal()">
+            ➕ Ingest New Content / Video
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter by category -->
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+        <button class="query-pill" style="background: rgba(58, 134, 255, 0.2); color: #fff;" onclick="filterRepo('All')">All Categories</button>
+        <button class="query-pill" onclick="filterRepo('Labour & Employment Law')">Labour & Employment</button>
+        <button class="query-pill" onclick="filterRepo('Constitutional & Tech Law')">Cyber & Constitutional</button>
+        <button class="query-pill" onclick="filterRepo('Corporate Law')">Corporate & CSR</button>
+        <button class="query-pill" onclick="filterRepo('Commercial & Contract Law')">Contracts & Non-Compete</button>
+        <button class="query-pill" onclick="filterRepo('Video Lecture & Webinar')">Video Webinars</button>
+      </div>
+
+      <!-- Document Cards Grid -->
+      <div id="documentsGrid" class="documents-grid">
+        <!-- Rendered Document Cards -->
+      </div>
+    </section>
+
+    <!-- TAB 3: ADMIN RESOLUTION DESK & FEEDBACK LOOP -->
+    <section id="pane-admin-desk" class="tab-pane">
+      <div class="admin-desk-header">
+        <div>
+          <h2>Admin Resolution Desk & Feedback Queue</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Unanswered or low-confidence questions flagged automatically by the AI search engine. Resolving a query injects verified answers directly into the knowledge base.
+          </p>
+        </div>
+      </div>
+
+      <div class="unanswered-table-card">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Frequency</th>
+              <th>Question / User Query</th>
+              <th>Category</th>
+              <th>First Logged</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="unansweredTableBody">
+            <!-- Unanswered queries rows -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 4: ANALYTICS & KNOWLEDGE GAP INSIGHTS -->
+    <section id="pane-analytics-insights" class="tab-pane">
+      <div style="margin-bottom: 1.5rem;">
+        <h2>Executive Legal Intelligence & Gap Analytics</h2>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">Real-time health, search query distribution, confidence scores, and knowledge base coverage.</p>
+      </div>
+
+      <!-- Metric Cards Grid -->
+      <div class="analytics-metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">Total Legal Searches</div>
+          <div id="statTotalQueries" class="metric-value">142</div>
+          <div class="metric-sub">Across All Business Units</div>
+        </div>
+        <div class="metric-card gold">
+          <div class="metric-label">Average Confidence Score</div>
+          <div id="statAvgConfidence" class="metric-value">91.4%</div>
+          <div class="metric-sub">High precision legal retrieval</div>
+        </div>
+        <div class="metric-card rose">
+          <div class="metric-label">Pending Gap Questions</div>
+          <div id="statPendingUnanswered" class="metric-value">3</div>
+          <div class="metric-sub">Routed for Lead Counsel Review</div>
+        </div>
+        <div class="metric-card emerald">
+          <div class="metric-label">Verified KB Feedback Loops</div>
+          <div id="statResolvedFeedback" class="metric-value">9</div>
+          <div class="metric-sub">Admin answers integrated</div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-row">
+        <!-- Knowledge Base Distribution -->
+        <div class="chart-box">
+          <h4>📊 Knowledge Base Category Distribution</h4>
+          <div id="categoryDistributionBars">
+            <!-- Dynamic progress bars -->
+          </div>
+        </div>
+
+        <!-- Confidence Distribution -->
+        <div class="chart-box">
+          <h4>🎯 Search Confidence & Escalation Distribution</h4>
+          <div id="confidenceDistributionBars">
+            <!-- Dynamic progress bars -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: COMPLIANCE & IMMUTABLE AUDIT TRAIL -->
+    <section id="pane-audit-compliance" class="tab-pane">
+      <div style="margin-bottom: 1.5rem;">
+        <h2>Compliance & Legal Search Audit Trail</h2>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">
+          Immutable audit log tracking every user query, synthesized answer, retrieved source citations, and admin updates for enterprise regulatory compliance.
+        </p>
+      </div>
+
+      <div class="unanswered-table-card">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>User & Role</th>
+              <th>Action Type</th>
+              <th>Search Query / Activity</th>
+              <th>Confidence Tier</th>
+              <th>Retrieved Documents</th>
+              <th>IP Address</th>
+            </tr>
+          </thead>
+          <tbody id="auditTableBody">
+            <!-- Audit log rows -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL 1: CITATION SOURCE INSPECTOR -->
+  <div id="citationModal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalCitationDocTitle">Document Title</h3>
+          <p id="modalCitationSection" style="color: var(--accent-gold); font-size: 0.85rem; font-weight: 600;">Section / Clause</p>
+        </div>
+        <button class="btn-close-modal" onclick="closeModal('citationModal')">✕</button>
+      </div>
+      <div id="modalCitationContent" style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0; max-height: 60vh; overflow-y: auto; background: rgba(0,0,0,0.25); padding: 1.25rem; border-radius: 8px; border-left: 3px solid var(--accent-blue);">
+        <!-- Full chunk content -->
+      </div>
+      <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+        <span id="modalCitationMeta" style="font-size: 0.8rem; color: var(--text-muted);">Jurisdiction: Central</span>
+        <button class="btn-secondary-sm" onclick="closeModal('citationModal')">Close Inspector</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: YOUTUBE VIDEO TIMESTAMP PLAYER -->
+  <div id="videoModal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalVideoTitle">YouTube Legal Webinar</h3>
+          <p id="modalVideoTimestamp" style="color: var(--accent-rose); font-size: 0.85rem; font-weight: 700;">⏱️ Jumps to Timestamp: 03:15</p>
+        </div>
+        <button class="btn-close-modal" onclick="closeModal('videoModal')">✕</button>
+      </div>
+      
+      <!-- Video Player Frame -->
+      <div class="video-preview-wrapper">
+        <iframe id="videoIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-rose); margin-bottom: 1rem;">
+        <h4 style="font-size: 0.88rem; color: #ffffff; margin-bottom: 0.35rem;">Transcribed Segment Content:</h4>
+        <p id="modalVideoTranscriptText" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;"></p>
+      </div>
+
+      <div style="text-align: right;">
+        <button class="btn-secondary-sm" onclick="closeModal('videoModal')">Close Player</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: INGEST NEW DOCUMENT OR VIDEO -->
+  <div id="ingestionModal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Ingest Legal Material (Acts, Judgements, Contracts, Videos)</h3>
+        <button class="btn-close-modal" onclick="closeModal('ingestionModal')">✕</button>
+      </div>
+
+      <form id="ingestForm" onsubmit="handleDocumentIngestion(event)">
+        <!-- File Dropzone -->
+        <div class="file-dropzone" id="fileDropZone" onclick="document.getElementById('fileUploadInput').click()" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleFileDrop(event)">
+          <input type="file" id="fileUploadInput" style="display: none;" accept=".pdf,.doc,.docx,.txt,.md,.json,.csv" onchange="handleFileSelect(event)" />
+          <span class="dropzone-icon">📁</span>
+          <div class="dropzone-text">Click to browse or Drag & Drop Legal Documents</div>
+          <div class="dropzone-sub">Supports PDF, Word (.docx), Scanned Docs (OCR text extraction), Plain Text (.txt, .md)</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Document / Webinar Title *</label>
+            <input type="text" id="ingestTitle" class="form-control" placeholder="e.g. Digital Personal Data Protection Act, 2023" required />
+          </div>
+          <div class="form-group">
+            <label>Document Type *</label>
+            <select id="ingestDocType" class="form-control" onchange="toggleVideoFields()" required>
+              <option value="Act">Statutory Act</option>
+              <option value="Judgement">Court Judgement</option>
+              <option value="Contract">Corporate Contract / MSA</option>
+              <option value="YouTube Video">YouTube Legal Video</option>
+              <option value="Administrative Clarification">Internal Legal Advisory</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Jurisdiction / Forum</label>
+            <input type="text" id="ingestJurisdiction" class="form-control" value="India (Central)" />
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="ingestCategory" class="form-control">
+              <option value="Labour & Employment Law">Labour & Employment Law</option>
+              <option value="Cyber & Tech Law">Cyber & Tech Law</option>
+              <option value="Constitutional & Privacy Law">Constitutional & Privacy Law</option>
+              <option value="Corporate Law">Corporate Law</option>
+              <option value="Commercial & Contract Law">Commercial & Contract Law</option>
+              <option value="Video Lecture & Webinar">Video Lecture & Webinar</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Confidentiality Tier</label>
+            <select id="ingestConfidentiality" class="form-control">
+              <option value="Public">Public (Accessible to all)</option>
+              <option value="Internal">Internal (Company Employees)</option>
+              <option value="Confidential">Confidential (Restricted)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Year</label>
+            <input type="number" id="ingestYear" class="form-control" value="2024" />
+          </div>
+        </div>
+
+        <div id="videoFieldsGroup" class="form-row" style="display: none;">
+          <div class="form-group">
+            <label>YouTube Video URL</label>
+            <input type="url" id="ingestVideoUrl" class="form-control" placeholder="https://www.youtube.com/watch?v=..." />
+          </div>
+          <div class="form-group">
+            <label>Video Duration</label>
+            <input type="text" id="ingestVideoDuration" class="form-control" placeholder="15:30" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Document Full Text / Transcript with Timestamps *</label>
+          <textarea id="ingestRawContent" class="form-control" rows="6" placeholder="Paste full statutory text or transcript (e.g. [03:15] Section 25F Explanation: ...)" required></textarea>
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+          <input type="checkbox" id="ingestSuperseded" />
+          <label for="ingestSuperseded" style="margin-bottom: 0; font-size: 0.85rem;">Mark as Superseded / Struck Down Law (Shows warning to users)</label>
+        </div>
+
+        <div style="text-align: right; margin-top: 1.25rem;">
+          <button type="button" class="btn-secondary-sm" onclick="closeModal('ingestionModal')" style="margin-right: 0.5rem;">Cancel</button>
+          <button type="submit" class="btn-primary">Chunk & Ingest Document ➔</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 4: ADMIN RESOLVE UNANSWERED QUESTION -->
+  <div id="resolveModal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>🛡️ Resolve Legal Question & Feed Knowledge Base</h3>
+        <button class="btn-close-modal" onclick="closeModal('resolveModal')">✕</button>
+      </div>
+
+      <form id="resolveForm" onsubmit="handleResolveSubmit(event)">
+        <input type="hidden" id="resolveQuestionId" />
+        
+        <div class="form-group">
+          <label>Employee / User Query</label>
+          <div id="resolveQueryText" style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; font-weight: 600; color: var(--accent-gold);"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Verified Legal Advisory / Statutory Answer *</label>
+          <textarea id="resolveAdminAnswer" class="form-control" rows="5" placeholder="Enter verified statutory rule, court ruling, or corporate policy to answer this question..." required></textarea>
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+          <input type="checkbox" id="resolveAddToKb" checked />
+          <label for="resolveAddToKb" style="margin-bottom: 0; font-size: 0.85rem;">
+            <strong>Feed directly into AI Knowledge Base</strong> (Future users will instantly receive this verified answer)
+          </label>
+        </div>
+
+        <div style="text-align: right; margin-top: 1.25rem;">
+          <button type="button" class="btn-secondary-sm" onclick="closeModal('resolveModal')" style="margin-right: 0.5rem;">Cancel</button>
+          <button type="submit" class="btn-primary">Publish Resolution & Update KB ➔</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 5: LEGAL RESEARCH BRIEF EXPORT -->
+  <div id="exportModal" class="modal-backdrop">
+    <div class="modal-dialog" style="max-width: 800px;">
+      <div class="modal-header">
+        <h3>📄 Generated Legal Research Brief</h3>
+        <button class="btn-close-modal" onclick="closeModal('exportModal')">✕</button>
+      </div>
+      <div id="briefContent" style="font-family: var(--font-serif); background: #ffffff; color: #1a202c; padding: 2rem; border-radius: 8px; max-height: 60vh; overflow-y: auto; line-height: 1.8;">
+        <!-- Formatted printable legal brief -->
+      </div>
+      <div style="margin-top: 1.25rem; display: flex; justify-content: space-between;">
+        <button class="btn-secondary-sm" onclick="closeModal('exportModal')">Close</button>
+        <button class="btn-primary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
