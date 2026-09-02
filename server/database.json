@@ -733,6 +733,23 @@
   ],
   "auditLogs": [
     {
+      "id": "audit-1788323552842-771",
+      "timestamp": "2026-09-02T04:32:32.842Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
       "id": "audit-1788323420099-443",
       "timestamp": "2026-09-02T04:30:20.099Z",
       "userId": "user_active",
