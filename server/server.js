@@ -14,10 +14,10 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(express.static(path.join(__dirname, '../public')));
 
 // 1. Natural Language AI Search
-app.post('/api/search', (req, res) => {
+app.post('/api/search', async (req, res) => {
   try {
     const { query, filters, userRole, userId } = req.body;
-    const result = executeSearch(
+    const result = await executeSearch(
       query,
       filters || {},
       userRole || 'Employee',
@@ -300,7 +300,6 @@ app.post('/api/admin/unanswered/:id/dismiss', async (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
-
 
 // 4. Audit Logs
 app.get('/api/audit-logs', (req, res) => {

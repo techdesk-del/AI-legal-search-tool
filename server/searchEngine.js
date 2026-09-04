@@ -1,5 +1,25 @@
 // searchEngine.js - Hybrid Semantic & Vector-Style Legal Search Engine with Citation Synthesizer
+require('dotenv').config();
 const dataStore = require('./dataStore');
+
+let GoogleGenAI = null;
+try {
+  GoogleGenAI = require('@google/genai').GoogleGenAI;
+} catch (e) {
+  GoogleGenAI = null;
+}
+
+let geminiClient = null;
+function getGeminiClient() {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey || apiKey === 'your_gemini_api_key_here' || apiKey.trim() === '') {
+    return null;
+  }
+  if (!geminiClient && GoogleGenAI) {
+    geminiClient = new GoogleGenAI({ apiKey: apiKey.trim() });
+  }
+  return geminiClient;
+}
 
 // Common English & Generic Legal Stopwords
 const STOPWORDS = new Set([
@@ -142,6 +162,56 @@ function synthesizeAnswer(query, matchedChunks, confidenceScore) {
   };
 }
 
+async function synthesizeWithGemini(query, matchedChunks) {
+  const ai = getGeminiClient();
+  if (!ai || !matchedChunks || matchedChunks.length === 0) return null;
+
+  try {
+    const context = matchedChunks.slice(0, 4).map((m, idx) => {
+      return `[Authority ${idx + 1}] Document: ${m.document.title} (${m.document.docType})
+Section/Clause: ${m.chunk.section || ''} ${m.chunk.heading ? `- ${m.chunk.heading}` : ''}
+Excerpt: ${m.chunk.content}
+${m.chunk.timestampDisplay ? `Video Timestamp: ${m.chunk.timestampDisplay}` : ''}
+${m.document.isSuperseded ? `Alert: Superseded / Struck Down (${m.document.supersededBy})` : ''}`;
+    }).join('\n\n');
+
+    const prompt = `You are a Senior Legal Counsel AI Assistant specializing in Indian Law (Statutory Acts, Supreme Court Precedents, Corporate Agreements, and Legal Lectures).
+
+A corporate user has asked the following legal question:
+"${query}"
+
+Here are the authoritative statutory provisions, court judgements, and transcripts retrieved from the verified Legal Knowledge Base:
+--------------------------------
+${context}
+--------------------------------
+
+Instructions:
+1. Provide a direct, authoritative, and lawyer-grade legal synthesis answering the user's question based on the retrieved authorities above.
+2. Explicitly cite the specific Sections, Acts, or Case Laws (e.g. "**Industrial Disputes Act, 1947 (Section 25F)**").
+3. If a YouTube video lecture is cited, mention the exact timestamp (e.g. "**Timestamp 08:20**").
+4. If a provision is marked as superseded or struck down by the Supreme Court (e.g. **Section 66A IT Act**), highlight that it is no longer enforceable law.
+5. Format the response clearly with bold highlights and concise paragraphs.
+6. If the retrieved authority is an Administrative Clarification or Admin Directive, include the exact verified directive text verbatim in your answer.
+7. Do not fabricate or hallucinate any statutory provisions outside the provided context.`;
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: prompt
+    });
+
+    if (response && response.text) {
+      return {
+        text: response.text,
+        isDirectAnswer: true,
+        source: 'Google Gemini 2.5 Live Real-Time AI'
+      };
+    }
+  } catch (err) {
+    console.error('Gemini real-time synthesis error, falling back to local synthesizer:', err.message);
+  }
+  return null;
+}
+
 function getRelatedSuggestions(query, topDoc) {
   const suggestions = [];
   const q = query.toLowerCase();
@@ -171,7 +241,7 @@ function getRelatedSuggestions(query, topDoc) {
   return suggestions;
 }
 
-function executeSearch(query, filters = {}, userRole = 'Employee', userId = 'emp_current') {
+async function executeSearch(query, filters = {}, userRole = 'Employee', userId = 'emp_current') {
   if (!query || query.trim() === '') {
     return {
       query: '',
@@ -305,7 +375,18 @@ function executeSearch(query, filters = {}, userRole = 'Employee', userId = 'emp
     confidentiality: m.document.confidentiality
   }));
 
-  const answer = synthesizeAnswer(query, matchedChunks, confidenceScore);
+  let answer = null;
+  if (confidenceScore >= 0.35 && matchedChunks.length > 0) {
+    // For official Administrative Clarifications, directly output verified Lead Counsel guidance:
+    if (matchedChunks[0].document.docType === 'Administrative Clarification') {
+      answer = synthesizeAnswer(query, matchedChunks, confidenceScore);
+    } else {
+      answer = await synthesizeWithGemini(query, matchedChunks);
+    }
+  }
+  if (!answer) {
+    answer = synthesizeAnswer(query, matchedChunks, confidenceScore);
+  }
   const relatedQueries = getRelatedSuggestions(query, matchedChunks[0] ? matchedChunks[0].document : null);
 
   // Log to Audit Trail

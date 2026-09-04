@@ -8,66 +8,104 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg?v=2">
+  <link rel="shortcut icon" href="images/favicon.jpg?v=2">
+  <link rel="apple-touch-icon" href="images/favicon.jpg?v=2">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Top Navigation Header -->
-  <header class="app-header">
-    <div class="brand-container">
-      <div class="brand-logo">⚖️</div>
-      <div class="brand-text">
-        <h1>URBANGAON AI LEGAL</h1>
-        <p>Intelligent Legal Search & Advisory</p>
-      </div>
-    </div>
-
-    <div class="header-actions">
-      <!-- Theme Toggle -->
-      <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Light/Dark Theme">
-        <span id="themeToggleIcon">🌙</span>
-        <span id="themeToggleLabel">Dark</span>
-      </button>
-
-      <!-- Admin Unanswered Alert Badge -->
-      <div id="adminNotificationBadge" class="admin-alert-badge" onclick="switchTab('admin-desk')">
-        <span class="pulsing-dot"></span>
-        <span>Admin Desk: <strong id="unansweredCountBadge">3</strong> Pending</span>
+  <div class="app-layout">
+    <!-- Left Sidebar Navbar -->
+    <aside class="app-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo-wrap">
+          <img src="images/urbangaon-logo.jpg" alt="UrbanGaon" class="brand-logo-img" />
+        </div>
+        <div class="brand-text">
+          <h1>AI LEGAL SEARCH</h1>
+          <p>Enterprise Legal Intelligence</p>
+        </div>
       </div>
 
-      <!-- Role Switcher -->
-      <div class="role-switcher-wrap">
-        <label for="userRoleSelect">Active Role:</label>
-        <select id="userRoleSelect" class="role-select" onchange="handleRoleChange()">
-          <option value="Employee">Employee / Associate</option>
-          <option value="Contributor">Contributor / Paralegal</option>
-          <option value="Admin" selected>Legal Admin / Lead Counsel</option>
-        </select>
+      <div class="sidebar-nav-section">
+        <div class="sidebar-section-title">PLATFORM MODULES</div>
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs-container">
+          <button class="nav-tab active" data-tab="search-workspace" onclick="switchTab('search-workspace')">
+            <span class="nav-tab-left">
+              <span class="nav-tab-icon">🔍</span>
+              <span class="nav-tab-text">AI Legal Search & Research</span>
+            </span>
+          </button>
+          <button class="nav-tab" data-tab="knowledge-repo" onclick="switchTab('knowledge-repo')">
+            <span class="nav-tab-left">
+              <span class="nav-tab-icon">📚</span>
+              <span class="nav-tab-text">Knowledge Base & Ingestion</span>
+            </span>
+            <span id="docCountBadge" class="badge-count">10</span>
+          </button>
+          <button class="nav-tab" data-tab="admin-desk" id="tabAdminDesk" onclick="switchTab('admin-desk')">
+            <span class="nav-tab-left">
+              <span class="nav-tab-icon">🛡️</span>
+              <span class="nav-tab-text">Admin Resolution Desk</span>
+            </span>
+            <span id="adminPendingBadge" class="badge-count">3</span>
+          </button>
+          <button class="nav-tab" data-tab="analytics-insights" onclick="switchTab('analytics-insights')">
+            <span class="nav-tab-left">
+              <span class="nav-tab-icon">📊</span>
+              <span class="nav-tab-text">Analytics & Gap Insights</span>
+            </span>
+          </button>
+          <button class="nav-tab" data-tab="audit-compliance" onclick="switchTab('audit-compliance')">
+            <span class="nav-tab-left">
+              <span class="nav-tab-icon">📜</span>
+              <span class="nav-tab-text">Compliance & Audit Trail</span>
+            </span>
+          </button>
+        </nav>
       </div>
-    </div>
-  </header>
 
-  <!-- Navigation Tabs -->
-  <nav class="nav-tabs-container">
-    <button class="nav-tab active" data-tab="search-workspace" onclick="switchTab('search-workspace')">
-      🔍 AI Legal Search & Research
-    </button>
-    <button class="nav-tab" data-tab="knowledge-repo" onclick="switchTab('knowledge-repo')">
-      📚 Knowledge Base & Ingestion <span id="docCountBadge" class="badge-count">10</span>
-    </button>
-    <button class="nav-tab" data-tab="admin-desk" id="tabAdminDesk" onclick="switchTab('admin-desk')">
-      🛡️ Admin Resolution Desk <span id="adminPendingBadge" class="badge-count">3</span>
-    </button>
-    <button class="nav-tab" data-tab="analytics-insights" onclick="switchTab('analytics-insights')">
-      📊 Analytics & Gap Insights
-    </button>
-    <button class="nav-tab" data-tab="audit-compliance" onclick="switchTab('audit-compliance')">
-      📜 Compliance & Audit Trail
-    </button>
-  </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-status-card">
+          <div class="status-indicator-wrap">
+            <span class="pulsing-green-dot"></span>
+            <span class="status-label">RAG Engine Live</span>
+          </div>
+          <div class="status-detail">Central Acts • Precedents • Video</div>
+        </div>
+      </div>
+    </aside>
 
-  <!-- Main Container -->
-  <main class="main-wrapper">
+    <!-- App Main Content Area -->
+    <div class="app-main-content">
+      <!-- Top Action Bar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <div class="topbar-breadcrumb">
+            <span class="crumb-app">Urbangaon Legal</span>
+            <span class="crumb-separator">/</span>
+            <span class="crumb-current" id="activeModuleTitle">AI Legal Search & Research</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Role Switcher -->
+          <div class="role-switcher-wrap">
+            <label for="userRoleSelect">Active Role:</label>
+            <select id="userRoleSelect" class="role-select" onchange="handleRoleChange()">
+              <option value="Employee">Employee / Associate</option>
+              <option value="Contributor">Contributor / Paralegal</option>
+              <option value="Admin" selected>Legal Admin / Lead Counsel</option>
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Container -->
+      <main class="main-wrapper">
 
     <!-- TAB 1: AI LEGAL SEARCH WORKSPACE -->
     <section id="pane-search-workspace" class="tab-pane active">
@@ -92,32 +130,6 @@
             <span>Ask AI</span> ➔
           </button>
         </div>
-      </div>
-
-      <!-- Quick Sample Queries -->
-      <div class="sample-queries">
-        <span>Try searching:</span>
-        <button class="query-pill" onclick="setQuery('What is the notice period required to terminate an employee under the Industrial Disputes Act?')">
-          💼 Retrenchment Notice Period (IDA 1947)
-        </button>
-        <button class="query-pill" onclick="setQuery('Why was Section 66A IT Act struck down by Supreme Court?')">
-          ⚖️ Section 66A Shreya Singhal Case
-        </button>
-        <button class="query-pill" onclick="setQuery('What is the formula for 15 days severance pay in video lecture?')">
-          🎥 Video Timestamp: 15-Day Severance Formula
-        </button>
-        <button class="query-pill" onclick="setQuery('What is the quorum and composition for Internal Complaints Committee under POSH Act?')">
-          🛡️ POSH ICC Committee Constitution
-        </button>
-        <button class="query-pill" onclick="setQuery('Are post-employment non-compete clauses valid under Indian Contract Act?')">
-          📑 Non-Compete Validity (Sec 27)
-        </button>
-        <button class="query-pill" onclick="setQuery('What is the mandatory CSR spending percentage under Companies Act 2013?')">
-          🏢 CSR Mandate (Companies Act)
-        </button>
-        <button class="query-pill" onclick="setQuery('What is the penalty for non-compliance with the new Digital Personal Data Protection Act 2023 for data breaches?')">
-          ⚠️ Unknown Query (Admin Routing Demo)
-        </button>
       </div>
 
       <!-- Facet Filters Bar -->
@@ -165,7 +177,12 @@
             <div class="answer-header">
               <div class="answer-title-wrap">
                 <div class="ai-icon-badge">✨</div>
-                <h3>AI Legal Research Synthesis</h3>
+                <div>
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <h3>AI Legal Research Synthesis</h3>
+                    <span id="aiModelBadge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem; border-radius: 12px; background: rgba(37,99,235,0.1); color: var(--accent-blue); font-weight: 600; border: 1px solid rgba(37,99,235,0.25);">⚡ Hybrid Legal RAG Engine</span>
+                  </div>
+                </div>
               </div>
               <div id="confidenceBadge" class="confidence-indicator high">
                 <span>●</span> <span id="confidenceText">High Confidence (94%)</span>
@@ -377,6 +394,8 @@
     </section>
 
   </main>
+    </div> <!-- /.app-main-content -->
+  </div> <!-- /.app-layout -->
 
   <!-- MODAL 1: CITATION SOURCE INSPECTOR -->
   <div id="citationModal" class="modal-backdrop">

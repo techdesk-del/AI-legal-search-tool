@@ -1,7 +1,6 @@
 // app.js - Urbangaon AI Legal Search Platform Client Logic
 
 let currentRole = 'Admin';
-let currentTheme = localStorage.getItem('urbangaon_theme') || 'light';
 let currentSearchResults = null;
 let currentDocuments = [];
 let currentUnanswered = [];
@@ -9,36 +8,11 @@ let currentBookmarks = [];
 let currentSavedSearches = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
+  // Enforce Light Mode permanently
+  localStorage.removeItem('urbangaon_theme');
+  document.documentElement.removeAttribute('data-theme');
   initApp();
 });
-
-function initTheme() {
-  applyTheme(currentTheme);
-}
-
-function toggleTheme() {
-  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-  localStorage.setItem('urbangaon_theme', currentTheme);
-  applyTheme(currentTheme);
-  showToast(`Switched to ${currentTheme === 'light' ? 'Light' : 'Dark'} Theme`, 'info');
-}
-
-function applyTheme(theme) {
-  if (theme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    const icon = document.getElementById('themeToggleIcon');
-    const label = document.getElementById('themeToggleLabel');
-    if (icon) icon.innerText = '☀️';
-    if (label) label.innerText = 'Light';
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-    const icon = document.getElementById('themeToggleIcon');
-    const label = document.getElementById('themeToggleLabel');
-    if (icon) icon.innerText = '🌙';
-    if (label) label.innerText = 'Dark';
-  }
-}
 
 async function initApp() {
   await Promise.all([
@@ -59,6 +33,18 @@ function switchTab(tabId) {
   document.querySelectorAll('.tab-pane').forEach(pane => {
     pane.classList.toggle('active', pane.id === `pane-${tabId}`);
   });
+
+  const moduleTitleEl = document.getElementById('activeModuleTitle');
+  if (moduleTitleEl) {
+    const titles = {
+      'search-workspace': 'AI Legal Search & Research',
+      'knowledge-repo': 'Knowledge Base & Ingestion',
+      'admin-desk': 'Admin Resolution Desk',
+      'analytics-insights': 'Analytics & Gap Insights',
+      'audit-compliance': 'Compliance & Audit Trail'
+    };
+    moduleTitleEl.textContent = titles[tabId] || 'Workspace';
+  }
 
   if (tabId === 'admin-desk') {
     fetchUnansweredQuestions();
@@ -81,11 +67,11 @@ function handleRoleChange() {
   const adminBadge = document.getElementById('adminNotificationBadge');
 
   if (currentRole === 'Employee') {
-    adminTab.style.display = 'none';
-    adminBadge.style.display = 'none';
+    if (adminTab) adminTab.style.display = 'none';
+    if (adminBadge) adminBadge.style.display = 'none';
   } else {
-    adminTab.style.display = 'flex';
-    adminBadge.style.display = 'flex';
+    if (adminTab) adminTab.style.display = 'flex';
+    if (adminBadge) adminBadge.style.display = 'flex';
   }
 
   fetchDocuments();
@@ -148,6 +134,21 @@ function renderSearchResults(data) {
   const confidenceBadge = document.getElementById('confidenceBadge');
   const confidenceText = document.getElementById('confidenceText');
   const matchStats = document.getElementById('matchStats');
+  const aiModelBadge = document.getElementById('aiModelBadge');
+
+  if (aiModelBadge) {
+    if (data.answer.source && data.answer.source.includes('Gemini')) {
+      aiModelBadge.innerHTML = '⚡ Google Gemini 2.5 Live Real-Time AI';
+      aiModelBadge.style.background = 'rgba(16,185,129,0.1)';
+      aiModelBadge.style.color = 'var(--accent-emerald)';
+      aiModelBadge.style.borderColor = 'rgba(16,185,129,0.25)';
+    } else {
+      aiModelBadge.innerHTML = '⚡ Hybrid Legal RAG Engine';
+      aiModelBadge.style.background = 'rgba(37,99,235,0.08)';
+      aiModelBadge.style.color = 'var(--accent-blue)';
+      aiModelBadge.style.borderColor = 'rgba(37,99,235,0.2)';
+    }
+  }
 
   // Format bold text and paragraphs
   const formattedAnswer = data.answer.text
@@ -501,8 +502,10 @@ async function fetchUnansweredQuestions() {
       currentUnanswered = json.data;
       renderUnansweredTable(json.data);
       const pendingCount = json.data.filter(q => q.status === 'Pending Review').length;
-      document.getElementById('unansweredCountBadge').innerText = pendingCount;
-      document.getElementById('adminPendingBadge').innerText = pendingCount;
+      const unansweredBadgeEl = document.getElementById('unansweredCountBadge');
+      if (unansweredBadgeEl) unansweredBadgeEl.innerText = pendingCount;
+      const adminPendingEl = document.getElementById('adminPendingBadge');
+      if (adminPendingEl) adminPendingEl.innerText = pendingCount;
     }
   } catch (err) {
     console.error('Error fetching unanswered queries:', err);
@@ -769,7 +772,8 @@ function exportResearchBrief() {
   const container = document.getElementById('briefContent');
   container.innerHTML = `
     <div style="text-align: center; border-bottom: 2px solid #1a202c; padding-bottom: 1rem; margin-bottom: 1.5rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 0.25rem;">URBANGAON AI LEGAL INTELLIGENCE BRIEF</h2>
+      <img src="images/urbangaon-logo.jpg" alt="UrbanGaon" style="height: 48px; object-fit: contain; margin-bottom: 0.5rem;" /><br>
+      <h2 style="font-size: 1.5rem; margin-bottom: 0.25rem; letter-spacing: -0.01em;">AI LEGAL INTELLIGENCE BRIEF</h2>
       <p style="font-size: 0.9rem; color: #4a5568;">Generated for: ${currentRole} | Date: ${new Date().toLocaleDateString()}</p>
     </div>
 

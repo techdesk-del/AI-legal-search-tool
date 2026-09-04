@@ -1,7 +1,7 @@
 {
   "documents": [
     {
-      "id": "doc-1788511944288",
+      "id": "doc-1788518061382",
       "title": "Arbitration and Conciliation (Amendment) Act, 2021",
       "docType": "Act",
       "jurisdiction": "India (Central)",
@@ -17,7 +17,7 @@
       "supersededBy": null,
       "chunks": [
         {
-          "id": "chunk-1788511944288-1",
+          "id": "chunk-1788518061382-1",
           "section": "Section 36",
           "heading": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or co",
           "content": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.",
@@ -32,7 +32,7 @@
           ]
         },
         {
-          "id": "chunk-1788511944288-2",
+          "id": "chunk-1788518061382-2",
           "section": "Section 43J",
           "heading": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Sc",
           "content": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Schedule.",
@@ -49,269 +49,97 @@
       ]
     },
     {
-      "id": "doc-admin-kb-001",
-      "title": "Legal Team Admin Verified Knowledge Base & FAQ Resolutions",
-      "docType": "Administrative Clarification",
-      "jurisdiction": "Corporate Legal Advisory",
-      "court": "In-House Counsel Advisory",
-      "year": 2026,
-      "status": "Verified Legal Advisory",
-      "confidentiality": "Public",
-      "category": "General Legal",
-      "summary": "Verified answers and official guidance resolved by the legal admin team for previously unanswered questions.",
-      "isSuperseded": false,
-      "supersededBy": null,
-      "chunks": [
-        {
-          "id": "chunk-resolved-1788511944134",
-          "section": "Admin Verified Advisory: Q-unans-17",
-          "heading": "Unknown Legal Provision Query Test 1788511943927",
-          "content": "ADMIN VERIFIED LEGAL RESOLUTION: Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.\n\nOriginal Query: \"Unknown Legal Provision Query Test 1788511943927\" (Resolved by Legal Admin on 4/9/2026)",
-          "tags": [
-            "admin-verified",
-            "feedback-loop",
-            "unknown",
-            "legal",
-            "provision",
-            "query",
-            "test",
-            "1788511943927"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "doc-1788324246451",
-      "title": "Corporate Governance Masterclass: Duties of Independent Directors 2026",
-      "docType": "YouTube Video",
-      "jurisdiction": "India (Corporate Law)",
-      "court": "Indian Institute of Directors",
-      "year": 2026,
-      "status": "Active",
-      "confidentiality": "Public",
-      "category": "Video Lecture & Webinar",
-      "sourceUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      "videoDuration": "16:20",
-      "summary": "[02:10] Code for Independent Directors (Schedule IV): Explaining the mandatory code under Companies Act 2013 where independent directors must hold at least one separate meeting a year without non-inde...",
-      "isSuperseded": false,
-      "supersededBy": null,
-      "chunks": [
-        {
-          "id": "chunk-v-1788324246451-0",
-          "section": "Timestamp [02:10]",
-          "heading": "Code for Independent Directors (Schedule IV)",
-          "content": "Explaining the mandatory code under Companies Act 2013 where independent directors must hold at least one separate meeting a year without non-independent directors.",
-          "timestampSeconds": 130,
-          "timestampDisplay": "02:10",
-          "tags": [
-            "video-transcript",
-            "corporate",
-            "governance",
-            "masterclass:",
-            "duties",
-            "independent",
-            "directors",
-            "2026"
-          ]
-        },
-        {
-          "id": "chunk-v-1788324246451-1",
-          "section": "Timestamp [07:45]",
-          "heading": "Board Committee Requirements (Audit & Nomination)",
-          "content": "Deep dive into the composition of the Audit Committee where two-thirds of the members must be independent directors.",
-          "timestampSeconds": 465,
-          "timestampDisplay": "07:45",
-          "tags": [
-            "video-transcript",
-            "corporate",
-            "governance",
-            "masterclass:",
-            "duties",
-            "independent",
-            "directors",
-            "2026"
-          ]
-        },
-        {
-          "id": "chunk-v-1788324246451-2",
-          "section": "Timestamp [12:30]",
-          "heading": "Liability & Safe Harbour Protections",
-          "content": "Section 149(12) safe harbour rule where independent directors are held liable only for acts of omission or commission occurring with their knowledge or consent.",
-          "timestampSeconds": 750,
-          "timestampDisplay": "12:30",
-          "tags": [
-            "video-transcript",
-            "corporate",
-            "governance",
-            "masterclass:",
-            "duties",
-            "independent",
-            "directors",
-            "2026"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "doc-1788324246376",
-      "title": "Cloud Infrastructure SLA & Vendor Agreement 2026",
-      "docType": "Contract",
-      "jurisdiction": "Urbangaon Corporate Legal",
-      "court": "Commercial Court New Delhi",
-      "year": 2026,
-      "status": "Active",
-      "confidentiality": "Internal",
-      "category": "Commercial & Contract Law",
-      "sourceUrl": "",
-      "videoDuration": null,
-      "summary": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly system availability of not less than 99.9%. If uptime falls below 99.5%, Client shall receive a 15% service credit on mo...",
-      "isSuperseded": false,
-      "supersededBy": null,
-      "chunks": [
-        {
-          "id": "chunk-1788324246376-1",
-          "section": "Clause 4",
-          "heading": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly ",
-          "content": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly system availability of not less than 99.9%. If uptime falls below 99.5%, Client shall receive a 15% service credit on monthly billing.",
-          "tags": [
-            "contract",
-            "commercial & contract law",
-            "cloud",
-            "infrastructure",
-            "vendor",
-            "agreement",
-            "2026"
-          ]
-        },
-        {
-          "id": "chunk-1788324246376-2",
-          "section": "Clause 11",
-          "heading": "Clause 11 Dispute Resolution & Escalation: Any dispute shall first be referred t",
-          "content": "Clause 11 Dispute Resolution & Escalation: Any dispute shall first be referred to executive mediation within fifteen (15) days before initiating arbitration in New Delhi.",
-          "tags": [
-            "contract",
-            "commercial & contract law",
-            "cloud",
-            "infrastructure",
-            "vendor",
-            "agreement",
-            "2026"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "doc-1788324246292",
-      "title": "Navtej Singh Johar & Ors. v. Union of India",
-      "docType": "Judgement",
-      "jurisdiction": "Supreme Court of India",
-      "court": "Supreme Court of India (5-Judge Constitution Bench)",
-      "year": 2018,
-      "status": "Active",
-      "confidentiality": "Public",
-      "category": "Constitutional & Privacy Law",
-      "sourceUrl": "",
-      "videoDuration": null,
-      "summary": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held that Section 377 IPC, in so far as it criminalises consensual sexual acts of adults in private, is violative of Articles ...",
-      "isSuperseded": false,
-      "supersededBy": null,
-      "chunks": [
-        {
-          "id": "chunk-1788324246291-1",
-          "section": "Paragraph 252",
-          "heading": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held t",
-          "content": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held that Section 377 IPC, in so far as it criminalises consensual sexual acts of adults in private, is violative of Articles 14, 15, 19, and 21 of the Constitution of India.",
-          "tags": [
-            "judgement",
-            "constitutional & privacy law",
-            "navtej",
-            "singh",
-            "johar",
-            "ors.",
-            "union",
-            "india"
-          ]
-        },
-        {
-          "id": "chunk-1788324246292-2",
-          "section": "Paragraph 268",
-          "heading": "Paragraph 268 Constitutional Morality & Individual Autonomy: The Court affirmed ",
-          "content": "Paragraph 268 Constitutional Morality & Individual Autonomy: The Court affirmed that constitutional morality requires the protection of individual identity and personal autonomy over majoritarian sentiment.",
-          "tags": [
-            "judgement",
-            "constitutional & privacy law",
-            "navtej",
-            "singh",
-            "johar",
-            "ors.",
-            "union",
-            "india"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "doc-1788324246198",
-      "title": "Digital Personal Data Protection Act, 2023",
+      "id": "doc-1788517865020",
+      "title": "Arbitration and Conciliation (Amendment) Act, 2021",
       "docType": "Act",
       "jurisdiction": "India (Central)",
       "court": "Parliament of India",
-      "year": 2023,
+      "year": 2021,
       "status": "Active",
       "confidentiality": "Public",
-      "category": "Cyber & Tech Law",
+      "category": "Commercial & Contract Law",
       "sourceUrl": "",
       "videoDuration": null,
-      "summary": "Section 4 Grounds for processing personal data: A person may process the personal data of a Data Principal only in accordance with the provisions of this Act and for a lawful purpose for which consent...",
+      "summary": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.\n\nSection 43J N...",
       "isSuperseded": false,
       "supersededBy": null,
       "chunks": [
         {
-          "id": "chunk-1788324246198-1",
-          "section": "Section 4",
-          "heading": "Section 4 Grounds for processing personal data: A person may process the persona",
-          "content": "Section 4 Grounds for processing personal data: A person may process the personal data of a Data Principal only in accordance with the provisions of this Act and for a lawful purpose for which consent has been given or for certain legitimate uses.",
+          "id": "chunk-1788517865020-1",
+          "section": "Section 36",
+          "heading": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or co",
+          "content": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.",
           "tags": [
             "act",
-            "cyber & tech law",
-            "digital",
-            "personal",
-            "data",
-            "protection",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
             "act,",
-            "2023"
+            "2021"
           ]
         },
         {
-          "id": "chunk-1788324246198-2",
-          "section": "Section 8",
-          "heading": "Section 8 General obligations of Data Fiduciary: A Data Fiduciary shall protect ",
-          "content": "Section 8 General obligations of Data Fiduciary: A Data Fiduciary shall protect personal data in its possession by taking reasonable security safeguards to prevent personal data breaches. In case of breach, notify the Board and affected users.",
+          "id": "chunk-1788517865020-2",
+          "section": "Section 43J",
+          "heading": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Sc",
+          "content": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Schedule.",
           "tags": [
             "act",
-            "cyber & tech law",
-            "digital",
-            "personal",
-            "data",
-            "protection",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
             "act,",
-            "2023"
+            "2021"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doc-1788516809007",
+      "title": "Arbitration and Conciliation (Amendment) Act, 2021",
+      "docType": "Act",
+      "jurisdiction": "India (Central)",
+      "court": "Parliament of India",
+      "year": 2021,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Commercial & Contract Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.\n\nSection 43J N...",
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788516809007-1",
+          "section": "Section 36",
+          "heading": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or co",
+          "content": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.",
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
           ]
         },
         {
-          "id": "chunk-1788324246198-3",
-          "section": "Section 33",
-          "heading": "Section 33 Penalties for significant breaches: Breach in observing obligation of",
-          "content": "Section 33 Penalties for significant breaches: Breach in observing obligation of Data Fiduciary may lead to penalty up to Rs 250 Crore. Failure to notify breach carries penalty up to Rs 200 Crore.",
+          "id": "chunk-1788516809007-2",
+          "section": "Section 43J",
+          "heading": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Sc",
+          "content": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Schedule.",
           "tags": [
             "act",
-            "cyber & tech law",
-            "digital",
-            "personal",
-            "data",
-            "protection",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
             "act,",
-            "2023"
+            "2021"
           ]
         }
       ]
@@ -1210,6 +1038,722 @@
       "createdAt": "2026-09-02T04:43:42.845Z",
       "updatedAt": "2026-09-02T04:43:42.845Z",
       "__v": 0
+    },
+    {
+      "_id": "6a97a9964f4946da53adde96",
+      "id": "doc-1788324246198",
+      "title": "Digital Personal Data Protection Act, 2023",
+      "docType": "Act",
+      "jurisdiction": "India (Central)",
+      "court": "Parliament of India",
+      "year": 2023,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Cyber & Tech Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Section 4 Grounds for processing personal data: A person may process the personal data of a Data Principal only in accordance with the provisions of this Act and for a lawful purpose for which consent...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788324246198-1",
+          "section": "Section 4",
+          "heading": "Section 4 Grounds for processing personal data: A person may process the persona",
+          "content": "Section 4 Grounds for processing personal data: A person may process the personal data of a Data Principal only in accordance with the provisions of this Act and for a lawful purpose for which consent has been given or for certain legitimate uses.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "cyber & tech law",
+            "digital",
+            "personal",
+            "data",
+            "protection",
+            "act,",
+            "2023"
+          ]
+        },
+        {
+          "id": "chunk-1788324246198-2",
+          "section": "Section 8",
+          "heading": "Section 8 General obligations of Data Fiduciary: A Data Fiduciary shall protect ",
+          "content": "Section 8 General obligations of Data Fiduciary: A Data Fiduciary shall protect personal data in its possession by taking reasonable security safeguards to prevent personal data breaches. In case of breach, notify the Board and affected users.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "cyber & tech law",
+            "digital",
+            "personal",
+            "data",
+            "protection",
+            "act,",
+            "2023"
+          ]
+        },
+        {
+          "id": "chunk-1788324246198-3",
+          "section": "Section 33",
+          "heading": "Section 33 Penalties for significant breaches: Breach in observing obligation of",
+          "content": "Section 33 Penalties for significant breaches: Breach in observing obligation of Data Fiduciary may lead to penalty up to Rs 250 Crore. Failure to notify breach carries penalty up to Rs 200 Crore.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "cyber & tech law",
+            "digital",
+            "personal",
+            "data",
+            "protection",
+            "act,",
+            "2023"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-02T04:44:06.208Z",
+      "updatedAt": "2026-09-02T04:44:06.208Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a97a9964f4946da53adde98",
+      "id": "doc-1788324246292",
+      "title": "Navtej Singh Johar & Ors. v. Union of India",
+      "docType": "Judgement",
+      "jurisdiction": "Supreme Court of India",
+      "court": "Supreme Court of India (5-Judge Constitution Bench)",
+      "year": 2018,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Constitutional & Privacy Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held that Section 377 IPC, in so far as it criminalises consensual sexual acts of adults in private, is violative of Articles ...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788324246291-1",
+          "section": "Paragraph 252",
+          "heading": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held t",
+          "content": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held that Section 377 IPC, in so far as it criminalises consensual sexual acts of adults in private, is violative of Articles 14, 15, 19, and 21 of the Constitution of India.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "judgement",
+            "constitutional & privacy law",
+            "navtej",
+            "singh",
+            "johar",
+            "ors.",
+            "union",
+            "india"
+          ]
+        },
+        {
+          "id": "chunk-1788324246292-2",
+          "section": "Paragraph 268",
+          "heading": "Paragraph 268 Constitutional Morality & Individual Autonomy: The Court affirmed ",
+          "content": "Paragraph 268 Constitutional Morality & Individual Autonomy: The Court affirmed that constitutional morality requires the protection of individual identity and personal autonomy over majoritarian sentiment.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "judgement",
+            "constitutional & privacy law",
+            "navtej",
+            "singh",
+            "johar",
+            "ors.",
+            "union",
+            "india"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-02T04:44:06.294Z",
+      "updatedAt": "2026-09-02T04:44:06.294Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a97a9964f4946da53adde9a",
+      "id": "doc-1788324246376",
+      "title": "Cloud Infrastructure SLA & Vendor Agreement 2026",
+      "docType": "Contract",
+      "jurisdiction": "Urbangaon Corporate Legal",
+      "court": "Commercial Court New Delhi",
+      "year": 2026,
+      "status": "Active",
+      "confidentiality": "Internal",
+      "category": "Commercial & Contract Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly system availability of not less than 99.9%. If uptime falls below 99.5%, Client shall receive a 15% service credit on mo...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788324246376-1",
+          "section": "Clause 4",
+          "heading": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly ",
+          "content": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly system availability of not less than 99.9%. If uptime falls below 99.5%, Client shall receive a 15% service credit on monthly billing.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "contract",
+            "commercial & contract law",
+            "cloud",
+            "infrastructure",
+            "vendor",
+            "agreement",
+            "2026"
+          ]
+        },
+        {
+          "id": "chunk-1788324246376-2",
+          "section": "Clause 11",
+          "heading": "Clause 11 Dispute Resolution & Escalation: Any dispute shall first be referred t",
+          "content": "Clause 11 Dispute Resolution & Escalation: Any dispute shall first be referred to executive mediation within fifteen (15) days before initiating arbitration in New Delhi.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "contract",
+            "commercial & contract law",
+            "cloud",
+            "infrastructure",
+            "vendor",
+            "agreement",
+            "2026"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-02T04:44:06.379Z",
+      "updatedAt": "2026-09-02T04:44:06.379Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a97a9964f4946da53adde9c",
+      "id": "doc-1788324246451",
+      "title": "Corporate Governance Masterclass: Duties of Independent Directors 2026",
+      "docType": "YouTube Video",
+      "jurisdiction": "India (Corporate Law)",
+      "court": "Indian Institute of Directors",
+      "year": 2026,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Video Lecture & Webinar",
+      "sourceUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "videoDuration": "16:20",
+      "summary": "[02:10] Code for Independent Directors (Schedule IV): Explaining the mandatory code under Companies Act 2013 where independent directors must hold at least one separate meeting a year without non-inde...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-v-1788324246451-0",
+          "section": "Timestamp [02:10]",
+          "heading": "Code for Independent Directors (Schedule IV)",
+          "content": "Explaining the mandatory code under Companies Act 2013 where independent directors must hold at least one separate meeting a year without non-independent directors.",
+          "timestampSeconds": 130,
+          "timestampDisplay": "02:10",
+          "tags": [
+            "video-transcript",
+            "corporate",
+            "governance",
+            "masterclass:",
+            "duties",
+            "independent",
+            "directors",
+            "2026"
+          ]
+        },
+        {
+          "id": "chunk-v-1788324246451-1",
+          "section": "Timestamp [07:45]",
+          "heading": "Board Committee Requirements (Audit & Nomination)",
+          "content": "Deep dive into the composition of the Audit Committee where two-thirds of the members must be independent directors.",
+          "timestampSeconds": 465,
+          "timestampDisplay": "07:45",
+          "tags": [
+            "video-transcript",
+            "corporate",
+            "governance",
+            "masterclass:",
+            "duties",
+            "independent",
+            "directors",
+            "2026"
+          ]
+        },
+        {
+          "id": "chunk-v-1788324246451-2",
+          "section": "Timestamp [12:30]",
+          "heading": "Liability & Safe Harbour Protections",
+          "content": "Section 149(12) safe harbour rule where independent directors are held liable only for acts of omission or commission occurring with their knowledge or consent.",
+          "timestampSeconds": 750,
+          "timestampDisplay": "12:30",
+          "tags": [
+            "video-transcript",
+            "corporate",
+            "governance",
+            "masterclass:",
+            "duties",
+            "independent",
+            "directors",
+            "2026"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-02T04:44:06.455Z",
+      "updatedAt": "2026-09-02T04:44:06.455Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a86c84f4946da53addeb0",
+      "id": "doc-admin-kb-001",
+      "title": "Legal Team Admin Verified Knowledge Base & FAQ Resolutions",
+      "docType": "Administrative Clarification",
+      "jurisdiction": "Corporate Legal Advisory",
+      "court": "In-House Counsel Advisory",
+      "year": 2026,
+      "status": "Verified Legal Advisory",
+      "confidentiality": "Public",
+      "category": "General Legal",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Verified answers and official guidance resolved by the legal admin team for previously unanswered questions.",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-resolved-1788518053275",
+          "section": "Admin Verified Advisory: Q-unans-17",
+          "heading": "Unknown Legal Provision Query Test 1788518049159",
+          "content": "ADMIN VERIFIED LEGAL RESOLUTION: Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.\n\nOriginal Query: \"Unknown Legal Provision Query Test 1788518049159\" (Resolved by Legal Admin on 4/9/2026)",
+          "tags": [
+            "admin-verified",
+            "feedback-loop",
+            "unknown",
+            "legal",
+            "provision",
+            "query",
+            "test",
+            "1788518049159"
+          ]
+        },
+        {
+          "id": "chunk-resolved-1788517856887",
+          "section": "Admin Verified Advisory: Q-unans-17",
+          "heading": "Unknown Legal Provision Query Test 1788517852683",
+          "content": "ADMIN VERIFIED LEGAL RESOLUTION: Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.\n\nOriginal Query: \"Unknown Legal Provision Query Test 1788517852683\" (Resolved by Legal Admin on 4/9/2026)",
+          "tags": [
+            "admin-verified",
+            "feedback-loop",
+            "unknown",
+            "legal",
+            "provision",
+            "query",
+            "test",
+            "1788517852683"
+          ]
+        },
+        {
+          "id": "chunk-resolved-1788516800901",
+          "section": "Admin Verified Advisory: Q-unans-17",
+          "heading": "Unknown Legal Provision Query Test 1788516796869",
+          "content": "ADMIN VERIFIED LEGAL RESOLUTION: Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.\n\nOriginal Query: \"Unknown Legal Provision Query Test 1788516796869\" (Resolved by Legal Admin on 4/9/2026)",
+          "tags": [
+            "admin-verified",
+            "feedback-loop",
+            "unknown",
+            "legal",
+            "provision",
+            "query",
+            "test",
+            "1788516796869"
+          ]
+        },
+        {
+          "id": "chunk-resolved-1788516674435",
+          "section": "Admin Verified Advisory: Q-unans-17",
+          "heading": "Unknown Legal Provision Query Test 1788516674386",
+          "content": "ADMIN VERIFIED LEGAL RESOLUTION: Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.\n\nOriginal Query: \"Unknown Legal Provision Query Test 1788516674386\" (Resolved by Legal Admin on 4/9/2026)",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "admin-verified",
+            "feedback-loop",
+            "unknown",
+            "legal",
+            "provision",
+            "query",
+            "test",
+            "1788516674386"
+          ]
+        },
+        {
+          "id": "chunk-resolved-1788516616274",
+          "section": "Admin Verified Advisory: Q-unans-17",
+          "heading": "Unknown Legal Provision Query Test 1788516616228",
+          "content": "ADMIN VERIFIED LEGAL RESOLUTION: Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.\n\nOriginal Query: \"Unknown Legal Provision Query Test 1788516616228\" (Resolved by Legal Admin on 4/9/2026)",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "admin-verified",
+            "feedback-loop",
+            "unknown",
+            "legal",
+            "provision",
+            "query",
+            "test",
+            "1788516616228"
+          ]
+        },
+        {
+          "id": "chunk-resolved-1788516495352",
+          "section": "Admin Verified Advisory: Q-unans-17",
+          "heading": "Unknown Legal Provision Query Test 1788516495294",
+          "content": "ADMIN VERIFIED LEGAL RESOLUTION: Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.\n\nOriginal Query: \"Unknown Legal Provision Query Test 1788516495294\" (Resolved by Legal Admin on 4/9/2026)",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "admin-verified",
+            "feedback-loop",
+            "unknown",
+            "legal",
+            "provision",
+            "query",
+            "test",
+            "1788516495294"
+          ]
+        },
+        {
+          "id": "chunk-resolved-1788512909196",
+          "section": "Admin Verified Advisory: Q-unans-17",
+          "heading": "Unknown Legal Provision Query Test 1788512909139",
+          "content": "ADMIN VERIFIED LEGAL RESOLUTION: Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.\n\nOriginal Query: \"Unknown Legal Provision Query Test 1788512909139\" (Resolved by Legal Admin on 4/9/2026)",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "admin-verified",
+            "feedback-loop",
+            "unknown",
+            "legal",
+            "provision",
+            "query",
+            "test",
+            "1788512909139"
+          ]
+        },
+        {
+          "id": "chunk-resolved-1788511944134",
+          "section": "Admin Verified Advisory: Q-unans-17",
+          "heading": "Unknown Legal Provision Query Test 1788511943927",
+          "content": "ADMIN VERIFIED LEGAL RESOLUTION: Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.\n\nOriginal Query: \"Unknown Legal Provision Query Test 1788511943927\" (Resolved by Legal Admin on 4/9/2026)",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "admin-verified",
+            "feedback-loop",
+            "unknown",
+            "legal",
+            "provision",
+            "query",
+            "test",
+            "1788511943927"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-04T08:52:24.082Z",
+      "updatedAt": "2026-09-04T10:11:14.435Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a86c84f4946da53addeb3",
+      "id": "doc-1788511944288",
+      "title": "Arbitration and Conciliation (Amendment) Act, 2021",
+      "docType": "Act",
+      "jurisdiction": "India (Central)",
+      "court": "Parliament of India",
+      "year": 2021,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Commercial & Contract Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.\n\nSection 43J N...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788511944288-1",
+          "section": "Section 36",
+          "heading": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or co",
+          "content": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
+          ]
+        },
+        {
+          "id": "chunk-1788511944288-2",
+          "section": "Section 43J",
+          "heading": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Sc",
+          "content": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Schedule.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-04T08:52:24.296Z",
+      "updatedAt": "2026-09-04T08:52:24.296Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a8d4f4946da53addec3",
+      "id": "doc-1788512909281",
+      "title": "Arbitration and Conciliation (Amendment) Act, 2021",
+      "docType": "Act",
+      "jurisdiction": "India (Central)",
+      "court": "Parliament of India",
+      "year": 2021,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Commercial & Contract Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.\n\nSection 43J N...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788512909281-1",
+          "section": "Section 36",
+          "heading": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or co",
+          "content": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
+          ]
+        },
+        {
+          "id": "chunk-1788512909281-2",
+          "section": "Section 43J",
+          "heading": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Sc",
+          "content": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Schedule.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-04T09:08:29.287Z",
+      "updatedAt": "2026-09-04T09:08:29.287Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a989451384b7cb542e7cc",
+      "id": "doc-1788516500004",
+      "title": "Arbitration and Conciliation (Amendment) Act, 2021",
+      "docType": "Act",
+      "jurisdiction": "India (Central)",
+      "court": "Parliament of India",
+      "year": 2021,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Commercial & Contract Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.\n\nSection 43J N...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788516500002-1",
+          "section": "Section 36",
+          "heading": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or co",
+          "content": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
+          ]
+        },
+        {
+          "id": "chunk-1788516500004-2",
+          "section": "Section 43J",
+          "heading": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Sc",
+          "content": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Schedule.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-04T10:08:20.036Z",
+      "updatedAt": "2026-09-04T10:08:20.036Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a990c51384b7cb542e7d5",
+      "id": "doc-1788516620278",
+      "title": "Arbitration and Conciliation (Amendment) Act, 2021",
+      "docType": "Act",
+      "jurisdiction": "India (Central)",
+      "court": "Parliament of India",
+      "year": 2021,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Commercial & Contract Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.\n\nSection 43J N...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788516620278-1",
+          "section": "Section 36",
+          "heading": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or co",
+          "content": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
+          ]
+        },
+        {
+          "id": "chunk-1788516620278-2",
+          "section": "Section 43J",
+          "heading": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Sc",
+          "content": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Schedule.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-04T10:10:20.283Z",
+      "updatedAt": "2026-09-04T10:10:20.283Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a994651384b7cb542e7de",
+      "id": "doc-1788516678003",
+      "title": "Arbitration and Conciliation (Amendment) Act, 2021",
+      "docType": "Act",
+      "jurisdiction": "India (Central)",
+      "court": "Parliament of India",
+      "year": 2021,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Commercial & Contract Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.\n\nSection 43J N...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788516678003-1",
+          "section": "Section 36",
+          "heading": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or co",
+          "content": "Section 36(3) Automatic stay of arbitral award where arbitration agreement or contract is induced by fraud or corruption. Court shall stay unconditionally pending disposal of challenge.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
+          ]
+        },
+        {
+          "id": "chunk-1788516678003-2",
+          "section": "Section 43J",
+          "heading": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Sc",
+          "content": "Section 43J Norms for accreditation of arbitrators as specified in the Eighth Schedule.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "commercial & contract law",
+            "arbitration",
+            "conciliation",
+            "(amendment)",
+            "act,",
+            "2021"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-04T10:11:18.008Z",
+      "updatedAt": "2026-09-04T10:11:18.008Z",
+      "__v": 0
     }
   ],
   "unansweredQuestions": [
@@ -1268,17 +1812,45 @@
       "updatedAt": "2026-09-02T04:40:26.110Z"
     },
     {
-      "id": "unans-1788511943929",
-      "query": "Unknown Legal Provision Query Test 1788511943927",
+      "id": "unans-1788518049185",
+      "query": "Unknown Legal Provision Query Test 1788518049159",
       "askedBy": "emp_current (Employee)",
       "frequency": 1,
-      "firstAskedAt": "2026-09-04T08:52:23.929Z",
-      "lastAskedAt": "2026-09-04T08:52:23.929Z",
+      "firstAskedAt": "2026-09-04T10:34:09.185Z",
+      "lastAskedAt": "2026-09-04T10:34:09.185Z",
       "status": "Resolved",
       "reason": "Low semantic match or missing legal document authority",
       "category": "General Legal",
       "adminAnswer": "Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.",
-      "resolvedAt": "2026-09-04T08:52:23.939Z",
+      "resolvedAt": "2026-09-04T10:34:09.259Z",
+      "confidenceScore": 0
+    },
+    {
+      "id": "unans-1788517852728",
+      "query": "Unknown Legal Provision Query Test 1788517852683",
+      "askedBy": "emp_current (Employee)",
+      "frequency": 1,
+      "firstAskedAt": "2026-09-04T10:30:52.728Z",
+      "lastAskedAt": "2026-09-04T10:30:52.728Z",
+      "status": "Resolved",
+      "reason": "Low semantic match or missing legal document authority",
+      "category": "General Legal",
+      "adminAnswer": "Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.",
+      "resolvedAt": "2026-09-04T10:30:52.819Z",
+      "confidenceScore": 0
+    },
+    {
+      "id": "unans-1788516796879",
+      "query": "Unknown Legal Provision Query Test 1788516796869",
+      "askedBy": "emp_current (Employee)",
+      "frequency": 1,
+      "firstAskedAt": "2026-09-04T10:13:16.879Z",
+      "lastAskedAt": "2026-09-04T10:13:16.879Z",
+      "status": "Resolved",
+      "reason": "Low semantic match or missing legal document authority",
+      "category": "General Legal",
+      "adminAnswer": "Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.",
+      "resolvedAt": "2026-09-04T10:13:16.898Z",
       "confidenceScore": 0
     },
     {
@@ -1298,12 +1870,119 @@
       "createdAt": "2026-09-02T04:40:35.186Z",
       "updatedAt": "2026-09-02T04:40:35.192Z",
       "__v": 0
+    },
+    {
+      "_id": "6a9a86c74f4946da53addeae",
+      "id": "unans-1788511943929",
+      "query": "Unknown Legal Provision Query Test 1788511943927",
+      "askedBy": "emp_current (Employee)",
+      "frequency": 1,
+      "firstAskedAt": "2026-09-04T08:52:23.929Z",
+      "lastAskedAt": "2026-09-04T08:52:23.929Z",
+      "status": "Resolved",
+      "reason": "Low semantic match or missing legal document authority",
+      "category": "General Legal",
+      "adminAnswer": "Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.",
+      "resolvedAt": "2026-09-04T08:52:23.939Z",
+      "confidenceScore": 0,
+      "createdAt": "2026-09-04T08:52:23.935Z",
+      "updatedAt": "2026-09-04T08:52:23.943Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a8d4f4946da53addebf",
+      "id": "unans-1788512909140",
+      "query": "Unknown Legal Provision Query Test 1788512909139",
+      "askedBy": "emp_current (Employee)",
+      "frequency": 1,
+      "firstAskedAt": "2026-09-04T09:08:29.140Z",
+      "lastAskedAt": "2026-09-04T09:08:29.140Z",
+      "status": "Pending Review",
+      "reason": "Low semantic match or missing legal document authority",
+      "category": "General Legal",
+      "adminAnswer": null,
+      "resolvedAt": null,
+      "confidenceScore": 0,
+      "createdAt": "2026-09-04T09:08:29.144Z",
+      "updatedAt": "2026-09-04T09:08:29.144Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a988f51384b7cb542e7c8",
+      "id": "unans-1788516495296",
+      "query": "Unknown Legal Provision Query Test 1788516495294",
+      "askedBy": "emp_current (Employee)",
+      "frequency": 1,
+      "firstAskedAt": "2026-09-04T10:08:15.296Z",
+      "lastAskedAt": "2026-09-04T10:08:15.296Z",
+      "status": "Resolved",
+      "reason": "Low semantic match or missing legal document authority",
+      "category": "General Legal",
+      "adminAnswer": "Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.",
+      "resolvedAt": "2026-09-04T10:08:15.313Z",
+      "confidenceScore": 0,
+      "createdAt": "2026-09-04T10:08:15.302Z",
+      "updatedAt": "2026-09-04T10:08:15.314Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a990851384b7cb542e7d1",
+      "id": "unans-1788516616231",
+      "query": "Unknown Legal Provision Query Test 1788516616228",
+      "askedBy": "emp_current (Employee)",
+      "frequency": 1,
+      "firstAskedAt": "2026-09-04T10:10:16.231Z",
+      "lastAskedAt": "2026-09-04T10:10:16.231Z",
+      "status": "Resolved",
+      "reason": "Low semantic match or missing legal document authority",
+      "category": "General Legal",
+      "adminAnswer": "Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.",
+      "resolvedAt": "2026-09-04T10:10:16.241Z",
+      "confidenceScore": 0,
+      "createdAt": "2026-09-04T10:10:16.237Z",
+      "updatedAt": "2026-09-04T10:10:16.241Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a994251384b7cb542e7da",
+      "id": "unans-1788516674388",
+      "query": "Unknown Legal Provision Query Test 1788516674386",
+      "askedBy": "emp_current (Employee)",
+      "frequency": 1,
+      "firstAskedAt": "2026-09-04T10:11:14.388Z",
+      "lastAskedAt": "2026-09-04T10:11:14.388Z",
+      "status": "Resolved",
+      "reason": "Low semantic match or missing legal document authority",
+      "category": "General Legal",
+      "adminAnswer": "Verified Admin Directive: All statutory compliance filings must follow Circular No. 44/2026.",
+      "resolvedAt": "2026-09-04T10:11:14.402Z",
+      "confidenceScore": 0,
+      "createdAt": "2026-09-04T10:11:14.395Z",
+      "updatedAt": "2026-09-04T10:11:14.402Z",
+      "__v": 0
     }
   ],
   "auditLogs": [
     {
-      "id": "audit-1788511944329-416",
-      "timestamp": "2026-09-04T08:52:24.329Z",
+      "id": "audit-1788518324309-183",
+      "timestamp": "2026-09-04T10:38:44.309Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788518065420-615",
+      "timestamp": "2026-09-04T10:34:25.420Z",
       "userId": "user_active",
       "userName": "Adv. Rajesh Sharma (Lead Counsel)",
       "userRole": "Admin",
@@ -1318,13 +1997,13 @@
       "ipAddress": "127.0.0.1"
     },
     {
-      "id": "audit-1788511944284-948",
-      "timestamp": "2026-09-04T08:52:24.284Z",
+      "id": "audit-1788518061349-687",
+      "timestamp": "2026-09-04T10:34:21.349Z",
       "userId": "emp_current",
       "userName": "Ananya Sen (Associate)",
       "userRole": "Employee",
       "action": "SEARCH_QUERY",
-      "query": "Unknown Legal Provision Query Test 1788511943927",
+      "query": "Unknown Legal Provision Query Test 1788518049159",
       "confidenceScore": 0.99,
       "confidenceTier": "High",
       "citationsCount": 1,
@@ -1334,13 +2013,13 @@
       "ipAddress": "127.0.0.1"
     },
     {
-      "id": "audit-1788511944246-63",
-      "timestamp": "2026-09-04T08:52:24.246Z",
+      "id": "audit-1788518057298-530",
+      "timestamp": "2026-09-04T10:34:17.298Z",
       "userId": "admin_active",
       "userName": "Adv. Rajesh Sharma (Lead Counsel)",
       "userRole": "Admin",
       "action": "ADMIN_FEEDBACK_RESOLVED",
-      "query": "Resolved Unanswered Question: \"Unknown Legal Provision Query Test 1788511943927\"",
+      "query": "Resolved Unanswered Question: \"Unknown Legal Provision Query Test 1788518049159\"",
       "confidenceScore": 1,
       "confidenceTier": "High (Admin Verified)",
       "citationsCount": 1,
@@ -1350,13 +2029,13 @@
       "ipAddress": "127.0.0.1"
     },
     {
-      "id": "audit-1788511943933-970",
-      "timestamp": "2026-09-04T08:52:23.933Z",
+      "id": "audit-1788518049199-666",
+      "timestamp": "2026-09-04T10:34:09.199Z",
       "userId": "emp_current",
       "userName": "Ananya Sen (Associate)",
       "userRole": "Employee",
       "action": "UNANSWERED_ESCALATION",
-      "query": "Unknown Legal Provision Query Test 1788511943927",
+      "query": "Unknown Legal Provision Query Test 1788518049159",
       "confidenceScore": 0,
       "confidenceTier": "Low (Routed to Admin)",
       "citationsCount": 0,
@@ -1364,8 +2043,8 @@
       "ipAddress": "127.0.0.1"
     },
     {
-      "id": "audit-1788511943923-208",
-      "timestamp": "2026-09-04T08:52:23.923Z",
+      "id": "audit-1788518049136-869",
+      "timestamp": "2026-09-04T10:34:09.136Z",
       "userId": "emp_current",
       "userName": "Ananya Sen (Associate)",
       "userRole": "Employee",
@@ -1381,8 +2060,8 @@
       "ipAddress": "127.0.0.1"
     },
     {
-      "id": "audit-1788511943917-39",
-      "timestamp": "2026-09-04T08:52:23.917Z",
+      "id": "audit-1788518038280-492",
+      "timestamp": "2026-09-04T10:33:58.280Z",
       "userId": "emp_current",
       "userName": "Ananya Sen (Associate)",
       "userRole": "Employee",
@@ -1398,8 +2077,8 @@
       "ipAddress": "127.0.0.1"
     },
     {
-      "id": "audit-1788511943908-339",
-      "timestamp": "2026-09-04T08:52:23.908Z",
+      "id": "audit-1788518031843-366",
+      "timestamp": "2026-09-04T10:33:51.843Z",
       "userId": "emp_current",
       "userName": "Ananya Sen (Associate)",
       "userRole": "Employee",
@@ -1416,6 +2095,1663 @@
       "ipAddress": "127.0.0.1"
     },
     {
+      "id": "audit-1788517869039-674",
+      "timestamp": "2026-09-04T10:31:09.039Z",
+      "userId": "user_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "DOCUMENT_INGESTION",
+      "query": "Ingested Act: Arbitration and Conciliation (Amendment) Act, 2021 (2 chunks indexed)",
+      "confidenceScore": 1,
+      "confidenceTier": "N/A",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Arbitration and Conciliation (Amendment) Act, 2021"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788517865012-400",
+      "timestamp": "2026-09-04T10:31:05.012Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Unknown Legal Provision Query Test 1788517852683",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base & FAQ Resolutions"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788517860995-661",
+      "timestamp": "2026-09-04T10:31:00.995Z",
+      "userId": "admin_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "ADMIN_FEEDBACK_RESOLVED",
+      "query": "Resolved Unanswered Question: \"Unknown Legal Provision Query Test 1788517852683\"",
+      "confidenceScore": 1,
+      "confidenceTier": "High (Admin Verified)",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788517852742-157",
+      "timestamp": "2026-09-04T10:30:52.742Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "UNANSWERED_ESCALATION",
+      "query": "Unknown Legal Provision Query Test 1788517852683",
+      "confidenceScore": 0,
+      "confidenceTier": "Low (Routed to Admin)",
+      "citationsCount": 0,
+      "retrievedDocs": [],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788517852661-460",
+      "timestamp": "2026-09-04T10:30:52.661Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788517842957-647",
+      "timestamp": "2026-09-04T10:30:42.957Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the formula for 15 days severance pay in video lecture?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
+        "Supreme Court of India: Digital Evidence & WhatsApp Chat Admissibility Workshop"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788517838676-997",
+      "timestamp": "2026-09-04T10:30:38.676Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788517146549-974",
+      "timestamp": "2026-09-04T10:19:06.549Z",
+      "userId": "user_contributor",
+      "userName": "Vikas Mehra (Paralegal)",
+      "userRole": "Contributor",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788516999744-206",
+      "timestamp": "2026-09-04T10:16:39.744Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "tell me about section a",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Indian Contract Act, 1872",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788516813065-416",
+      "timestamp": "2026-09-04T10:13:33.065Z",
+      "userId": "user_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "DOCUMENT_INGESTION",
+      "query": "Ingested Act: Arbitration and Conciliation (Amendment) Act, 2021 (2 chunks indexed)",
+      "confidenceScore": 1,
+      "confidenceTier": "N/A",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Arbitration and Conciliation (Amendment) Act, 2021"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788516808987-247",
+      "timestamp": "2026-09-04T10:13:28.987Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Unknown Legal Provision Query Test 1788516796869",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base & FAQ Resolutions"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788516804949-640",
+      "timestamp": "2026-09-04T10:13:24.949Z",
+      "userId": "admin_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "ADMIN_FEEDBACK_RESOLVED",
+      "query": "Resolved Unanswered Question: \"Unknown Legal Provision Query Test 1788516796869\"",
+      "confidenceScore": 1,
+      "confidenceTier": "High (Admin Verified)",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788516796884-446",
+      "timestamp": "2026-09-04T10:13:16.884Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "UNANSWERED_ESCALATION",
+      "query": "Unknown Legal Provision Query Test 1788516796869",
+      "confidenceScore": 0,
+      "confidenceTier": "Low (Routed to Admin)",
+      "citationsCount": 0,
+      "retrievedDocs": [],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788516796860-756",
+      "timestamp": "2026-09-04T10:13:16.860Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788516726675-564",
+      "timestamp": "2026-09-04T10:12:06.675Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the formula for 15 days severance pay in video lecture?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
+        "Supreme Court of India: Digital Evidence & WhatsApp Chat Admissibility Workshop"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788516718569-135",
+      "timestamp": "2026-09-04T10:11:58.569Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "_id": "6a9a994651384b7cb542e7df",
+      "id": "audit-1788516678049-88",
+      "timestamp": "2026-09-04T10:11:18.049Z",
+      "userId": "user_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "DOCUMENT_INGESTION",
+      "query": "Ingested Act: Arbitration and Conciliation (Amendment) Act, 2021 (2 chunks indexed)",
+      "confidenceScore": 1,
+      "confidenceTier": "N/A",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Arbitration and Conciliation (Amendment) Act, 2021"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:11:18.051Z",
+      "updatedAt": "2026-09-04T10:11:18.051Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a994651384b7cb542e7dd",
+      "id": "audit-1788516677999-850",
+      "timestamp": "2026-09-04T10:11:17.999Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Unknown Legal Provision Query Test 1788516674386",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base & FAQ Resolutions"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:11:18.001Z",
+      "updatedAt": "2026-09-04T10:11:18.001Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a994251384b7cb542e7dc",
+      "id": "audit-1788516674468-176",
+      "timestamp": "2026-09-04T10:11:14.468Z",
+      "userId": "admin_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "ADMIN_FEEDBACK_RESOLVED",
+      "query": "Resolved Unanswered Question: \"Unknown Legal Provision Query Test 1788516674386\"",
+      "confidenceScore": 1,
+      "confidenceTier": "High (Admin Verified)",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:11:14.470Z",
+      "updatedAt": "2026-09-04T10:11:14.470Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a994251384b7cb542e7db",
+      "id": "audit-1788516674393-993",
+      "timestamp": "2026-09-04T10:11:14.393Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "UNANSWERED_ESCALATION",
+      "query": "Unknown Legal Provision Query Test 1788516674386",
+      "confidenceScore": 0,
+      "confidenceTier": "Low (Routed to Admin)",
+      "citationsCount": 0,
+      "retrievedDocs": [],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:11:14.395Z",
+      "updatedAt": "2026-09-04T10:11:14.395Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a994251384b7cb542e7d9",
+      "id": "audit-1788516674381-86",
+      "timestamp": "2026-09-04T10:11:14.381Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:11:14.385Z",
+      "updatedAt": "2026-09-04T10:11:14.385Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a993851384b7cb542e7d8",
+      "id": "audit-1788516664012-245",
+      "timestamp": "2026-09-04T10:11:04.012Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the formula for 15 days severance pay in video lecture?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
+        "Supreme Court of India: Digital Evidence & WhatsApp Chat Admissibility Workshop"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:11:04.017Z",
+      "updatedAt": "2026-09-04T10:11:04.017Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a992f51384b7cb542e7d7",
+      "id": "audit-1788516655280-533",
+      "timestamp": "2026-09-04T10:10:55.280Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:10:55.283Z",
+      "updatedAt": "2026-09-04T10:10:55.283Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a990c51384b7cb542e7d6",
+      "id": "audit-1788516620315-419",
+      "timestamp": "2026-09-04T10:10:20.315Z",
+      "userId": "user_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "DOCUMENT_INGESTION",
+      "query": "Ingested Act: Arbitration and Conciliation (Amendment) Act, 2021 (2 chunks indexed)",
+      "confidenceScore": 1,
+      "confidenceTier": "N/A",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Arbitration and Conciliation (Amendment) Act, 2021"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:10:20.317Z",
+      "updatedAt": "2026-09-04T10:10:20.317Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a990c51384b7cb542e7d4",
+      "id": "audit-1788516620269-724",
+      "timestamp": "2026-09-04T10:10:20.270Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Unknown Legal Provision Query Test 1788516616228",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base & FAQ Resolutions"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:10:20.273Z",
+      "updatedAt": "2026-09-04T10:10:20.273Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a990851384b7cb542e7d3",
+      "id": "audit-1788516616318-495",
+      "timestamp": "2026-09-04T10:10:16.318Z",
+      "userId": "admin_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "ADMIN_FEEDBACK_RESOLVED",
+      "query": "Resolved Unanswered Question: \"Unknown Legal Provision Query Test 1788516616228\"",
+      "confidenceScore": 1,
+      "confidenceTier": "High (Admin Verified)",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:10:16.320Z",
+      "updatedAt": "2026-09-04T10:10:16.320Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a990851384b7cb542e7d2",
+      "id": "audit-1788516616234-764",
+      "timestamp": "2026-09-04T10:10:16.234Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "UNANSWERED_ESCALATION",
+      "query": "Unknown Legal Provision Query Test 1788516616228",
+      "confidenceScore": 0,
+      "confidenceTier": "Low (Routed to Admin)",
+      "citationsCount": 0,
+      "retrievedDocs": [],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:10:16.237Z",
+      "updatedAt": "2026-09-04T10:10:16.237Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a990851384b7cb542e7d0",
+      "id": "audit-1788516616222-615",
+      "timestamp": "2026-09-04T10:10:16.222Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:10:16.226Z",
+      "updatedAt": "2026-09-04T10:10:16.226Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a98fd51384b7cb542e7cf",
+      "id": "audit-1788516605648-909",
+      "timestamp": "2026-09-04T10:10:05.648Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the formula for 15 days severance pay in video lecture?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
+        "Supreme Court of India: Digital Evidence & WhatsApp Chat Admissibility Workshop"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:10:05.652Z",
+      "updatedAt": "2026-09-04T10:10:05.652Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a98f951384b7cb542e7ce",
+      "id": "audit-1788516601783-531",
+      "timestamp": "2026-09-04T10:10:01.783Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:10:01.785Z",
+      "updatedAt": "2026-09-04T10:10:01.785Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a989451384b7cb542e7cd",
+      "id": "audit-1788516500086-124",
+      "timestamp": "2026-09-04T10:08:20.086Z",
+      "userId": "user_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "DOCUMENT_INGESTION",
+      "query": "Ingested Act: Arbitration and Conciliation (Amendment) Act, 2021 (2 chunks indexed)",
+      "confidenceScore": 1,
+      "confidenceTier": "N/A",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Arbitration and Conciliation (Amendment) Act, 2021"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:08:20.098Z",
+      "updatedAt": "2026-09-04T10:08:20.098Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a989351384b7cb542e7cb",
+      "id": "audit-1788516499969-632",
+      "timestamp": "2026-09-04T10:08:19.969Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Unknown Legal Provision Query Test 1788516495294",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base & FAQ Resolutions"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:08:19.982Z",
+      "updatedAt": "2026-09-04T10:08:19.982Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a988f51384b7cb542e7ca",
+      "id": "audit-1788516495452-768",
+      "timestamp": "2026-09-04T10:08:15.452Z",
+      "userId": "admin_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "ADMIN_FEEDBACK_RESOLVED",
+      "query": "Resolved Unanswered Question: \"Unknown Legal Provision Query Test 1788516495294\"",
+      "confidenceScore": 1,
+      "confidenceTier": "High (Admin Verified)",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:08:15.456Z",
+      "updatedAt": "2026-09-04T10:08:15.456Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a988f51384b7cb542e7c9",
+      "id": "audit-1788516495299-891",
+      "timestamp": "2026-09-04T10:08:15.299Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "UNANSWERED_ESCALATION",
+      "query": "Unknown Legal Provision Query Test 1788516495294",
+      "confidenceScore": 0,
+      "confidenceTier": "Low (Routed to Admin)",
+      "citationsCount": 0,
+      "retrievedDocs": [],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:08:15.302Z",
+      "updatedAt": "2026-09-04T10:08:15.302Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a988f51384b7cb542e7c7",
+      "id": "audit-1788516495290-498",
+      "timestamp": "2026-09-04T10:08:15.290Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:08:15.293Z",
+      "updatedAt": "2026-09-04T10:08:15.293Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a988351384b7cb542e7c6",
+      "id": "audit-1788516483177-750",
+      "timestamp": "2026-09-04T10:08:03.177Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the formula for 15 days severance pay in video lecture?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
+        "Supreme Court of India: Digital Evidence & WhatsApp Chat Admissibility Workshop"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:08:03.180Z",
+      "updatedAt": "2026-09-04T10:08:03.180Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a987b51384b7cb542e7c5",
+      "id": "audit-1788516475570-860",
+      "timestamp": "2026-09-04T10:07:55.570Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:07:55.573Z",
+      "updatedAt": "2026-09-04T10:07:55.573Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a97ab51384b7cb542e7c4",
+      "id": "audit-1788516267355-399",
+      "timestamp": "2026-09-04T10:04:27.355Z",
+      "userId": "test_live",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:04:27.360Z",
+      "updatedAt": "2026-09-04T10:04:27.360Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a978551384b7cb542e7c3",
+      "id": "audit-1788516229298-184",
+      "timestamp": "2026-09-04T10:03:49.298Z",
+      "userId": "test_live",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:03:49.315Z",
+      "updatedAt": "2026-09-04T10:03:49.315Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a977751384b7cb542e7c2",
+      "id": "audit-1788516215613-49",
+      "timestamp": "2026-09-04T10:03:35.613Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "hi",
+      "confidenceScore": 0.93,
+      "confidenceTier": "High",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:03:35.617Z",
+      "updatedAt": "2026-09-04T10:03:35.617Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a976451384b7cb542e7c1",
+      "id": "audit-1788516196853-330",
+      "timestamp": "2026-09-04T10:03:16.853Z",
+      "userId": "test_live",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under the Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:03:16.921Z",
+      "updatedAt": "2026-09-04T10:03:16.921Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a9707ed463d453d5a1161",
+      "id": "audit-1788516103615-527",
+      "timestamp": "2026-09-04T10:01:43.615Z",
+      "userId": "test_live",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under the Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:01:43.618Z",
+      "updatedAt": "2026-09-04T10:01:43.618Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a96f6ed463d453d5a1160",
+      "id": "audit-1788516086590-141",
+      "timestamp": "2026-09-04T10:01:26.590Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under the Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:01:26.597Z",
+      "updatedAt": "2026-09-04T10:01:26.597Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a96f6ed463d453d5a115f",
+      "id": "audit-1788516086220-500",
+      "timestamp": "2026-09-04T10:01:26.220Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under the Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:01:26.226Z",
+      "updatedAt": "2026-09-04T10:01:26.226Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a96e0ed463d453d5a115e",
+      "id": "audit-1788516064762-968",
+      "timestamp": "2026-09-04T10:01:04.762Z",
+      "userId": "test_live",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under the Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T10:01:04.825Z",
+      "updatedAt": "2026-09-04T10:01:04.825Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8ed14f4946da53added4",
+      "id": "audit-1788514001883-104",
+      "timestamp": "2026-09-04T09:26:41.883Z",
+      "userId": "test_user",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under the Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:26:41.894Z",
+      "updatedAt": "2026-09-04T09:26:41.894Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8bc64f4946da53added3",
+      "id": "audit-1788513222603-918",
+      "timestamp": "2026-09-04T09:13:42.603Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under the Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:13:42.624Z",
+      "updatedAt": "2026-09-04T09:13:42.624Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8bbf4f4946da53added2",
+      "id": "audit-1788513215563-151",
+      "timestamp": "2026-09-04T09:13:35.563Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the quorum and composition for Internal Complaints Committee under POSH Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Sexual Harassment of Women at Workplace (POSH) Act, 2013",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:13:35.578Z",
+      "updatedAt": "2026-09-04T09:13:35.578Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8bb94f4946da53added1",
+      "id": "audit-1788513209538-281",
+      "timestamp": "2026-09-04T09:13:29.538Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the formula for 15 days severance pay in video lecture?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
+        "Supreme Court of India: Digital Evidence & WhatsApp Chat Admissibility Workshop"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:13:29.560Z",
+      "updatedAt": "2026-09-04T09:13:29.560Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8bb34f4946da53added0",
+      "id": "audit-1788513203211-824",
+      "timestamp": "2026-09-04T09:13:23.211Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "Are post-employment non-compete clauses valid under Indian Contract Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Percept D'Mark (India) Pvt. Ltd. v. Zaheer Khan & Anr.",
+        "Indian Contract Act, 1872",
+        "Arbitration and Conciliation (Amendment) Act, 2021"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:13:23.231Z",
+      "updatedAt": "2026-09-04T09:13:23.231Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8b9a4f4946da53addecf",
+      "id": "audit-1788513178074-42",
+      "timestamp": "2026-09-04T09:12:58.074Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:12:58.090Z",
+      "updatedAt": "2026-09-04T09:12:58.090Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8b594f4946da53addece",
+      "id": "audit-1788513113696-589",
+      "timestamp": "2026-09-04T09:11:53.696Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the penalty for non-compliance with the new Digital Personal Data Protection Act 2023 for data breaches?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Digital Personal Data Protection Act, 2023"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:11:53.706Z",
+      "updatedAt": "2026-09-04T09:11:53.706Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8b584f4946da53addecd",
+      "id": "audit-1788513112527-476",
+      "timestamp": "2026-09-04T09:11:52.527Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the penalty for non-compliance with the new Digital Personal Data Protection Act 2023 for data breaches?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Digital Personal Data Protection Act, 2023"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:11:52.556Z",
+      "updatedAt": "2026-09-04T09:11:52.556Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8b544f4946da53addecc",
+      "id": "audit-1788513108084-30",
+      "timestamp": "2026-09-04T09:11:48.084Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "Natural Language Legal Intelligence",
+      "confidenceScore": 0.77,
+      "confidenceTier": "High",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Sexual Harassment of Women at Workplace (POSH) Act, 2013"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:11:48.103Z",
+      "updatedAt": "2026-09-04T09:11:48.103Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8b324f4946da53addecb",
+      "id": "audit-1788513074455-258",
+      "timestamp": "2026-09-04T09:11:14.455Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "Natural Language Legal Intelligence",
+      "confidenceScore": 0.77,
+      "confidenceTier": "High",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Sexual Harassment of Women at Workplace (POSH) Act, 2013"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:11:14.473Z",
+      "updatedAt": "2026-09-04T09:11:14.473Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8b264f4946da53addeca",
+      "id": "audit-1788513062955-155",
+      "timestamp": "2026-09-04T09:11:02.955Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "hi",
+      "confidenceScore": 0.93,
+      "confidenceTier": "High",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:11:02.978Z",
+      "updatedAt": "2026-09-04T09:11:02.978Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8b254f4946da53addec9",
+      "id": "audit-1788513061539-900",
+      "timestamp": "2026-09-04T09:11:01.539Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "hi",
+      "confidenceScore": 0.93,
+      "confidenceTier": "High",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:11:01.555Z",
+      "updatedAt": "2026-09-04T09:11:01.555Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8b135392f434f619285e",
+      "id": "audit-1788513043507-741",
+      "timestamp": "2026-09-04T09:10:43.507Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under the Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:10:43.518Z",
+      "updatedAt": "2026-09-04T09:10:43.518Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8aa34f4946da53addec8",
+      "id": "audit-1788512931984-436",
+      "timestamp": "2026-09-04T09:08:51.984Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "hi",
+      "confidenceScore": 0.93,
+      "confidenceTier": "High",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:52.004Z",
+      "updatedAt": "2026-09-04T09:08:52.004Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8aa04f4946da53addec7",
+      "id": "audit-1788512928758-313",
+      "timestamp": "2026-09-04T09:08:48.758Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "hi",
+      "confidenceScore": 0.93,
+      "confidenceTier": "High",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:48.774Z",
+      "updatedAt": "2026-09-04T09:08:48.774Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a9b4f4946da53addec6",
+      "id": "audit-1788512923625-456",
+      "timestamp": "2026-09-04T09:08:43.625Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the formula for 15 days severance pay in video lecture?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
+        "Supreme Court of India: Digital Evidence & WhatsApp Chat Admissibility Workshop"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:43.629Z",
+      "updatedAt": "2026-09-04T09:08:43.629Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a9a4f4946da53addec5",
+      "id": "audit-1788512922260-687",
+      "timestamp": "2026-09-04T09:08:42.260Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the formula for 15 days severance pay in video lecture?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
+        "Supreme Court of India: Digital Evidence & WhatsApp Chat Admissibility Workshop"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:42.277Z",
+      "updatedAt": "2026-09-04T09:08:42.277Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a8d4f4946da53addec4",
+      "id": "audit-1788512909327-120",
+      "timestamp": "2026-09-04T09:08:29.327Z",
+      "userId": "user_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "DOCUMENT_INGESTION",
+      "query": "Ingested Act: Arbitration and Conciliation (Amendment) Act, 2021 (2 chunks indexed)",
+      "confidenceScore": 1,
+      "confidenceTier": "N/A",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Arbitration and Conciliation (Amendment) Act, 2021"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:29.330Z",
+      "updatedAt": "2026-09-04T09:08:29.330Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a8d4f4946da53addec2",
+      "id": "audit-1788512909274-580",
+      "timestamp": "2026-09-04T09:08:29.274Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Unknown Legal Provision Query Test 1788512909139",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base & FAQ Resolutions"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:29.278Z",
+      "updatedAt": "2026-09-04T09:08:29.278Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a8d4f4946da53addec1",
+      "id": "audit-1788512909238-760",
+      "timestamp": "2026-09-04T09:08:29.238Z",
+      "userId": "admin_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "ADMIN_FEEDBACK_RESOLVED",
+      "query": "Resolved Unanswered Question: \"Unknown Legal Provision Query Test 1788512909139\"",
+      "confidenceScore": 1,
+      "confidenceTier": "High (Admin Verified)",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:29.240Z",
+      "updatedAt": "2026-09-04T09:08:29.240Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a8d4f4946da53addec0",
+      "id": "audit-1788512909142-457",
+      "timestamp": "2026-09-04T09:08:29.142Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "UNANSWERED_ESCALATION",
+      "query": "Unknown Legal Provision Query Test 1788512909139",
+      "confidenceScore": 0,
+      "confidenceTier": "Low (Routed to Admin)",
+      "citationsCount": 0,
+      "retrievedDocs": [],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:29.144Z",
+      "updatedAt": "2026-09-04T09:08:29.144Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a8d4f4946da53addebe",
+      "id": "audit-1788512909135-494",
+      "timestamp": "2026-09-04T09:08:29.135Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:29.137Z",
+      "updatedAt": "2026-09-04T09:08:29.137Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a8d4f4946da53addebd",
+      "id": "audit-1788512909130-170",
+      "timestamp": "2026-09-04T09:08:29.130Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the formula for 15 days severance pay in video lecture?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
+        "Supreme Court of India: Digital Evidence & WhatsApp Chat Admissibility Workshop"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:29.132Z",
+      "updatedAt": "2026-09-04T09:08:29.132Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a8a8d4f4946da53addebc",
+      "id": "audit-1788512909120-181",
+      "timestamp": "2026-09-04T09:08:29.120Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:08:29.123Z",
+      "updatedAt": "2026-09-04T09:08:29.123Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a895b4f4946da53addebb",
+      "id": "audit-1788512603827-761",
+      "timestamp": "2026-09-04T09:03:23.827Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:03:23.836Z",
+      "updatedAt": "2026-09-04T09:03:23.836Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a895a4f4946da53addeba",
+      "id": "audit-1788512602627-399",
+      "timestamp": "2026-09-04T09:03:22.627Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:03:22.647Z",
+      "updatedAt": "2026-09-04T09:03:22.647Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a89594f4946da53addeb9",
+      "id": "audit-1788512600997-268",
+      "timestamp": "2026-09-04T09:03:20.997Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the mandatory CSR spending percentage under Companies Act 2013?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Companies Act, 2013",
+        "Corporate Governance Masterclass: Duties of Independent Directors 2026",
+        "Information Technology Act, 2000",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:03:21.017Z",
+      "updatedAt": "2026-09-04T09:03:21.017Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a89574f4946da53addeb8",
+      "id": "audit-1788512599141-675",
+      "timestamp": "2026-09-04T09:03:19.141Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the mandatory CSR spending percentage under Companies Act 2013?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Companies Act, 2013",
+        "Corporate Governance Masterclass: Duties of Independent Directors 2026",
+        "Information Technology Act, 2000",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:03:19.156Z",
+      "updatedAt": "2026-09-04T09:03:19.156Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a89564f4946da53addeb7",
+      "id": "audit-1788512598084-577",
+      "timestamp": "2026-09-04T09:03:18.084Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "What is the mandatory CSR spending percentage under Companies Act 2013?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Companies Act, 2013",
+        "Corporate Governance Masterclass: Duties of Independent Directors 2026",
+        "Information Technology Act, 2000",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:03:18.115Z",
+      "updatedAt": "2026-09-04T09:03:18.115Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a891f4f4946da53addeb6",
+      "id": "audit-1788512543014-755",
+      "timestamp": "2026-09-04T09:02:23.014Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:02:23.042Z",
+      "updatedAt": "2026-09-04T09:02:23.042Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a891d4f4946da53addeb5",
+      "id": "audit-1788512541444-775",
+      "timestamp": "2026-09-04T09:02:21.445Z",
+      "userId": "user_admin",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T09:02:21.474Z",
+      "updatedAt": "2026-09-04T09:02:21.474Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a86c84f4946da53addeb4",
+      "id": "audit-1788511944329-416",
+      "timestamp": "2026-09-04T08:52:24.329Z",
+      "userId": "user_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "DOCUMENT_INGESTION",
+      "query": "Ingested Act: Arbitration and Conciliation (Amendment) Act, 2021 (2 chunks indexed)",
+      "confidenceScore": 1,
+      "confidenceTier": "N/A",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Arbitration and Conciliation (Amendment) Act, 2021"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T08:52:24.332Z",
+      "updatedAt": "2026-09-04T08:52:24.332Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a86c84f4946da53addeb2",
+      "id": "audit-1788511944284-948",
+      "timestamp": "2026-09-04T08:52:24.284Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Unknown Legal Provision Query Test 1788511943927",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base & FAQ Resolutions"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T08:52:24.286Z",
+      "updatedAt": "2026-09-04T08:52:24.286Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a86c84f4946da53addeb1",
+      "id": "audit-1788511944246-63",
+      "timestamp": "2026-09-04T08:52:24.246Z",
+      "userId": "admin_active",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "ADMIN_FEEDBACK_RESOLVED",
+      "query": "Resolved Unanswered Question: \"Unknown Legal Provision Query Test 1788511943927\"",
+      "confidenceScore": 1,
+      "confidenceTier": "High (Admin Verified)",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Legal Team Admin Verified Knowledge Base"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T08:52:24.250Z",
+      "updatedAt": "2026-09-04T08:52:24.250Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a86c74f4946da53addeaf",
+      "id": "audit-1788511943933-970",
+      "timestamp": "2026-09-04T08:52:23.933Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "UNANSWERED_ESCALATION",
+      "query": "Unknown Legal Provision Query Test 1788511943927",
+      "confidenceScore": 0,
+      "confidenceTier": "Low (Routed to Admin)",
+      "citationsCount": 0,
+      "retrievedDocs": [],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T08:52:23.935Z",
+      "updatedAt": "2026-09-04T08:52:23.935Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a86c74f4946da53addead",
+      "id": "audit-1788511943923-208",
+      "timestamp": "2026-09-04T08:52:23.923Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "Why was Section 66A IT Act struck down by Supreme Court?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Information Technology Act, 2000"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T08:52:23.926Z",
+      "updatedAt": "2026-09-04T08:52:23.926Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a86c74f4946da53addeac",
+      "id": "audit-1788511943917-39",
+      "timestamp": "2026-09-04T08:52:23.917Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the formula for 15 days severance pay in video lecture?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
+        "Supreme Court of India: Digital Evidence & WhatsApp Chat Admissibility Workshop"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T08:52:23.919Z",
+      "updatedAt": "2026-09-04T08:52:23.919Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a86c74f4946da53addeab",
+      "id": "audit-1788511943908-339",
+      "timestamp": "2026-09-04T08:52:23.908Z",
+      "userId": "emp_current",
+      "userName": "Ananya Sen (Associate)",
+      "userRole": "Employee",
+      "action": "SEARCH_QUERY",
+      "query": "What is the notice period required to terminate an employee under Industrial Disputes Act?",
+      "confidenceScore": 0.99,
+      "confidenceTier": "High",
+      "citationsCount": 4,
+      "retrievedDocs": [
+        "Industrial Disputes Act, 1947",
+        "Master Services Agreement (MSA) - Enterprise Client Standard Template",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T08:52:23.911Z",
+      "updatedAt": "2026-09-04T08:52:23.911Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a9a86784f4946da53addeaa",
       "id": "audit-1788511864607-997",
       "timestamp": "2026-09-04T08:51:04.607Z",
       "userId": "user_admin",
@@ -1431,9 +3767,13 @@
         "Master Services Agreement (MSA) - Enterprise Client Standard Template",
         "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T08:51:04.613Z",
+      "updatedAt": "2026-09-04T08:51:04.613Z",
+      "__v": 0
     },
     {
+      "_id": "6a9a86764f4946da53addea9",
       "id": "audit-1788511862430-985",
       "timestamp": "2026-09-04T08:51:02.430Z",
       "userId": "user_admin",
@@ -1449,9 +3789,13 @@
         "Master Services Agreement (MSA) - Enterprise Client Standard Template",
         "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T08:51:02.526Z",
+      "updatedAt": "2026-09-04T08:51:02.526Z",
+      "__v": 0
     },
     {
+      "_id": "6a9a59b74f4946da53addea8",
       "id": "audit-1788500407183-309",
       "timestamp": "2026-09-04T05:40:07.183Z",
       "userId": "user_admin",
@@ -1466,9 +3810,13 @@
         "Shreya Singhal v. Union of India",
         "Information Technology Act, 2000"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-04T05:40:08.023Z",
+      "updatedAt": "2026-09-04T05:40:08.023Z",
+      "__v": 0
     },
     {
+      "_id": "6a97d8b24f4946da53addea7",
       "id": "audit-1788336306365-785",
       "timestamp": "2026-09-02T08:05:06.365Z",
       "userId": "user_admin",
@@ -1485,9 +3833,13 @@
         "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
         "Digital Personal Data Protection Act, 2023"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T08:05:06.381Z",
+      "updatedAt": "2026-09-02T08:05:06.381Z",
+      "__v": 0
     },
     {
+      "_id": "6a97d8b14f4946da53addea6",
       "id": "audit-1788336305013-801",
       "timestamp": "2026-09-02T08:05:05.013Z",
       "userId": "user_admin",
@@ -1503,9 +3855,13 @@
         "Information Technology Act, 2000",
         "Percept D'Mark (India) Pvt. Ltd. v. Zaheer Khan & Anr."
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T08:05:05.047Z",
+      "updatedAt": "2026-09-02T08:05:05.047Z",
+      "__v": 0
     },
     {
+      "_id": "6a97d0894f4946da53addea5",
       "id": "audit-1788334217311-250",
       "timestamp": "2026-09-02T07:30:17.311Z",
       "userId": "user_admin",
@@ -1520,9 +3876,13 @@
         "Shreya Singhal v. Union of India",
         "Information Technology Act, 2000"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T07:30:17.330Z",
+      "updatedAt": "2026-09-02T07:30:17.330Z",
+      "__v": 0
     },
     {
+      "_id": "6a97d0864f4946da53addea4",
       "id": "audit-1788334214744-624",
       "timestamp": "2026-09-02T07:30:14.744Z",
       "userId": "user_admin",
@@ -1537,9 +3897,13 @@
         "Shreya Singhal v. Union of India",
         "Information Technology Act, 2000"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T07:30:14.895Z",
+      "updatedAt": "2026-09-02T07:30:14.895Z",
+      "__v": 0
     },
     {
+      "_id": "6a97c6b14f4946da53addea3",
       "id": "audit-1788331697512-878",
       "timestamp": "2026-09-02T06:48:17.513Z",
       "userId": "user_admin",
@@ -1555,9 +3919,13 @@
         "Master Services Agreement (MSA) - Enterprise Client Standard Template",
         "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T06:48:17.624Z",
+      "updatedAt": "2026-09-02T06:48:17.624Z",
+      "__v": 0
     },
     {
+      "_id": "6a97ace84f4946da53addea2",
       "id": "audit-1788325096627-920",
       "timestamp": "2026-09-02T04:58:16.627Z",
       "userId": "user_admin",
@@ -1572,9 +3940,13 @@
         "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
         "Corporate Governance Masterclass: Duties of Independent Directors 2026"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:58:16.696Z",
+      "updatedAt": "2026-09-02T04:58:16.696Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53addea1",
       "id": "audit-1788324246557-561",
       "timestamp": "2026-09-02T04:44:06.557Z",
       "userId": "emp_current",
@@ -1588,9 +3960,13 @@
       "retrievedDocs": [
         "Corporate Governance Masterclass: Duties of Independent Directors 2026"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.559Z",
+      "updatedAt": "2026-09-02T04:44:06.559Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53addea0",
       "id": "audit-1788324246551-198",
       "timestamp": "2026-09-02T04:44:06.551Z",
       "userId": "emp_current",
@@ -1604,9 +3980,13 @@
       "retrievedDocs": [
         "Cloud Infrastructure SLA & Vendor Agreement 2026"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.553Z",
+      "updatedAt": "2026-09-02T04:44:06.553Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde9f",
       "id": "audit-1788324246543-580",
       "timestamp": "2026-09-02T04:44:06.543Z",
       "userId": "emp_current",
@@ -1621,9 +4001,13 @@
         "Navtej Singh Johar & Ors. v. Union of India",
         "Shreya Singhal v. Union of India"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.546Z",
+      "updatedAt": "2026-09-02T04:44:06.546Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde9e",
       "id": "audit-1788324246533-587",
       "timestamp": "2026-09-02T04:44:06.534Z",
       "userId": "emp_current",
@@ -1637,9 +4021,13 @@
       "retrievedDocs": [
         "Digital Personal Data Protection Act, 2023"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.538Z",
+      "updatedAt": "2026-09-02T04:44:06.538Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde9d",
       "id": "audit-1788324246487-746",
       "timestamp": "2026-09-02T04:44:06.487Z",
       "userId": "user_active",
@@ -1653,9 +4041,13 @@
       "retrievedDocs": [
         "Corporate Governance Masterclass: Duties of Independent Directors 2026"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.488Z",
+      "updatedAt": "2026-09-02T04:44:06.488Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde9b",
       "id": "audit-1788324246412-674",
       "timestamp": "2026-09-02T04:44:06.412Z",
       "userId": "user_active",
@@ -1669,9 +4061,13 @@
       "retrievedDocs": [
         "Cloud Infrastructure SLA & Vendor Agreement 2026"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.413Z",
+      "updatedAt": "2026-09-02T04:44:06.413Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde99",
       "id": "audit-1788324246326-999",
       "timestamp": "2026-09-02T04:44:06.326Z",
       "userId": "user_active",
@@ -1685,9 +4081,13 @@
       "retrievedDocs": [
         "Navtej Singh Johar & Ors. v. Union of India"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.327Z",
+      "updatedAt": "2026-09-02T04:44:06.327Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde97",
       "id": "audit-1788324246244-950",
       "timestamp": "2026-09-02T04:44:06.244Z",
       "userId": "user_active",
@@ -1701,7 +4101,10 @@
       "retrievedDocs": [
         "Digital Personal Data Protection Act, 2023"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.246Z",
+      "updatedAt": "2026-09-02T04:44:06.246Z",
+      "__v": 0
     },
     {
       "_id": "6a97a97ff5d0f6e0559d744a",
@@ -2032,86 +4435,6 @@
       "createdAt": "2026-09-02T04:40:35.170Z",
       "updatedAt": "2026-09-02T04:40:35.170Z",
       "__v": 0
-    },
-    {
-      "_id": "6a97a8baf5d0f6e0559d7430",
-      "id": "audit-004",
-      "timestamp": "2026-09-01T15:10:20.000Z",
-      "userId": "admin_01",
-      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
-      "userRole": "Admin",
-      "action": "DOCUMENT_UPLOAD",
-      "query": "Uploaded Master Services Agreement (MSA) v2.4",
-      "confidenceScore": 1,
-      "confidenceTier": "N/A",
-      "citationsCount": 0,
-      "retrievedDocs": [
-        "Master Services Agreement (MSA)"
-      ],
-      "ipAddress": "192.168.1.10",
-      "__v": 0,
-      "createdAt": "2026-09-02T04:40:26.385Z",
-      "updatedAt": "2026-09-02T04:40:26.385Z"
-    },
-    {
-      "_id": "6a97a8baf5d0f6e0559d742f",
-      "id": "audit-003",
-      "timestamp": "2026-09-01T14:22:00.000Z",
-      "userId": "emp_310",
-      "userName": "Rohan Verma",
-      "userRole": "Employee",
-      "action": "UNANSWERED_ESCALATION",
-      "query": "What is the penalty for non-compliance with the new Digital Personal Data Protection Act 2023 for data breaches?",
-      "confidenceScore": 0.18,
-      "confidenceTier": "Low (Routed to Admin)",
-      "citationsCount": 0,
-      "retrievedDocs": [],
-      "ipAddress": "192.168.1.112",
-      "__v": 0,
-      "createdAt": "2026-09-02T04:40:26.385Z",
-      "updatedAt": "2026-09-02T04:40:26.385Z"
-    },
-    {
-      "_id": "6a97a8baf5d0f6e0559d742e",
-      "id": "audit-002",
-      "timestamp": "2026-09-01T11:45:00.000Z",
-      "userId": "emp_205",
-      "userName": "Karan Johar",
-      "userRole": "Employee",
-      "action": "SEARCH_QUERY",
-      "query": "Is Section 66A IT Act still valid in India?",
-      "confidenceScore": 0.98,
-      "confidenceTier": "High",
-      "citationsCount": 2,
-      "retrievedDocs": [
-        "Information Technology Act, 2000",
-        "Shreya Singhal v. Union of India"
-      ],
-      "ipAddress": "192.168.1.88",
-      "__v": 0,
-      "createdAt": "2026-09-02T04:40:26.384Z",
-      "updatedAt": "2026-09-02T04:40:26.384Z"
-    },
-    {
-      "_id": "6a97a8baf5d0f6e0559d742d",
-      "id": "audit-001",
-      "timestamp": "2026-09-01T10:30:15.000Z",
-      "userId": "emp_102",
-      "userName": "Ananya Sen",
-      "userRole": "Employee",
-      "action": "SEARCH_QUERY",
-      "query": "What is the notice period required to terminate an employee under Industrial Disputes Act?",
-      "confidenceScore": 0.94,
-      "confidenceTier": "High",
-      "citationsCount": 2,
-      "retrievedDocs": [
-        "Industrial Disputes Act, 1947",
-        "Labour Law Masterclass Video"
-      ],
-      "ipAddress": "192.168.1.45",
-      "__v": 0,
-      "createdAt": "2026-09-02T04:40:26.384Z",
-      "updatedAt": "2026-09-02T04:40:26.384Z"
     }
   ],
   "savedSearches": [
@@ -2156,6 +4479,14 @@
     }
   ],
   "bookmarks": [
+    {
+      "id": "bm-1788518344503",
+      "bookmarkedAt": "2026-09-04T10:39:04.503Z",
+      "title": "Paragraph 82-84 - Shreya Singhal v. Union of India",
+      "docTitle": "Shreya Singhal v. Union of India",
+      "section": "Paragraph 82-84",
+      "excerpt": "The Supreme Court held that Section 66A of the IT Act is unconstitutional and void in its entirety as it infringes upon the fundamental right of speech and expression under Article 19(1)(a) and is not saved under Article 19(2). The Court observed: 'Section 66A is cast so widely that virtually any opinion on any subject would be covered by it, as any serious opinion will likely be offensive to someone. The line between advocacy and incitement was completely erased. The chilling effect on free speech is severe.'"
+    },
     {
       "_id": "6a97a8baf5d0f6e0559d7431",
       "id": "bm-001",
