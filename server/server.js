@@ -402,10 +402,23 @@ app.delete('/api/saved-searches/:id', (req, res) => {
   res.json({ success: true, data: removed });
 });
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`=======================================================`);
-  console.log(` Urbangaon AI Legal Search Platform listening on port ${PORT}`);
-  console.log(` Open http://localhost:${PORT} in your browser`);
-  console.log(`=======================================================`);
+// API Health Check
+app.get('/api', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Urbangaon AI Legal Search Platform API is online',
+    timestamp: new Date().toISOString()
+  });
 });
+
+// Start Server if executed directly
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`=======================================================`);
+    console.log(` Urbangaon AI Legal Search Platform listening on port ${PORT}`);
+    console.log(` Open http://localhost:${PORT} in your browser`);
+    console.log(`=======================================================`);
+  });
+}
+
+module.exports = app;

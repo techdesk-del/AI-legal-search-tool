@@ -18,7 +18,7 @@ const {
 } = require('./seedData');
 
 const DB_FILE_PATH = path.join(__dirname, 'database.json');
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/urbangaon_legal_db';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://techdesk_db_user:aakash2899@ailegalsearchtool.zegxjbz.mongodb.net/urbangaon_legal_db?retryWrites=true&w=majority&appName=AILegalSearchTool';
 
 class DataStore {
   constructor() {
@@ -119,16 +119,20 @@ class DataStore {
       if (fs.existsSync(DB_FILE_PATH)) {
         const raw = fs.readFileSync(DB_FILE_PATH, 'utf8');
         this.data = JSON.parse(raw);
-        if (!this.data.documents) this.data.documents = defaultDocuments;
-        if (!this.data.unansweredQuestions) this.data.unansweredQuestions = defaultUnansweredQuestions;
-        if (!this.data.auditLogs) this.data.auditLogs = defaultAuditLogs;
-        if (!this.data.savedSearches) this.data.savedSearches = defaultSavedSearches;
-        if (!this.data.bookmarks) this.data.bookmarks = defaultBookmarks;
       } else {
-        this.saveToDisk();
+        try {
+          this.data = require('./database.json');
+        } catch (e) {
+          // Defaults are already set in constructor
+        }
       }
+      if (!this.data.documents) this.data.documents = defaultDocuments;
+      if (!this.data.unansweredQuestions) this.data.unansweredQuestions = defaultUnansweredQuestions;
+      if (!this.data.auditLogs) this.data.auditLogs = defaultAuditLogs;
+      if (!this.data.savedSearches) this.data.savedSearches = defaultSavedSearches;
+      if (!this.data.bookmarks) this.data.bookmarks = defaultBookmarks;
     } catch (err) {
-      this.saveToDisk();
+      console.warn('Fallback to memory state:', err.message);
     }
   }
 
@@ -136,7 +140,7 @@ class DataStore {
     try {
       fs.writeFileSync(DB_FILE_PATH, JSON.stringify(this.data, null, 2), 'utf8');
     } catch (err) {
-      console.error('Error saving DB to disk:', err);
+      // In read-only serverless filesystems (Vercel), write is silently ignored while keeping in-memory & Mongo state
     }
   }
 
