@@ -1,242 +1,6 @@
 {
   "documents": [
     {
-      "id": "doc-1788324246451",
-      "title": "Corporate Governance Masterclass: Duties of Independent Directors 2026",
-      "docType": "YouTube Video",
-      "jurisdiction": "India (Corporate Law)",
-      "court": "Indian Institute of Directors",
-      "year": 2026,
-      "status": "Active",
-      "confidentiality": "Public",
-      "category": "Video Lecture & Webinar",
-      "sourceUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      "videoDuration": "16:20",
-      "summary": "[02:10] Code for Independent Directors (Schedule IV): Explaining the mandatory code under Companies Act 2013 where independent directors must hold at least one separate meeting a year without non-inde...",
-      "isSuperseded": false,
-      "supersededBy": null,
-      "chunks": [
-        {
-          "id": "chunk-v-1788324246451-0",
-          "section": "Timestamp [02:10]",
-          "heading": "Code for Independent Directors (Schedule IV)",
-          "content": "Explaining the mandatory code under Companies Act 2013 where independent directors must hold at least one separate meeting a year without non-independent directors.",
-          "timestampSeconds": 130,
-          "timestampDisplay": "02:10",
-          "tags": [
-            "video-transcript",
-            "corporate",
-            "governance",
-            "masterclass:",
-            "duties",
-            "independent",
-            "directors",
-            "2026"
-          ]
-        },
-        {
-          "id": "chunk-v-1788324246451-1",
-          "section": "Timestamp [07:45]",
-          "heading": "Board Committee Requirements (Audit & Nomination)",
-          "content": "Deep dive into the composition of the Audit Committee where two-thirds of the members must be independent directors.",
-          "timestampSeconds": 465,
-          "timestampDisplay": "07:45",
-          "tags": [
-            "video-transcript",
-            "corporate",
-            "governance",
-            "masterclass:",
-            "duties",
-            "independent",
-            "directors",
-            "2026"
-          ]
-        },
-        {
-          "id": "chunk-v-1788324246451-2",
-          "section": "Timestamp [12:30]",
-          "heading": "Liability & Safe Harbour Protections",
-          "content": "Section 149(12) safe harbour rule where independent directors are held liable only for acts of omission or commission occurring with their knowledge or consent.",
-          "timestampSeconds": 750,
-          "timestampDisplay": "12:30",
-          "tags": [
-            "video-transcript",
-            "corporate",
-            "governance",
-            "masterclass:",
-            "duties",
-            "independent",
-            "directors",
-            "2026"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "doc-1788324246376",
-      "title": "Cloud Infrastructure SLA & Vendor Agreement 2026",
-      "docType": "Contract",
-      "jurisdiction": "Urbangaon Corporate Legal",
-      "court": "Commercial Court New Delhi",
-      "year": 2026,
-      "status": "Active",
-      "confidentiality": "Internal",
-      "category": "Commercial & Contract Law",
-      "sourceUrl": "",
-      "videoDuration": null,
-      "summary": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly system availability of not less than 99.9%. If uptime falls below 99.5%, Client shall receive a 15% service credit on mo...",
-      "isSuperseded": false,
-      "supersededBy": null,
-      "chunks": [
-        {
-          "id": "chunk-1788324246376-1",
-          "section": "Clause 4",
-          "heading": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly ",
-          "content": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly system availability of not less than 99.9%. If uptime falls below 99.5%, Client shall receive a 15% service credit on monthly billing.",
-          "tags": [
-            "contract",
-            "commercial & contract law",
-            "cloud",
-            "infrastructure",
-            "vendor",
-            "agreement",
-            "2026"
-          ]
-        },
-        {
-          "id": "chunk-1788324246376-2",
-          "section": "Clause 11",
-          "heading": "Clause 11 Dispute Resolution & Escalation: Any dispute shall first be referred t",
-          "content": "Clause 11 Dispute Resolution & Escalation: Any dispute shall first be referred to executive mediation within fifteen (15) days before initiating arbitration in New Delhi.",
-          "tags": [
-            "contract",
-            "commercial & contract law",
-            "cloud",
-            "infrastructure",
-            "vendor",
-            "agreement",
-            "2026"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "doc-1788324246292",
-      "title": "Navtej Singh Johar & Ors. v. Union of India",
-      "docType": "Judgement",
-      "jurisdiction": "Supreme Court of India",
-      "court": "Supreme Court of India (5-Judge Constitution Bench)",
-      "year": 2018,
-      "status": "Active",
-      "confidentiality": "Public",
-      "category": "Constitutional & Privacy Law",
-      "sourceUrl": "",
-      "videoDuration": null,
-      "summary": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held that Section 377 IPC, in so far as it criminalises consensual sexual acts of adults in private, is violative of Articles ...",
-      "isSuperseded": false,
-      "supersededBy": null,
-      "chunks": [
-        {
-          "id": "chunk-1788324246291-1",
-          "section": "Paragraph 252",
-          "heading": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held t",
-          "content": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held that Section 377 IPC, in so far as it criminalises consensual sexual acts of adults in private, is violative of Articles 14, 15, 19, and 21 of the Constitution of India.",
-          "tags": [
-            "judgement",
-            "constitutional & privacy law",
-            "navtej",
-            "singh",
-            "johar",
-            "ors.",
-            "union",
-            "india"
-          ]
-        },
-        {
-          "id": "chunk-1788324246292-2",
-          "section": "Paragraph 268",
-          "heading": "Paragraph 268 Constitutional Morality & Individual Autonomy: The Court affirmed ",
-          "content": "Paragraph 268 Constitutional Morality & Individual Autonomy: The Court affirmed that constitutional morality requires the protection of individual identity and personal autonomy over majoritarian sentiment.",
-          "tags": [
-            "judgement",
-            "constitutional & privacy law",
-            "navtej",
-            "singh",
-            "johar",
-            "ors.",
-            "union",
-            "india"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "doc-1788324246198",
-      "title": "Digital Personal Data Protection Act, 2023",
-      "docType": "Act",
-      "jurisdiction": "India (Central)",
-      "court": "Parliament of India",
-      "year": 2023,
-      "status": "Active",
-      "confidentiality": "Public",
-      "category": "Cyber & Tech Law",
-      "sourceUrl": "",
-      "videoDuration": null,
-      "summary": "Section 4 Grounds for processing personal data: A person may process the personal data of a Data Principal only in accordance with the provisions of this Act and for a lawful purpose for which consent...",
-      "isSuperseded": false,
-      "supersededBy": null,
-      "chunks": [
-        {
-          "id": "chunk-1788324246198-1",
-          "section": "Section 4",
-          "heading": "Section 4 Grounds for processing personal data: A person may process the persona",
-          "content": "Section 4 Grounds for processing personal data: A person may process the personal data of a Data Principal only in accordance with the provisions of this Act and for a lawful purpose for which consent has been given or for certain legitimate uses.",
-          "tags": [
-            "act",
-            "cyber & tech law",
-            "digital",
-            "personal",
-            "data",
-            "protection",
-            "act,",
-            "2023"
-          ]
-        },
-        {
-          "id": "chunk-1788324246198-2",
-          "section": "Section 8",
-          "heading": "Section 8 General obligations of Data Fiduciary: A Data Fiduciary shall protect ",
-          "content": "Section 8 General obligations of Data Fiduciary: A Data Fiduciary shall protect personal data in its possession by taking reasonable security safeguards to prevent personal data breaches. In case of breach, notify the Board and affected users.",
-          "tags": [
-            "act",
-            "cyber & tech law",
-            "digital",
-            "personal",
-            "data",
-            "protection",
-            "act,",
-            "2023"
-          ]
-        },
-        {
-          "id": "chunk-1788324246198-3",
-          "section": "Section 33",
-          "heading": "Section 33 Penalties for significant breaches: Breach in observing obligation of",
-          "content": "Section 33 Penalties for significant breaches: Breach in observing obligation of Data Fiduciary may lead to penalty up to Rs 250 Crore. Failure to notify breach carries penalty up to Rs 200 Crore.",
-          "tags": [
-            "act",
-            "cyber & tech law",
-            "digital",
-            "personal",
-            "data",
-            "protection",
-            "act,",
-            "2023"
-          ]
-        }
-      ]
-    },
-    {
       "_id": "6a97a8b9f5d0f6e0559d741f",
       "id": "doc-act-001",
       "title": "Industrial Disputes Act, 1947",
@@ -1130,6 +894,276 @@
       "createdAt": "2026-09-02T04:43:42.845Z",
       "updatedAt": "2026-09-02T04:43:42.845Z",
       "__v": 0
+    },
+    {
+      "_id": "6a97a9964f4946da53adde96",
+      "id": "doc-1788324246198",
+      "title": "Digital Personal Data Protection Act, 2023",
+      "docType": "Act",
+      "jurisdiction": "India (Central)",
+      "court": "Parliament of India",
+      "year": 2023,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Cyber & Tech Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Section 4 Grounds for processing personal data: A person may process the personal data of a Data Principal only in accordance with the provisions of this Act and for a lawful purpose for which consent...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788324246198-1",
+          "section": "Section 4",
+          "heading": "Section 4 Grounds for processing personal data: A person may process the persona",
+          "content": "Section 4 Grounds for processing personal data: A person may process the personal data of a Data Principal only in accordance with the provisions of this Act and for a lawful purpose for which consent has been given or for certain legitimate uses.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "cyber & tech law",
+            "digital",
+            "personal",
+            "data",
+            "protection",
+            "act,",
+            "2023"
+          ]
+        },
+        {
+          "id": "chunk-1788324246198-2",
+          "section": "Section 8",
+          "heading": "Section 8 General obligations of Data Fiduciary: A Data Fiduciary shall protect ",
+          "content": "Section 8 General obligations of Data Fiduciary: A Data Fiduciary shall protect personal data in its possession by taking reasonable security safeguards to prevent personal data breaches. In case of breach, notify the Board and affected users.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "cyber & tech law",
+            "digital",
+            "personal",
+            "data",
+            "protection",
+            "act,",
+            "2023"
+          ]
+        },
+        {
+          "id": "chunk-1788324246198-3",
+          "section": "Section 33",
+          "heading": "Section 33 Penalties for significant breaches: Breach in observing obligation of",
+          "content": "Section 33 Penalties for significant breaches: Breach in observing obligation of Data Fiduciary may lead to penalty up to Rs 250 Crore. Failure to notify breach carries penalty up to Rs 200 Crore.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "act",
+            "cyber & tech law",
+            "digital",
+            "personal",
+            "data",
+            "protection",
+            "act,",
+            "2023"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-02T04:44:06.208Z",
+      "updatedAt": "2026-09-02T04:44:06.208Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a97a9964f4946da53adde98",
+      "id": "doc-1788324246292",
+      "title": "Navtej Singh Johar & Ors. v. Union of India",
+      "docType": "Judgement",
+      "jurisdiction": "Supreme Court of India",
+      "court": "Supreme Court of India (5-Judge Constitution Bench)",
+      "year": 2018,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Constitutional & Privacy Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held that Section 377 IPC, in so far as it criminalises consensual sexual acts of adults in private, is violative of Articles ...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788324246291-1",
+          "section": "Paragraph 252",
+          "heading": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held t",
+          "content": "Paragraph 252 Section 377 IPC Unconstitutionality: The Constitution Bench held that Section 377 IPC, in so far as it criminalises consensual sexual acts of adults in private, is violative of Articles 14, 15, 19, and 21 of the Constitution of India.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "judgement",
+            "constitutional & privacy law",
+            "navtej",
+            "singh",
+            "johar",
+            "ors.",
+            "union",
+            "india"
+          ]
+        },
+        {
+          "id": "chunk-1788324246292-2",
+          "section": "Paragraph 268",
+          "heading": "Paragraph 268 Constitutional Morality & Individual Autonomy: The Court affirmed ",
+          "content": "Paragraph 268 Constitutional Morality & Individual Autonomy: The Court affirmed that constitutional morality requires the protection of individual identity and personal autonomy over majoritarian sentiment.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "judgement",
+            "constitutional & privacy law",
+            "navtej",
+            "singh",
+            "johar",
+            "ors.",
+            "union",
+            "india"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-02T04:44:06.294Z",
+      "updatedAt": "2026-09-02T04:44:06.294Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a97a9964f4946da53adde9a",
+      "id": "doc-1788324246376",
+      "title": "Cloud Infrastructure SLA & Vendor Agreement 2026",
+      "docType": "Contract",
+      "jurisdiction": "Urbangaon Corporate Legal",
+      "court": "Commercial Court New Delhi",
+      "year": 2026,
+      "status": "Active",
+      "confidentiality": "Internal",
+      "category": "Commercial & Contract Law",
+      "sourceUrl": "",
+      "videoDuration": null,
+      "summary": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly system availability of not less than 99.9%. If uptime falls below 99.5%, Client shall receive a 15% service credit on mo...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-1788324246376-1",
+          "section": "Clause 4",
+          "heading": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly ",
+          "content": "Clause 4 Service Level Commitment (99.9% Uptime): The Vendor guarantees monthly system availability of not less than 99.9%. If uptime falls below 99.5%, Client shall receive a 15% service credit on monthly billing.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "contract",
+            "commercial & contract law",
+            "cloud",
+            "infrastructure",
+            "vendor",
+            "agreement",
+            "2026"
+          ]
+        },
+        {
+          "id": "chunk-1788324246376-2",
+          "section": "Clause 11",
+          "heading": "Clause 11 Dispute Resolution & Escalation: Any dispute shall first be referred t",
+          "content": "Clause 11 Dispute Resolution & Escalation: Any dispute shall first be referred to executive mediation within fifteen (15) days before initiating arbitration in New Delhi.",
+          "timestampSeconds": null,
+          "timestampDisplay": null,
+          "tags": [
+            "contract",
+            "commercial & contract law",
+            "cloud",
+            "infrastructure",
+            "vendor",
+            "agreement",
+            "2026"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-02T04:44:06.379Z",
+      "updatedAt": "2026-09-02T04:44:06.379Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a97a9964f4946da53adde9c",
+      "id": "doc-1788324246451",
+      "title": "Corporate Governance Masterclass: Duties of Independent Directors 2026",
+      "docType": "YouTube Video",
+      "jurisdiction": "India (Corporate Law)",
+      "court": "Indian Institute of Directors",
+      "year": 2026,
+      "status": "Active",
+      "confidentiality": "Public",
+      "category": "Video Lecture & Webinar",
+      "sourceUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "videoDuration": "16:20",
+      "summary": "[02:10] Code for Independent Directors (Schedule IV): Explaining the mandatory code under Companies Act 2013 where independent directors must hold at least one separate meeting a year without non-inde...",
+      "citationRef": null,
+      "isSuperseded": false,
+      "supersededBy": null,
+      "chunks": [
+        {
+          "id": "chunk-v-1788324246451-0",
+          "section": "Timestamp [02:10]",
+          "heading": "Code for Independent Directors (Schedule IV)",
+          "content": "Explaining the mandatory code under Companies Act 2013 where independent directors must hold at least one separate meeting a year without non-independent directors.",
+          "timestampSeconds": 130,
+          "timestampDisplay": "02:10",
+          "tags": [
+            "video-transcript",
+            "corporate",
+            "governance",
+            "masterclass:",
+            "duties",
+            "independent",
+            "directors",
+            "2026"
+          ]
+        },
+        {
+          "id": "chunk-v-1788324246451-1",
+          "section": "Timestamp [07:45]",
+          "heading": "Board Committee Requirements (Audit & Nomination)",
+          "content": "Deep dive into the composition of the Audit Committee where two-thirds of the members must be independent directors.",
+          "timestampSeconds": 465,
+          "timestampDisplay": "07:45",
+          "tags": [
+            "video-transcript",
+            "corporate",
+            "governance",
+            "masterclass:",
+            "duties",
+            "independent",
+            "directors",
+            "2026"
+          ]
+        },
+        {
+          "id": "chunk-v-1788324246451-2",
+          "section": "Timestamp [12:30]",
+          "heading": "Liability & Safe Harbour Protections",
+          "content": "Section 149(12) safe harbour rule where independent directors are held liable only for acts of omission or commission occurring with their knowledge or consent.",
+          "timestampSeconds": 750,
+          "timestampDisplay": "12:30",
+          "tags": [
+            "video-transcript",
+            "corporate",
+            "governance",
+            "masterclass:",
+            "duties",
+            "independent",
+            "directors",
+            "2026"
+          ]
+        }
+      ],
+      "createdAt": "2026-09-02T04:44:06.455Z",
+      "updatedAt": "2026-09-02T04:44:06.455Z",
+      "__v": 0
     }
   ],
   "unansweredQuestions": [
@@ -1208,6 +1242,7 @@
   ],
   "auditLogs": [
     {
+      "_id": "6a97d8b24f4946da53addea7",
       "id": "audit-1788336306365-785",
       "timestamp": "2026-09-02T08:05:06.365Z",
       "userId": "user_admin",
@@ -1224,9 +1259,13 @@
         "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
         "Digital Personal Data Protection Act, 2023"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T08:05:06.381Z",
+      "updatedAt": "2026-09-02T08:05:06.381Z",
+      "__v": 0
     },
     {
+      "_id": "6a97d8b14f4946da53addea6",
       "id": "audit-1788336305013-801",
       "timestamp": "2026-09-02T08:05:05.013Z",
       "userId": "user_admin",
@@ -1242,9 +1281,13 @@
         "Information Technology Act, 2000",
         "Percept D'Mark (India) Pvt. Ltd. v. Zaheer Khan & Anr."
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T08:05:05.047Z",
+      "updatedAt": "2026-09-02T08:05:05.047Z",
+      "__v": 0
     },
     {
+      "_id": "6a97d0894f4946da53addea5",
       "id": "audit-1788334217311-250",
       "timestamp": "2026-09-02T07:30:17.311Z",
       "userId": "user_admin",
@@ -1259,9 +1302,13 @@
         "Shreya Singhal v. Union of India",
         "Information Technology Act, 2000"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T07:30:17.330Z",
+      "updatedAt": "2026-09-02T07:30:17.330Z",
+      "__v": 0
     },
     {
+      "_id": "6a97d0864f4946da53addea4",
       "id": "audit-1788334214744-624",
       "timestamp": "2026-09-02T07:30:14.744Z",
       "userId": "user_admin",
@@ -1276,9 +1323,13 @@
         "Shreya Singhal v. Union of India",
         "Information Technology Act, 2000"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T07:30:14.895Z",
+      "updatedAt": "2026-09-02T07:30:14.895Z",
+      "__v": 0
     },
     {
+      "_id": "6a97c6b14f4946da53addea3",
       "id": "audit-1788331697512-878",
       "timestamp": "2026-09-02T06:48:17.513Z",
       "userId": "user_admin",
@@ -1294,9 +1345,13 @@
         "Master Services Agreement (MSA) - Enterprise Client Standard Template",
         "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T06:48:17.624Z",
+      "updatedAt": "2026-09-02T06:48:17.624Z",
+      "__v": 0
     },
     {
+      "_id": "6a97ace84f4946da53addea2",
       "id": "audit-1788325096627-920",
       "timestamp": "2026-09-02T04:58:16.627Z",
       "userId": "user_admin",
@@ -1311,9 +1366,13 @@
         "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance",
         "Corporate Governance Masterclass: Duties of Independent Directors 2026"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:58:16.696Z",
+      "updatedAt": "2026-09-02T04:58:16.696Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53addea1",
       "id": "audit-1788324246557-561",
       "timestamp": "2026-09-02T04:44:06.557Z",
       "userId": "emp_current",
@@ -1327,9 +1386,13 @@
       "retrievedDocs": [
         "Corporate Governance Masterclass: Duties of Independent Directors 2026"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.559Z",
+      "updatedAt": "2026-09-02T04:44:06.559Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53addea0",
       "id": "audit-1788324246551-198",
       "timestamp": "2026-09-02T04:44:06.551Z",
       "userId": "emp_current",
@@ -1343,9 +1406,13 @@
       "retrievedDocs": [
         "Cloud Infrastructure SLA & Vendor Agreement 2026"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.553Z",
+      "updatedAt": "2026-09-02T04:44:06.553Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde9f",
       "id": "audit-1788324246543-580",
       "timestamp": "2026-09-02T04:44:06.543Z",
       "userId": "emp_current",
@@ -1360,9 +1427,13 @@
         "Navtej Singh Johar & Ors. v. Union of India",
         "Shreya Singhal v. Union of India"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.546Z",
+      "updatedAt": "2026-09-02T04:44:06.546Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde9e",
       "id": "audit-1788324246533-587",
       "timestamp": "2026-09-02T04:44:06.534Z",
       "userId": "emp_current",
@@ -1376,9 +1447,13 @@
       "retrievedDocs": [
         "Digital Personal Data Protection Act, 2023"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.538Z",
+      "updatedAt": "2026-09-02T04:44:06.538Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde9d",
       "id": "audit-1788324246487-746",
       "timestamp": "2026-09-02T04:44:06.487Z",
       "userId": "user_active",
@@ -1392,9 +1467,13 @@
       "retrievedDocs": [
         "Corporate Governance Masterclass: Duties of Independent Directors 2026"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.488Z",
+      "updatedAt": "2026-09-02T04:44:06.488Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde9b",
       "id": "audit-1788324246412-674",
       "timestamp": "2026-09-02T04:44:06.412Z",
       "userId": "user_active",
@@ -1408,9 +1487,13 @@
       "retrievedDocs": [
         "Cloud Infrastructure SLA & Vendor Agreement 2026"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.413Z",
+      "updatedAt": "2026-09-02T04:44:06.413Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde99",
       "id": "audit-1788324246326-999",
       "timestamp": "2026-09-02T04:44:06.326Z",
       "userId": "user_active",
@@ -1424,9 +1507,13 @@
       "retrievedDocs": [
         "Navtej Singh Johar & Ors. v. Union of India"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.327Z",
+      "updatedAt": "2026-09-02T04:44:06.327Z",
+      "__v": 0
     },
     {
+      "_id": "6a97a9964f4946da53adde97",
       "id": "audit-1788324246244-950",
       "timestamp": "2026-09-02T04:44:06.244Z",
       "userId": "user_active",
@@ -1440,7 +1527,10 @@
       "retrievedDocs": [
         "Digital Personal Data Protection Act, 2023"
       ],
-      "ipAddress": "127.0.0.1"
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-09-02T04:44:06.246Z",
+      "updatedAt": "2026-09-02T04:44:06.246Z",
+      "__v": 0
     },
     {
       "_id": "6a97a97ff5d0f6e0559d744a",
