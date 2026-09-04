@@ -23,6 +23,12 @@
     </div>
 
     <div class="header-actions">
+      <!-- Theme Toggle -->
+      <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Light/Dark Theme">
+        <span id="themeToggleIcon">🌙</span>
+        <span id="themeToggleLabel">Dark</span>
+      </button>
+
       <!-- Admin Unanswered Alert Badge -->
       <div id="adminNotificationBadge" class="admin-alert-badge" onclick="switchTab('admin-desk')">
         <span class="pulsing-dot"></span>
@@ -246,7 +252,7 @@
 
       <!-- Filter by category -->
       <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-        <button class="query-pill" style="background: rgba(58, 134, 255, 0.2); color: #fff;" onclick="filterRepo('All')">All Categories</button>
+        <button class="query-pill" style="background: var(--accent-blue); color: #ffffff;" onclick="filterRepo('All')">All Categories</button>
         <button class="query-pill" onclick="filterRepo('Labour & Employment Law')">Labour & Employment</button>
         <button class="query-pill" onclick="filterRepo('Constitutional & Tech Law')">Cyber & Constitutional</button>
         <button class="query-pill" onclick="filterRepo('Corporate Law')">Corporate & CSR</button>
@@ -382,7 +388,7 @@
         </div>
         <button class="btn-close-modal" onclick="closeModal('citationModal')">✕</button>
       </div>
-      <div id="modalCitationContent" style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0; max-height: 60vh; overflow-y: auto; background: rgba(0,0,0,0.25); padding: 1.25rem; border-radius: 8px; border-left: 3px solid var(--accent-blue);">
+      <div id="modalCitationContent" style="font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); max-height: 60vh; overflow-y: auto; background: var(--bg-input); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color); border-left: 3px solid var(--accent-blue);">
         <!-- Full chunk content -->
       </div>
       <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
@@ -408,8 +414,8 @@
         <iframe id="videoIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
-      <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-rose); margin-bottom: 1rem;">
-        <h4 style="font-size: 0.88rem; color: #ffffff; margin-bottom: 0.35rem;">Transcribed Segment Content:</h4>
+      <div style="background: var(--bg-input); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); border-left: 3px solid var(--accent-rose); margin-bottom: 1rem;">
+        <h4 style="font-size: 0.88rem; color: var(--text-primary); margin-bottom: 0.35rem;">Transcribed Segment Content:</h4>
         <p id="modalVideoTranscriptText" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;"></p>
       </div>
 
@@ -528,7 +534,7 @@
         
         <div class="form-group">
           <label>Employee / User Query</label>
-          <div id="resolveQueryText" style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; font-weight: 600; color: var(--accent-gold);"></div>
+          <div id="resolveQueryText" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 6px; font-weight: 600; color: var(--accent-gold);"></div>
         </div>
 
         <div class="form-group">

@@ -1,6 +1,7 @@
 // app.js - Urbangaon AI Legal Search Platform Client Logic
 
 let currentRole = 'Admin';
+let currentTheme = localStorage.getItem('urbangaon_theme') || 'light';
 let currentSearchResults = null;
 let currentDocuments = [];
 let currentUnanswered = [];
@@ -8,8 +9,36 @@ let currentBookmarks = [];
 let currentSavedSearches = [];
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initApp();
 });
+
+function initTheme() {
+  applyTheme(currentTheme);
+}
+
+function toggleTheme() {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  localStorage.setItem('urbangaon_theme', currentTheme);
+  applyTheme(currentTheme);
+  showToast(`Switched to ${currentTheme === 'light' ? 'Light' : 'Dark'} Theme`, 'info');
+}
+
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    const icon = document.getElementById('themeToggleIcon');
+    const label = document.getElementById('themeToggleLabel');
+    if (icon) icon.innerText = '☀️';
+    if (label) label.innerText = 'Light';
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    const icon = document.getElementById('themeToggleIcon');
+    const label = document.getElementById('themeToggleLabel');
+    if (icon) icon.innerText = '🌙';
+    if (label) label.innerText = 'Dark';
+  }
+}
 
 async function initApp() {
   await Promise.all([
@@ -150,7 +179,7 @@ function renderSearchResults(data) {
 
   if (data.citations.length === 0) {
     citationsList.innerHTML = `
-      <div style="background: rgba(244,63,94,0.1); border: 1px solid rgba(244,63,94,0.3); padding: 1rem; border-radius: 8px; color: #fca5a5;">
+      <div style="background: rgba(225,29,72,0.08); border: 1px solid rgba(225,29,72,0.25); padding: 1rem; border-radius: 8px; color: var(--accent-rose);">
         <strong>No direct statutory or judicial citation matched this exact query.</strong><br>
         This query has been logged and escalated to the Lead Counsel Admin Desk.
       </div>
@@ -171,7 +200,7 @@ function renderSearchResults(data) {
           <div class="citation-meta">
             <span class="tag-badge ${tagClass}">${icon} ${c.docType}</span>
             <span style="color: var(--text-muted);">${c.court || c.jurisdiction} • ${c.year}</span>
-            ${c.confidentiality === 'Internal' ? '<span class="tag-badge" style="background: rgba(245,158,11,0.2); color:#fbbf24;">Internal</span>' : ''}
+            ${c.confidentiality === 'Internal' ? '<span class="tag-badge" style="background: rgba(217,119,6,0.12); color: var(--accent-gold); border: 1px solid rgba(217,119,6,0.25);">Internal</span>' : ''}
           </div>
           <span style="font-size: 0.75rem; color: var(--accent-gold); font-weight: 700;">Relevance Score: ${c.relevanceScore}</span>
         </div>
@@ -196,7 +225,7 @@ function renderSearchResults(data) {
           <span class="relevance-meter">Citation #${c.citationIndex}</span>
           <div>
             ${c.docType === 'YouTube Video' && c.timestampSeconds !== undefined ? `
-              <button class="btn-inspect" style="background: rgba(244,63,94,0.15); border-color: rgba(244,63,94,0.3); color:#f43f5e;" onclick='openVideoModal(${JSON.stringify(c)})'>
+              <button class="btn-inspect" style="background: rgba(225,29,72,0.08); border-color: rgba(225,29,72,0.25); color: var(--accent-rose);" onclick='openVideoModal(${JSON.stringify(c)})'>
                 ▶️ Play at Timestamp ${c.timestampDisplay}
               </button>
             ` : `
@@ -676,8 +705,8 @@ function renderSavedItems() {
 
   currentBookmarks.forEach(b => {
     list.innerHTML += `
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.8rem;">
-        <span style="color: var(--accent-gold);">📌 ${b.title || b.section}</span><br>
+      <div style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.8rem;">
+        <span style="color: var(--accent-gold); font-weight: 600;">📌 ${b.title || b.section}</span><br>
         <small style="color: var(--text-muted);">${b.docTitle || ''}</small>
       </div>
     `;
@@ -685,8 +714,8 @@ function renderSavedItems() {
 
   currentSavedSearches.forEach(s => {
     list.innerHTML += `
-      <div style="background: rgba(58,134,255,0.05); border: 1px solid rgba(58,134,255,0.2); padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer;" onclick="setQuery('${s.query.replace(/'/g, "\\'")}')">
-        <span style="color: #60a5fa;">🔍 "${s.query}"</span>
+      <div style="background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.2); padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer;" onclick="setQuery('${s.query.replace(/'/g, "\\'")}')">
+        <span style="color: var(--accent-blue); font-weight: 500;">🔍 "${s.query}"</span>
       </div>
     `;
   });
