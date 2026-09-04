@@ -57,7 +57,7 @@ app.get('/api/documents/:id', (req, res) => {
   }
 });
 
-app.post('/api/documents', (req, res) => {
+app.post('/api/documents', async (req, res) => {
   try {
     const {
       title,
@@ -83,50 +83,49 @@ app.post('/api/documents', (req, res) => {
     // Smart chunking based on content or video transcript format
     const chunks = [];
     if (docType === 'YouTube Video') {
-      // Split by timestamp lines or generate structured video chunks
       const lines = (rawContent || '').split('\n').filter(l => l.trim().length > 0);
-      let currentHeading = 'Introduction & Overview';
-      let currentSec = 'Timestamp [00:00]';
-      let currentSecs = 0;
-      let currentBuffer = [];
-
       for (const line of lines) {
         const timeMatch = line.match(/\[?(\d{1,2}):(\d{2})\]?/);
+        let tsSecs = 0;
+        let tsDisplay = '00:00';
+        let heading = 'Video Segment';
+        let body = line;
         if (timeMatch) {
-          if (currentBuffer.length > 0) {
-            chunks.push({
-              id: `chunk-v-${Date.now()}-${chunks.length}`,
-              section: currentSec,
-              heading: currentHeading,
-              content: currentBuffer.join(' '),
-              timestampSeconds: currentSecs,
-              timestampDisplay: `${timeMatch[1].padStart(2, '0')}:${timeMatch[2]}`,
-              tags: ['video-transcript', ...title.toLowerCase().split(' ')]
-            });
-            currentBuffer = [];
-          }
           const mins = parseInt(timeMatch[1], 10);
           const secs = parseInt(timeMatch[2], 10);
-          currentSecs = mins * 60 + secs;
-          currentSec = `Timestamp [${timeMatch[1].padStart(2, '0')}:${timeMatch[2]}]`;
-          currentHeading = line.replace(/\[?(\d{1,2}):(\d{2})\]?/, '').trim() || 'Video Segment';
-        } else {
-          currentBuffer.push(line);
+          tsSecs = mins * 60 + secs;
+          tsDisplay = `${timeMatch[1].padStart(2, '0')}:${timeMatch[2]}`;
+          body = line.replace(/\[?(\d{1,2}):(\d{2})\]?/, '').trim();
+          if (body.includes(':')) {
+            const parts = body.split(':');
+            heading = parts[0].trim();
+            body = parts.slice(1).join(':').trim();
+          } else {
+            heading = body.substring(0, 60);
+          }
         }
-      }
-      if (currentBuffer.length > 0 || chunks.length === 0) {
         chunks.push({
           id: `chunk-v-${Date.now()}-${chunks.length}`,
-          section: currentSec,
-          heading: currentHeading,
-          content: currentBuffer.join(' ') || (rawContent || title),
-          timestampSeconds: currentSecs,
+          section: `Timestamp [${tsDisplay}]`,
+          heading: heading || 'Video Segment',
+          content: body || line,
+          timestampSeconds: tsSecs,
+          timestampDisplay: tsDisplay,
+          tags: ['video-transcript', ...title.toLowerCase().split(' ').filter(w => w.length > 3)]
+        });
+      }
+      if (chunks.length === 0) {
+        chunks.push({
+          id: `chunk-v-${Date.now()}-0`,
+          section: 'Timestamp [00:00]',
+          heading: title,
+          content: rawContent || title,
+          timestampSeconds: 0,
           timestampDisplay: '00:00',
-          tags: ['video-transcript', ...title.toLowerCase().split(' ')]
+          tags: ['video-transcript']
         });
       }
     } else {
-      // Document chunking by sections or paragraphs
       const paragraphs = (rawContent || '').split(/\n\s*\n/).filter(p => p.trim().length > 0);
       if (paragraphs.length === 0) {
         chunks.push({
@@ -174,10 +173,10 @@ app.post('/api/documents', (req, res) => {
       chunks
     };
 
-    const saved = dataStore.addDocument(newDoc);
+    const saved = await dataStore.addDocument(newDoc);
 
     // Audit Log
-    dataStore.logAction({
+    await dataStore.logAction({
       userId: 'user_active',
       userName: userRole === 'Admin' ? 'Adv. Rajesh Sharma (Lead Counsel)' : 'Vikas Mehra (Contributor)',
       userRole: userRole || 'Contributor',
@@ -196,13 +195,13 @@ app.post('/api/documents', (req, res) => {
   }
 });
 
-app.put('/api/documents/:id', (req, res) => {
+app.put('/api/documents/:id', async (req, res) => {
   try {
-    const updated = dataStore.updateDocument(req.params.id, req.body);
+    const updated = await dataStore.updateDocument(req.params.id, req.body);
     if (!updated) {
       return res.status(404).json({ success: false, error: 'Document not found' });
     }
-    dataStore.logAction({
+    await dataStore.logAction({
       userId: 'admin_active',
       userName: 'Adv. Rajesh Sharma (Lead Counsel)',
       userRole: 'Admin',
@@ -220,13 +219,13 @@ app.put('/api/documents/:id', (req, res) => {
   }
 });
 
-app.delete('/api/documents/:id', (req, res) => {
+app.delete('/api/documents/:id', async (req, res) => {
   try {
-    const deleted = dataStore.deleteDocument(req.params.id);
+    const deleted = await dataStore.deleteDocument(req.params.id);
     if (!deleted) {
       return res.status(404).json({ success: false, error: 'Document not found' });
     }
-    dataStore.logAction({
+    await dataStore.logAction({
       userId: 'admin_active',
       userName: 'Adv. Rajesh Sharma (Lead Counsel)',
       userRole: 'Admin',
@@ -254,13 +253,13 @@ app.get('/api/admin/unanswered', (req, res) => {
   }
 });
 
-app.post('/api/admin/unanswered/:id/resolve', (req, res) => {
+app.post('/api/admin/unanswered/:id/resolve', async (req, res) => {
   try {
     const { adminAnswer, category, addToKnowledgeBase } = req.body;
     if (!adminAnswer || adminAnswer.trim() === '') {
       return res.status(400).json({ success: false, error: 'Admin resolution answer is required.' });
     }
-    const resolved = dataStore.resolveUnansweredQuestion(
+    const resolved = await dataStore.resolveUnansweredQuestion(
       req.params.id,
       adminAnswer,
       category,
@@ -270,7 +269,7 @@ app.post('/api/admin/unanswered/:id/resolve', (req, res) => {
       return res.status(404).json({ success: false, error: 'Question not found' });
     }
 
-    dataStore.logAction({
+    await dataStore.logAction({
       userId: 'admin_active',
       userName: 'Adv. Rajesh Sharma (Lead Counsel)',
       userRole: 'Admin',
@@ -289,10 +288,10 @@ app.post('/api/admin/unanswered/:id/resolve', (req, res) => {
   }
 });
 
-app.post('/api/admin/unanswered/:id/dismiss', (req, res) => {
+app.post('/api/admin/unanswered/:id/dismiss', async (req, res) => {
   try {
     const { note } = req.body;
-    const dismissed = dataStore.dismissUnansweredQuestion(req.params.id, note);
+    const dismissed = await dataStore.dismissUnansweredQuestion(req.params.id, note);
     if (!dismissed) {
       return res.status(404).json({ success: false, error: 'Question not found' });
     }
@@ -301,6 +300,7 @@ app.post('/api/admin/unanswered/:id/dismiss', (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
+
 
 // 4. Audit Logs
 app.get('/api/audit-logs', (req, res) => {

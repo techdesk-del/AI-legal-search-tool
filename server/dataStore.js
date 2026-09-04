@@ -1,6 +1,14 @@
-// dataStore.js - Persistent JSON Storage Manager for AI Legal Search Tool
+// dataStore.js - MongoDB & JSON Storage Manager with Automatic Seeding
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
+const mongoose = require('mongoose');
+
+const DocumentModel = require('./models/Document');
+const UnansweredQuestionModel = require('./models/UnansweredQuestion');
+const AuditLogModel = require('./models/AuditLog');
+const { Bookmark: BookmarkModel, SavedSearch: SavedSearchModel } = require('./models/Bookmark');
+
 const {
   defaultDocuments,
   defaultUnansweredQuestions,
@@ -10,9 +18,11 @@ const {
 } = require('./seedData');
 
 const DB_FILE_PATH = path.join(__dirname, 'database.json');
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/urbangaon_legal_db';
 
 class DataStore {
   constructor() {
+    this.isMongoConnected = false;
     this.data = {
       documents: defaultDocuments,
       unansweredQuestions: defaultUnansweredQuestions,
@@ -28,7 +38,80 @@ class DataStore {
         resolvedFeedbackCount: 9
       }
     };
+
+    // Load initial local state
     this.loadFromDisk();
+
+    // Connect to MongoDB
+    this.connectMongoDB();
+  }
+
+  async connectMongoDB() {
+    try {
+      console.log(`🔌 Attempting to connect to MongoDB: ${MONGODB_URI}...`);
+      await mongoose.connect(MONGODB_URI, {
+        serverSelectionTimeoutMS: 4000
+      });
+      this.isMongoConnected = true;
+      console.log('✅ Connected to MongoDB successfully!');
+
+      // Sync & Seed MongoDB Collections
+      await this.syncAndSeedMongo();
+    } catch (err) {
+      console.warn(`⚠️ MongoDB connection unavailable (${err.message}). Running with persistent fallback storage.`);
+      this.isMongoConnected = false;
+    }
+  }
+
+  async syncAndSeedMongo() {
+    try {
+      if (!this.isMongoConnected) return;
+
+      const docCount = await DocumentModel.countDocuments();
+      if (docCount === 0) {
+        console.log('🌱 Seeding default legal documents into MongoDB...');
+        await DocumentModel.insertMany(defaultDocuments);
+      } else {
+        // Load documents from MongoDB into memory
+        const mongoDocs = await DocumentModel.find({}).lean();
+        this.data.documents = mongoDocs;
+      }
+
+      const unansCount = await UnansweredQuestionModel.countDocuments();
+      if (unansCount === 0) {
+        await UnansweredQuestionModel.insertMany(defaultUnansweredQuestions);
+      } else {
+        const mongoUnans = await UnansweredQuestionModel.find({}).lean();
+        this.data.unansweredQuestions = mongoUnans;
+      }
+
+      const auditCount = await AuditLogModel.countDocuments();
+      if (auditCount === 0) {
+        await AuditLogModel.insertMany(defaultAuditLogs);
+      } else {
+        const mongoAudit = await AuditLogModel.find({}).sort({ timestamp: -1 }).limit(100).lean();
+        this.data.auditLogs = mongoAudit;
+      }
+
+      const bmCount = await BookmarkModel.countDocuments();
+      if (bmCount === 0) {
+        await BookmarkModel.insertMany(defaultBookmarks);
+      } else {
+        this.data.bookmarks = await BookmarkModel.find({}).lean();
+      }
+
+      const searchCount = await SavedSearchModel.countDocuments();
+      if (searchCount === 0) {
+        await SavedSearchModel.insertMany(defaultSavedSearches);
+      } else {
+        this.data.savedSearches = await SavedSearchModel.find({}).lean();
+      }
+
+      this.saveToDisk();
+      console.log('✨ MongoDB synchronization and memory cache initialized.');
+    } catch (err) {
+      console.error('Error syncing MongoDB data:', err);
+    }
   }
 
   loadFromDisk() {
@@ -36,7 +119,6 @@ class DataStore {
       if (fs.existsSync(DB_FILE_PATH)) {
         const raw = fs.readFileSync(DB_FILE_PATH, 'utf8');
         this.data = JSON.parse(raw);
-        // Ensure all arrays exist
         if (!this.data.documents) this.data.documents = defaultDocuments;
         if (!this.data.unansweredQuestions) this.data.unansweredQuestions = defaultUnansweredQuestions;
         if (!this.data.auditLogs) this.data.auditLogs = defaultAuditLogs;
@@ -46,7 +128,6 @@ class DataStore {
         this.saveToDisk();
       }
     } catch (err) {
-      console.error('Error loading DB from disk, resetting to seed defaults:', err);
       this.saveToDisk();
     }
   }
@@ -64,10 +145,6 @@ class DataStore {
     if (userRole === 'Admin') {
       return this.data.documents;
     }
-    if (userRole === 'Contributor') {
-      return this.data.documents.filter(d => d.confidentiality !== 'Confidential');
-    }
-    // Employee: Public & Internal
     return this.data.documents.filter(d => d.confidentiality !== 'Confidential');
   }
 
@@ -75,39 +152,62 @@ class DataStore {
     return this.data.documents.find(d => d.id === id);
   }
 
-  addDocument(doc) {
+  async addDocument(doc) {
     this.data.documents.unshift(doc);
     this.saveToDisk();
+
+    if (this.isMongoConnected) {
+      try {
+        await DocumentModel.create(doc);
+      } catch (err) {
+        console.error('MongoDB document insert error:', err);
+      }
+    }
     return doc;
   }
 
-  updateDocument(id, updates) {
+  async updateDocument(id, updates) {
     const idx = this.data.documents.findIndex(d => d.id === id);
     if (idx !== -1) {
       this.data.documents[idx] = { ...this.data.documents[idx], ...updates };
       this.saveToDisk();
+
+      if (this.isMongoConnected) {
+        try {
+          await DocumentModel.findOneAndUpdate({ id }, updates);
+        } catch (err) {
+          console.error('MongoDB document update error:', err);
+        }
+      }
       return this.data.documents[idx];
     }
     return null;
   }
 
-  deleteDocument(id) {
+  async deleteDocument(id) {
     const idx = this.data.documents.findIndex(d => d.id === id);
     if (idx !== -1) {
-      const removed = this.data.documents.splice(idx, 1);
+      const removed = this.data.documents.splice(idx, 1)[0];
       this.saveToDisk();
-      return removed[0];
+
+      if (this.isMongoConnected) {
+        try {
+          await DocumentModel.findOneAndDelete({ id });
+        } catch (err) {
+          console.error('MongoDB document delete error:', err);
+        }
+      }
+      return removed;
     }
     return null;
   }
 
-  // Unanswered / Low Confidence Questions
+  // Unanswered Questions
   getUnansweredQuestions() {
     return this.data.unansweredQuestions.sort((a, b) => (b.frequency || 1) - (a.frequency || 1));
   }
 
-  addUnansweredQuestion(query, askedBy, category = 'General Legal', confidenceScore = 0.2) {
-    // Check if duplicate query exists
+  async addUnansweredQuestion(query, askedBy, category = 'General Legal', confidenceScore = 0.2) {
     const existing = this.data.unansweredQuestions.find(q => 
       q.query.trim().toLowerCase() === query.trim().toLowerCase()
     );
@@ -115,6 +215,15 @@ class DataStore {
       existing.frequency = (existing.frequency || 1) + 1;
       existing.lastAskedAt = new Date().toISOString();
       this.saveToDisk();
+
+      if (this.isMongoConnected) {
+        try {
+          await UnansweredQuestionModel.findOneAndUpdate(
+            { id: existing.id },
+            { frequency: existing.frequency, lastAskedAt: existing.lastAskedAt }
+          );
+        } catch (err) {}
+      }
       return existing;
     }
 
@@ -134,10 +243,16 @@ class DataStore {
     };
     this.data.unansweredQuestions.unshift(newQuestion);
     this.saveToDisk();
+
+    if (this.isMongoConnected) {
+      try {
+        await UnansweredQuestionModel.create(newQuestion);
+      } catch (err) {}
+    }
     return newQuestion;
   }
 
-  resolveUnansweredQuestion(id, adminAnswer, resolvedCategory, addToKnowledgeBase = true) {
+  async resolveUnansweredQuestion(id, adminAnswer, resolvedCategory, addToKnowledgeBase = true) {
     const question = this.data.unansweredQuestions.find(q => q.id === id);
     if (!question) return null;
 
@@ -145,8 +260,16 @@ class DataStore {
     question.adminAnswer = adminAnswer;
     question.resolvedAt = new Date().toISOString();
 
+    if (this.isMongoConnected) {
+      try {
+        await UnansweredQuestionModel.findOneAndUpdate(
+          { id },
+          { status: 'Resolved', adminAnswer, resolvedAt: question.resolvedAt }
+        );
+      } catch (err) {}
+    }
+
     if (addToKnowledgeBase) {
-      // Create or append to a Knowledge Base document
       const adminDocId = 'doc-admin-kb-001';
       let adminDoc = this.data.documents.find(d => d.id === adminDocId);
       if (!adminDoc) {
@@ -166,31 +289,46 @@ class DataStore {
           chunks: []
         };
         this.data.documents.unshift(adminDoc);
+        if (this.isMongoConnected) {
+          try { await DocumentModel.create(adminDoc); } catch (e) {}
+        }
       }
 
-      // Add verified chunk
       const newChunkId = `chunk-resolved-${Date.now()}`;
       const terms = question.query.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter(w => w.length > 3);
-      adminDoc.chunks.unshift({
+      const chunkData = {
         id: newChunkId,
         section: `Admin Verified Advisory: Q-${question.id.substring(0, 8)}`,
         heading: question.query,
         content: `ADMIN VERIFIED LEGAL RESOLUTION: ${adminAnswer}\n\nOriginal Query: "${question.query}" (Resolved by Legal Admin on ${new Date().toLocaleDateString()})`,
         tags: ["admin-verified", "feedback-loop", ...terms]
-      });
+      };
+
+      adminDoc.chunks.unshift(chunkData);
+      if (this.isMongoConnected) {
+        try {
+          await DocumentModel.findOneAndUpdate({ id: adminDocId }, { chunks: adminDoc.chunks });
+        } catch (e) {}
+      }
     }
 
     this.saveToDisk();
     return question;
   }
 
-  dismissUnansweredQuestion(id, note = "Out of scope / non-legal query") {
+  async dismissUnansweredQuestion(id, note = "Out of scope / non-legal query") {
     const question = this.data.unansweredQuestions.find(q => q.id === id);
     if (!question) return null;
     question.status = 'Dismissed';
     question.adminAnswer = `Dismissed: ${note}`;
     question.resolvedAt = new Date().toISOString();
     this.saveToDisk();
+
+    if (this.isMongoConnected) {
+      try {
+        await UnansweredQuestionModel.findOneAndUpdate({ id }, { status: 'Dismissed', adminAnswer: question.adminAnswer, resolvedAt: question.resolvedAt });
+      } catch (e) {}
+    }
     return question;
   }
 
@@ -199,7 +337,7 @@ class DataStore {
     return this.data.auditLogs.slice(0, 100);
   }
 
-  logAction(logEntry) {
+  async logAction(logEntry) {
     const entry = {
       id: `audit-${Date.now()}-${Math.floor(Math.random()*1000)}`,
       timestamp: new Date().toISOString(),
@@ -210,6 +348,12 @@ class DataStore {
       this.data.auditLogs = this.data.auditLogs.slice(0, 500);
     }
     this.saveToDisk();
+
+    if (this.isMongoConnected) {
+      try {
+        await AuditLogModel.create(entry);
+      } catch (err) {}
+    }
     return entry;
   }
 
@@ -218,7 +362,7 @@ class DataStore {
     return this.data.bookmarks.filter(b => b.userId === userId || !b.userId);
   }
 
-  addBookmark(bookmark) {
+  async addBookmark(bookmark) {
     const bm = {
       id: `bm-${Date.now()}`,
       bookmarkedAt: new Date().toISOString(),
@@ -226,15 +370,22 @@ class DataStore {
     };
     this.data.bookmarks.unshift(bm);
     this.saveToDisk();
+
+    if (this.isMongoConnected) {
+      try { await BookmarkModel.create(bm); } catch (e) {}
+    }
     return bm;
   }
 
-  removeBookmark(id) {
+  async removeBookmark(id) {
     const idx = this.data.bookmarks.findIndex(b => b.id === id);
     if (idx !== -1) {
-      const removed = this.data.bookmarks.splice(idx, 1);
+      const removed = this.data.bookmarks.splice(idx, 1)[0];
       this.saveToDisk();
-      return removed[0];
+      if (this.isMongoConnected) {
+        try { await BookmarkModel.findOneAndDelete({ id }); } catch (e) {}
+      }
+      return removed;
     }
     return null;
   }
@@ -243,7 +394,7 @@ class DataStore {
     return this.data.savedSearches.filter(s => s.userId === userId || !s.userId);
   }
 
-  addSavedSearch(search) {
+  async addSavedSearch(search) {
     const s = {
       id: `saved-${Date.now()}`,
       savedAt: new Date().toISOString(),
@@ -251,15 +402,22 @@ class DataStore {
     };
     this.data.savedSearches.unshift(s);
     this.saveToDisk();
+
+    if (this.isMongoConnected) {
+      try { await SavedSearchModel.create(s); } catch (e) {}
+    }
     return s;
   }
 
-  removeSavedSearch(id) {
+  async removeSavedSearch(id) {
     const idx = this.data.savedSearches.findIndex(s => s.id === id);
     if (idx !== -1) {
-      const removed = this.data.savedSearches.splice(idx, 1);
+      const removed = this.data.savedSearches.splice(idx, 1)[0];
       this.saveToDisk();
-      return removed[0];
+      if (this.isMongoConnected) {
+        try { await SavedSearchModel.findOneAndDelete({ id }); } catch (e) {}
+      }
+      return removed;
     }
     return null;
   }
