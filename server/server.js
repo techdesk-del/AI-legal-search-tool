@@ -4,6 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const dataStore = require('./dataStore');
 const { executeSearch } = require('./searchEngine');
+const auth = require('./auth');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -12,6 +13,64 @@ app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(express.static(path.join(__dirname, '../public')));
+
+// 0. Authentication Endpoints
+app.post('/api/auth/login', (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const result = auth.authenticateUser(email, password);
+    if (!result.success) {
+      return res.status(401).json(result);
+    }
+
+    // Audit log login activity
+    dataStore.logAction({
+      userId: result.user.id,
+      userName: result.user.name,
+      userRole: result.user.role,
+      action: 'USER_LOGIN',
+      query: `Authenticated as ${result.user.role} (${result.user.designation})`,
+      confidenceScore: 1.0,
+      confidenceTier: 'N/A',
+      citationsCount: 0,
+      retrievedDocs: [],
+      ipAddress: req.ip || '127.0.0.1'
+    });
+
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.get('/api/auth/me', (req, res) => {
+  try {
+    const authHeader = req.headers.authorization;
+    const token = authHeader ? authHeader.replace('Bearer ', '') : req.query.token;
+    const user = auth.verifyToken(token);
+    if (!user) {
+      return res.status(401).json({ success: false, error: 'Session expired or invalid' });
+    }
+    res.json({ success: true, user });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.post('/api/auth/logout', (req, res) => {
+  try {
+    const authHeader = req.headers.authorization;
+    const token = authHeader ? authHeader.replace('Bearer ', '') : req.body.token;
+    auth.invalidateToken(token);
+    res.json({ success: true, message: 'Logged out successfully' });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.get('/api/auth/personas', (req, res) => {
+  res.json({ success: true, personas: auth.getAllUsers() });
+});
 
 // 1. Natural Language AI Search
 app.post('/api/search', async (req, res) => {
@@ -57,9 +116,58 @@ app.get('/api/documents/:id', (req, res) => {
   }
 });
 
+// 2.5 Document / PDF Text Extraction Endpoint
+app.post('/api/extract-text', async (req, res) => {
+  try {
+    let rawBase64 = req.body.base64Data || req.body.fileData || req.body.data;
+    const fileName = req.body.fileName;
+    if (!rawBase64) {
+      return res.status(400).json({ success: false, error: 'No file data provided' });
+    }
+    if (typeof rawBase64 === 'string' && rawBase64.includes(',')) {
+      rawBase64 = rawBase64.split(',')[1];
+    }
+
+    const buffer = Buffer.from(rawBase64, 'base64');
+
+    // Check if it is a PDF file
+    const isPdf = (fileName && fileName.toLowerCase().endsWith('.pdf')) ||
+                  buffer.slice(0, 5).toString('ascii') === '%PDF-';
+
+    if (isPdf) {
+      const pdfParse = require('pdf-parse');
+      const data = await pdfParse(buffer);
+
+      const cleanedText = (data.text || '')
+        .replace(/\u0000/g, '')
+        .replace(/\r\n/g, '\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+
+      return res.json({
+        success: true,
+        text: cleanedText,
+        numPages: data.numpages,
+        info: data.info
+      });
+    }
+
+    // Default plain text fallback
+    const text = buffer.toString('utf-8');
+    return res.json({
+      success: true,
+      text: text.trim(),
+      numPages: 1
+    });
+  } catch (err) {
+    console.error('Server text extraction error:', err);
+    res.status(500).json({ success: false, error: 'Failed to extract text: ' + err.message });
+  }
+});
+
 app.post('/api/documents', async (req, res) => {
   try {
-    const {
+    let {
       title,
       docType,
       jurisdiction,
@@ -78,6 +186,24 @@ app.post('/api/documents', async (req, res) => {
 
     if (!title || !docType) {
       return res.status(400).json({ success: false, error: 'Title and Document Type are required' });
+    }
+
+    category = category || 'General';
+    jurisdiction = jurisdiction || 'India (Central)';
+
+    // Safety guard: If rawContent contains raw PDF stream binary, extract real text
+    if (rawContent && (rawContent.startsWith('%PDF-') || rawContent.includes('%PDF-1.'))) {
+      try {
+        const pdfParse = require('pdf-parse');
+        const pdfIndex = rawContent.indexOf('%PDF-');
+        const buffer = Buffer.from(rawContent.slice(pdfIndex), 'latin1');
+        const data = await pdfParse(buffer);
+        if (data && data.text && data.text.trim().length > 0) {
+          rawContent = data.text.replace(/\u0000/g, '').replace(/\r\n/g, '\n').trim();
+        }
+      } catch (pdfErr) {
+        console.warn('PDF stream parse fallback in POST /api/documents:', pdfErr.message);
+      }
     }
 
     // Smart chunking based on content or video transcript format

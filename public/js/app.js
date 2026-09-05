@@ -1,11 +1,44 @@
 // app.js - Urbangaon AI Legal Search Platform Client Logic
 
+let currentUser = null;
+let authToken = localStorage.getItem('ubg_auth_token') || null;
 let currentRole = 'Admin';
 let currentSearchResults = null;
 let currentDocuments = [];
 let currentUnanswered = [];
 let currentBookmarks = [];
 let currentSavedSearches = [];
+
+// Fallback Persona Dictionary
+const PERSONAS = {
+  'Admin': {
+    id: 'usr-admin-01',
+    name: 'Adv. Rajesh Sharma',
+    email: 'admin@urbangaon.com',
+    role: 'Admin',
+    designation: 'Legal Admin / Lead Counsel',
+    avatarInitials: 'RS',
+    avatarColor: 'linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%)'
+  },
+  'Contributor': {
+    id: 'usr-contrib-02',
+    name: 'Vikas Mehra',
+    email: 'contributor@urbangaon.com',
+    role: 'Contributor',
+    designation: 'Contributor / Paralegal',
+    avatarInitials: 'VM',
+    avatarColor: 'linear-gradient(135deg, #059669 0%, #10b981 100%)'
+  },
+  'Employee': {
+    id: 'usr-emp-03',
+    name: 'Aakash Das',
+    email: 'employee@urbangaon.com',
+    role: 'Employee',
+    designation: 'Employee / Legal Associate',
+    avatarInitials: 'AD',
+    avatarColor: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)'
+  }
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   // Enforce Light Mode permanently
@@ -15,6 +48,45 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function initApp() {
+  // Check stored session
+  const storedToken = localStorage.getItem('ubg_auth_token');
+  const storedUserRaw = localStorage.getItem('ubg_auth_user');
+
+  if (storedToken && storedUserRaw) {
+    try {
+      currentUser = JSON.parse(storedUserRaw);
+      authToken = storedToken;
+      currentRole = currentUser.role || 'Admin';
+
+      // Hide login overlay
+      const overlay = document.getElementById('loginOverlay');
+      if (overlay) overlay.classList.add('hidden');
+
+      updateProfileUI(currentUser);
+      applyRoleVisibility(currentRole);
+
+      // Verify token in background
+      fetch(`/api/auth/me?token=${encodeURIComponent(storedToken)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (!data.success) {
+            handleLogout(false);
+          }
+        })
+        .catch(() => {});
+    } catch (e) {
+      console.error('Failed to parse cached session:', e);
+      document.getElementById('loginOverlay')?.classList.remove('hidden');
+    }
+  } else {
+    // Show login overlay
+    const overlay = document.getElementById('loginOverlay');
+    if (overlay) overlay.classList.remove('hidden');
+    // Default to admin for initial background data loading
+    currentRole = 'Admin';
+    applyRoleVisibility('Admin');
+  }
+
   await Promise.all([
     fetchDocuments(),
     fetchUnansweredQuestions(),
@@ -27,6 +99,16 @@ async function initApp() {
 
 // Navigation Tabs
 function switchTab(tabId) {
+  // Role-based access control guard
+  if (currentRole === 'Employee' && tabId !== 'search-workspace') {
+    showToast('Employee role is restricted to AI Legal Search & Research.', 'warning');
+    return;
+  }
+  if (currentRole === 'Contributor' && ['admin-desk', 'analytics-insights', 'audit-compliance'].includes(tabId)) {
+    showToast('Lead Counsel approval required for this module.', 'warning');
+    return;
+  }
+
   document.querySelectorAll('.nav-tab').forEach(tab => {
     tab.classList.toggle('active', tab.dataset.tab === tabId);
   });
@@ -57,24 +139,218 @@ function switchTab(tabId) {
   }
 }
 
-// Role Switcher
+// Role Switcher & Persona Sync
 function handleRoleChange() {
   const select = document.getElementById('userRoleSelect');
   currentRole = select.value;
-  showToast(`Active role switched to: ${currentRole}`, 'info');
 
-  const adminTab = document.getElementById('tabAdminDesk');
-  const adminBadge = document.getElementById('adminNotificationBadge');
-
-  if (currentRole === 'Employee') {
-    if (adminTab) adminTab.style.display = 'none';
-    if (adminBadge) adminBadge.style.display = 'none';
-  } else {
-    if (adminTab) adminTab.style.display = 'flex';
-    if (adminBadge) adminBadge.style.display = 'flex';
+  // Switch to the matching persona
+  const persona = PERSONAS[currentRole];
+  if (persona) {
+    currentUser = persona;
+    localStorage.setItem('ubg_auth_user', JSON.stringify(currentUser));
+    updateProfileUI(currentUser);
   }
 
+  showToast(`Active persona: ${currentUser ? currentUser.name : currentRole} (${currentRole})`, 'info');
+
+  applyRoleVisibility(currentRole);
   fetchDocuments();
+}
+
+function applyRoleVisibility(role) {
+  const tabKnowledge = document.getElementById('tabKnowledgeRepo');
+  const tabAdmin = document.getElementById('tabAdminDesk');
+  const tabAnalytics = document.getElementById('tabAnalyticsInsights');
+  const tabCompliance = document.getElementById('tabAuditCompliance');
+  const adminBadge = document.getElementById('adminNotificationBadge');
+
+  if (role === 'Employee') {
+    // Hide Knowledge Base, Admin Desk, Analytics, and Compliance
+    if (tabKnowledge) tabKnowledge.style.display = 'none';
+    if (tabAdmin) tabAdmin.style.display = 'none';
+    if (tabAnalytics) tabAnalytics.style.display = 'none';
+    if (tabCompliance) tabCompliance.style.display = 'none';
+    if (adminBadge) adminBadge.style.display = 'none';
+
+    // Auto-redirect to search workspace if currently on a restricted tab
+    const activeTab = document.querySelector('.nav-tab.active');
+    if (activeTab && activeTab.dataset.tab !== 'search-workspace') {
+      switchTab('search-workspace');
+    }
+  } else if (role === 'Contributor') {
+    // Contributor sees Search and Knowledge Base / Ingestion
+    if (tabKnowledge) tabKnowledge.style.display = 'flex';
+    if (tabAdmin) tabAdmin.style.display = 'none';
+    if (tabAnalytics) tabAnalytics.style.display = 'none';
+    if (tabCompliance) tabCompliance.style.display = 'none';
+    if (adminBadge) adminBadge.style.display = 'none';
+
+    const activeTab = document.querySelector('.nav-tab.active');
+    if (activeTab && ['admin-desk', 'analytics-insights', 'audit-compliance'].includes(activeTab.dataset.tab)) {
+      switchTab('search-workspace');
+    }
+  } else {
+    // Admin / Lead Counsel sees all 5 modules
+    if (tabKnowledge) tabKnowledge.style.display = 'flex';
+    if (tabAdmin) tabAdmin.style.display = 'flex';
+    if (tabAnalytics) tabAnalytics.style.display = 'flex';
+    if (tabCompliance) tabCompliance.style.display = 'flex';
+    if (adminBadge) adminBadge.style.display = 'flex';
+  }
+}
+
+// Enterprise Authentication Handlers
+async function handleLoginSubmit(e) {
+  if (e && e.preventDefault) e.preventDefault();
+
+  const emailInput = document.getElementById('loginEmail');
+  const passwordInput = document.getElementById('loginPassword');
+  const errorBox = document.getElementById('loginErrorMsg');
+  const btnSubmit = document.getElementById('btnLoginSubmit');
+
+  const email = emailInput ? emailInput.value.trim() : '';
+  const password = passwordInput ? passwordInput.value : '';
+
+  if (!email || !password) {
+    if (errorBox) {
+      errorBox.textContent = 'Please enter both corporate email and password.';
+      errorBox.style.display = 'block';
+    }
+    return;
+  }
+
+  if (errorBox) errorBox.style.display = 'none';
+  if (btnSubmit) {
+    btnSubmit.disabled = true;
+    btnSubmit.innerHTML = '<span>Verifying credentials...</span> ⏳';
+  }
+
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      currentUser = data.user;
+      authToken = data.token;
+      currentRole = data.user.role;
+
+      localStorage.setItem('ubg_auth_token', authToken);
+      localStorage.setItem('ubg_auth_user', JSON.stringify(currentUser));
+
+      updateProfileUI(currentUser);
+      applyRoleVisibility(currentRole);
+
+      // Hide login overlay
+      const overlay = document.getElementById('loginOverlay');
+      if (overlay) overlay.classList.add('hidden');
+
+      showToast(`Authenticated as ${currentUser.name} (${currentUser.designation})`, 'info');
+
+      // Refresh documents according to role permissions
+      fetchDocuments();
+    } else {
+      if (errorBox) {
+        errorBox.textContent = data.error || 'Invalid corporate credentials.';
+        errorBox.style.display = 'block';
+      }
+    }
+  } catch (err) {
+    if (errorBox) {
+      errorBox.textContent = 'Authentication service unreachable. Please retry.';
+      errorBox.style.display = 'block';
+    }
+  } finally {
+    if (btnSubmit) {
+      btnSubmit.disabled = false;
+      btnSubmit.innerHTML = '<span>Sign In to Platform</span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>';
+    }
+  }
+}
+
+async function quickLogin(email, password) {
+  const emailInput = document.getElementById('loginEmail');
+  const passwordInput = document.getElementById('loginPassword');
+  if (emailInput) emailInput.value = email;
+  if (passwordInput) passwordInput.value = password;
+  await handleLoginSubmit({ preventDefault: () => {} });
+}
+
+async function handleLogout(showNotification = true) {
+  if (authToken) {
+    try {
+      await fetch('/api/auth/logout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authToken}`
+        },
+        body: JSON.stringify({ token: authToken })
+      });
+    } catch (e) {}
+  }
+
+  localStorage.removeItem('ubg_auth_token');
+  localStorage.removeItem('ubg_auth_user');
+  currentUser = null;
+  authToken = null;
+
+  const overlay = document.getElementById('loginOverlay');
+  if (overlay) overlay.classList.remove('hidden');
+
+  const passwordInput = document.getElementById('loginPassword');
+  if (passwordInput) passwordInput.value = '';
+
+  const errorBox = document.getElementById('loginErrorMsg');
+  if (errorBox) errorBox.style.display = 'none';
+
+  if (showNotification) {
+    showToast('Signed out of UrbanGaon Legal Platform.', 'info');
+  }
+}
+
+function updateProfileUI(user) {
+  if (!user) return;
+
+  // Sidebar elements
+  const sidebarAvatar = document.getElementById('sidebarUserAvatar');
+  const sidebarName = document.getElementById('sidebarUserName');
+  const sidebarRole = document.getElementById('sidebarUserRole');
+
+  if (sidebarAvatar) {
+    sidebarAvatar.textContent = user.avatarInitials || 'U';
+    if (user.avatarColor) sidebarAvatar.style.background = user.avatarColor;
+  }
+  if (sidebarName) {
+    sidebarName.textContent = user.name || 'User';
+  }
+  if (sidebarRole) {
+    sidebarRole.innerHTML = `<span class="user-status-dot"></span> ${user.designation || user.role}`;
+  }
+
+  // Topbar elements
+  const topbarAvatar = document.getElementById('topbarUserAvatar');
+  const topbarName = document.getElementById('topbarUserName');
+  const topbarRole = document.getElementById('topbarUserRole');
+  const topbarRoleBadge = document.getElementById('topbarRoleBadge');
+
+  if (topbarAvatar) {
+    topbarAvatar.textContent = user.avatarInitials || 'U';
+    if (user.avatarColor) topbarAvatar.style.background = user.avatarColor;
+  }
+  if (topbarName) {
+    topbarName.textContent = user.name || 'User';
+  }
+  if (topbarRole) {
+    topbarRole.textContent = user.role || 'Member';
+  }
+  if (topbarRoleBadge) {
+    topbarRoleBadge.textContent = user.designation || user.role || 'Member';
+  }
 }
 
 // Quick Sample Query Setter
@@ -105,7 +381,8 @@ async function executeSearchQuery() {
         query,
         filters: { docType, jurisdiction },
         userRole: currentRole,
-        userId: `user_${currentRole.toLowerCase()}`
+        userId: (currentUser && currentUser.id) || `user_${currentRole.toLowerCase()}`,
+        userName: (currentUser && currentUser.name) || currentRole
       })
     });
     const json = await res.json();
@@ -121,13 +398,16 @@ async function executeSearchQuery() {
     showToast('Failed to execute search query', 'error');
   } finally {
     btnSearch.disabled = false;
-    btnSearch.innerHTML = '<span>Ask AI</span> ➔';
+    btnSearch.innerHTML = '<span>ask UBG AI</span> ➔';
   }
 }
 
 function renderSearchResults(data) {
   const container = document.getElementById('searchResultsContainer');
   container.style.display = 'grid';
+
+  const initialRecs = document.getElementById('initialSearchRecommendations');
+  if (initialRecs) initialRecs.style.display = 'none';
 
   // AI Answer Box
   const aiAnswerBody = document.getElementById('aiAnswerBody');
@@ -304,15 +584,28 @@ async function fetchDocuments(category = 'All') {
       renderDocumentsGrid(json.data);
       document.getElementById('docCountBadge').innerText = json.data.length;
       document.getElementById('repoTotalDocs').innerText = json.data.length;
+      const topbarDocEl = document.getElementById('topbarLiveDocCount');
+      if (topbarDocEl) topbarDocEl.innerText = json.data.length;
       const totalChunks = json.data.reduce((sum, d) => sum + (d.chunks ? d.chunks.length : 0), 0);
       document.getElementById('repoTotalChunks').innerText = totalChunks;
+      if (!document.querySelector('.cat-pill.active')) {
+        const matching = document.querySelector(`.cat-pill[data-category="${category}"]`);
+        if (matching) matching.classList.add('active');
+      }
     }
   } catch (err) {
     console.error('Error fetching docs:', err);
   }
 }
 
-function filterRepo(cat) {
+function filterRepo(cat, btnElement) {
+  document.querySelectorAll('.cat-pill').forEach(btn => btn.classList.remove('active'));
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const matching = document.querySelector(`.cat-pill[data-category="${cat}"]`);
+    if (matching) matching.classList.add('active');
+  }
   fetchDocuments(cat);
 }
 
@@ -398,7 +691,7 @@ function handleFileSelect(e) {
   }
 }
 
-function processUploadedFile(file) {
+async function processUploadedFile(file) {
   const titleInput = document.getElementById('ingestTitle');
   const rawContentArea = document.getElementById('ingestRawContent');
   const docTypeSelect = document.getElementById('ingestDocType');
@@ -415,28 +708,138 @@ function processUploadedFile(file) {
     docTypeSelect.value = 'Contract';
   }
 
-  showToast(`Extracting text from ${file.name}...`, 'info');
+  showToast(`Parsing & extracting legal text from ${file.name}...`, 'info');
 
-  const reader = new FileReader();
-  reader.onload = (event) => {
-    const text = event.target.result;
-    if (typeof text === 'string') {
-      // If it looks like raw text/markdown/json
-      rawContentArea.value = text;
-      showToast(`Successfully extracted ${text.length} characters from ${file.name}!`, 'success');
-    } else {
-      // Binary (PDF / Docx simulation / OCR extract)
-      rawContentArea.value = `[Extracted OCR Content from ${file.name}]\n\nSection 1: Short Title and Commencement - This Act may be called the ${cleanName}.\n\nSection 2: Definitions and Key Provisions - In this enactment, all terms shall have the meanings assigned thereunder.\n\nSection 3: Mandatory Legal Obligations and Compliance Guidelines.`;
-      showToast(`Parsed ${file.name} via OCR/Text extractor!`, 'success');
+  const isPdf = file.name.toLowerCase().endsWith('.pdf') || file.type === 'application/pdf';
+
+  if (isPdf) {
+    rawContentArea.value = 'Extracting legal statutory text from PDF, please wait...';
+    rawContentArea.disabled = true;
+
+    try {
+      // 1. Try client-side extraction with PDF.js if loaded
+      if (window.pdfjsLib) {
+        if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
+          pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        }
+        const arrayBuffer = await file.arrayBuffer();
+        const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+        const pdf = await loadingTask.promise;
+        let extractedText = '';
+
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+          const page = await pdf.getPage(pageNum);
+          const textContent = await page.getTextContent();
+          
+          let lastY;
+          let pageText = '';
+          for (const item of textContent.items) {
+            if (lastY === undefined || Math.abs(item.transform[5] - lastY) > 5) {
+              pageText += '\n';
+              lastY = item.transform[5];
+            }
+            pageText += item.str + ' ';
+          }
+          pageText = pageText.replace(/[ \t]+/g, ' ').trim();
+          if (pageText) {
+            extractedText += (extractedText ? '\n\n' : '') + `[Section / Page ${pageNum}]\n` + pageText;
+          }
+        }
+
+        if (extractedText.trim().length > 20) {
+          rawContentArea.value = extractedText.trim();
+          rawContentArea.disabled = false;
+          showToast(`Extracted ${extractedText.length} characters across ${pdf.numPages} pages from ${file.name}!`, 'success');
+          return;
+        }
+      }
+
+      // 2. Server-side extraction fallback via pdf-parse
+      const base64Data = await fileToBase64(file);
+      const res = await fetch('/api/extract-text', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ base64Data, fileName: file.name })
+      });
+      const json = await res.json();
+      rawContentArea.disabled = false;
+      if (json.success && json.text) {
+        rawContentArea.value = json.text;
+        showToast(`Extracted ${json.text.length} characters across ${json.numPages || 1} pages from ${file.name}!`, 'success');
+      } else {
+        throw new Error(json.error || 'Extraction failed');
+      }
+    } catch (err) {
+      console.error('PDF parsing error:', err);
+      // Final attempt: call server extraction endpoint directly
+      try {
+        const base64Data = await fileToBase64(file);
+        const res = await fetch('/api/extract-text', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ base64Data, fileName: file.name })
+        });
+        const json = await res.json();
+        rawContentArea.disabled = false;
+        if (json.success && json.text) {
+          rawContentArea.value = json.text;
+          showToast(`Extracted ${json.text.length} characters from ${file.name}!`, 'success');
+          return;
+        }
+      } catch (fallbackErr) {
+        console.error('Fallback error:', fallbackErr);
+      }
+      rawContentArea.disabled = false;
+      rawContentArea.value = '';
+      showToast('Could not extract text automatically. Please paste document text.', 'error');
     }
-  };
-
-  if (file.name.endsWith('.txt') || file.name.endsWith('.md') || file.name.endsWith('.json') || file.name.endsWith('.csv')) {
+  } else if (file.name.endsWith('.txt') || file.name.endsWith('.md') || file.name.endsWith('.json') || file.name.endsWith('.csv')) {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const text = event.target.result;
+      rawContentArea.value = text;
+      showToast(`Loaded ${text.length} characters from ${file.name}!`, 'success');
+    };
     reader.readAsText(file);
   } else {
-    // For PDFs/docs read as text or binary fallback
-    reader.readAsText(file);
+    // Word (.docx, .doc) or other format
+    rawContentArea.value = 'Extracting document text, please wait...';
+    rawContentArea.disabled = true;
+    try {
+      const base64Data = await fileToBase64(file);
+      const res = await fetch('/api/extract-text', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ base64Data, fileName: file.name })
+      });
+      const json = await res.json();
+      rawContentArea.disabled = false;
+      if (json.success && json.text) {
+        rawContentArea.value = json.text;
+        showToast(`Extracted ${json.text.length} characters from ${file.name}!`, 'success');
+      } else {
+        rawContentArea.value = '';
+        showToast('Please paste document text manually.', 'info');
+      }
+    } catch (e) {
+      rawContentArea.disabled = false;
+      rawContentArea.value = '';
+      showToast('Document parsing failed. Please paste text manually.', 'error');
+    }
   }
+}
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      const base64 = typeof result === 'string' ? result.split(',')[1] : '';
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
 }
 
 
@@ -456,8 +859,8 @@ async function handleDocumentIngestion(e) {
   const year = document.getElementById('ingestYear').value;
   const sourceUrl = document.getElementById('ingestVideoUrl').value;
   const videoDuration = document.getElementById('ingestVideoDuration').value;
-  const rawContent = document.getElementById('ingestRawContent').value;
-  const isSuperseded = document.getElementById('ingestSuperseded').checked;
+  const supersededEl = document.getElementById('ingestSuperseded');
+  const isSuperseded = supersededEl ? supersededEl.checked : false;
 
   try {
     const res = await fetch('/api/documents', {

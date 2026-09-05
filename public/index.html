@@ -16,6 +16,91 @@
 </head>
 <body>
 
+  <!-- =========================================================================
+       EXECUTIVE ENTERPRISE LOGIN PORTAL OVERLAY
+       ========================================================================= -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-card">
+      <div class="login-header">
+        <img src="images/urbangaon-logo.jpg" alt="UrbanGaon" class="login-logo" />
+        <div class="login-badge">
+          <span class="login-pulse-dot"></span>
+          <span>Enterprise Legal Access Portal</span>
+        </div>
+        <h2 class="login-title">Sign In to UrbanGaon Legal</h2>
+        <p class="login-subtitle">Authenticate with your corporate credentials or select a verified enterprise role persona below.</p>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="login-form" onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label for="loginEmail">Corporate Email / Login ID</label>
+          <div class="input-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            <input type="email" id="loginEmail" class="form-control with-icon" placeholder="admin@urbangaon.com" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <div class="input-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <input type="password" id="loginPassword" class="form-control with-icon" placeholder="••••••••" required autocomplete="current-password" />
+          </div>
+        </div>
+
+        <div id="loginErrorMsg" class="login-error-alert" style="display: none;"></div>
+
+        <button type="submit" id="btnLoginSubmit" class="btn-login-submit">
+          <span>Sign In to Platform</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
+      </form>
+
+      <!-- Quick 1-Click Persona Login -->
+      <div class="persona-section">
+        <div class="persona-divider">
+          <span>OR 1-CLICK QUICK PERSONA LOGIN</span>
+        </div>
+
+        <div class="persona-grid">
+          <!-- Persona 1: Admin -->
+          <div class="persona-card" onclick="quickLogin('admin@urbangaon.com', 'admin123')">
+            <div class="persona-avatar admin">RS</div>
+            <div class="persona-info">
+              <div class="persona-name">Adv. Rajesh Sharma</div>
+              <div class="persona-role">⚖️ Legal Admin / Lead Counsel</div>
+              <div class="persona-email">admin@urbangaon.com</div>
+            </div>
+            <span class="persona-badge admin">Full Access</span>
+          </div>
+
+          <!-- Persona 2: Contributor -->
+          <div class="persona-card" onclick="quickLogin('contributor@urbangaon.com', 'paralegal123')">
+            <div class="persona-avatar contributor">VM</div>
+            <div class="persona-info">
+              <div class="persona-name">Vikas Mehra</div>
+              <div class="persona-role">✍️ Contributor / Paralegal</div>
+              <div class="persona-email">contributor@urbangaon.com</div>
+            </div>
+            <span class="persona-badge contributor">Search + Ingest</span>
+          </div>
+
+          <!-- Persona 3: Employee -->
+          <div class="persona-card" onclick="quickLogin('employee@urbangaon.com', 'employee123')">
+            <div class="persona-avatar employee">AD</div>
+            <div class="persona-info">
+              <div class="persona-name">Aakash Das</div>
+              <div class="persona-role">👤 Employee / Associate</div>
+              <div class="persona-email">employee@urbangaon.com</div>
+            </div>
+            <span class="persona-badge employee">Search Only</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="app-layout">
     <!-- Left Sidebar Navbar -->
     <aside class="app-sidebar">
@@ -40,7 +125,7 @@
             </span>
           </button>
 
-          <button class="nav-tab" data-tab="knowledge-repo" onclick="switchTab('knowledge-repo')">
+          <button class="nav-tab" data-tab="knowledge-repo" id="tabKnowledgeRepo" onclick="switchTab('knowledge-repo')">
             <span class="nav-tab-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-tab-icon"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path><path d="M6 6h10"></path><path d="M6 10h10"></path></svg>
               <span class="nav-tab-text">Knowledge Base & Ingestion</span>
@@ -56,14 +141,14 @@
             <span id="adminPendingBadge" class="badge-count">3</span>
           </button>
 
-          <button class="nav-tab" data-tab="analytics-insights" onclick="switchTab('analytics-insights')">
+          <button class="nav-tab" data-tab="analytics-insights" id="tabAnalyticsInsights" onclick="switchTab('analytics-insights')">
             <span class="nav-tab-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-tab-icon"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
               <span class="nav-tab-text">Analytics & Gap Insights</span>
             </span>
           </button>
 
-          <button class="nav-tab" data-tab="audit-compliance" onclick="switchTab('audit-compliance')">
+          <button class="nav-tab" data-tab="audit-compliance" id="tabAuditCompliance" onclick="switchTab('audit-compliance')">
             <span class="nav-tab-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-tab-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
               <span class="nav-tab-text">Compliance & Audit Trail</span>
@@ -72,14 +157,17 @@
         </nav>
       </div>
 
-      <!-- Bottom User Profile Footer matching todo dashboard -->
+      <!-- Bottom User Profile Footer -->
       <div class="sidebar-user-footer">
         <div class="user-profile-card">
-          <div class="user-avatar-circle">AD</div>
+          <div class="user-avatar-circle" id="sidebarUserAvatar">RS</div>
           <div class="user-details">
-            <span class="user-name">Aakash Das</span>
-            <span class="user-status-text"><span class="user-status-dot"></span> Active Session</span>
+            <span class="user-name" id="sidebarUserName">Adv. Rajesh Sharma</span>
+            <span class="user-status-text" id="sidebarUserRole"><span class="user-status-dot"></span> Legal Admin</span>
           </div>
+          <button class="btn-logout-icon" onclick="handleLogout()" title="Sign Out">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          </button>
         </div>
       </div>
     </aside>
@@ -89,28 +177,40 @@
       <!-- Top Action Bar -->
       <header class="app-topbar">
         <div class="topbar-left">
-          <div class="topbar-breadcrumb">
-            <span class="crumb-pill"><img src="images/urbangaon-icon.jpg" alt="UrbanGaon" class="crumb-icon-img" /> Urbangaon Legal</span>
-            <span class="crumb-separator">/</span>
-            <span class="crumb-current" id="activeModuleTitle">AI Legal Search & Research</span>
+          <!-- Active Session Profile Chip -->
+          <div class="topbar-profile-chip">
+            <div class="topbar-avatar" id="topbarUserAvatar">RS</div>
+            <div class="topbar-user-info">
+              <span class="topbar-user-name" id="topbarUserName">Adv. Rajesh Sharma</span>
+              <span class="topbar-user-role" id="topbarUserRole">Legal Admin</span>
+            </div>
+          </div>
+
+          <!-- Verified Enterprise Role Pill (Static Display) -->
+          <div class="role-display-pill" title="Verified Corporate Role">
+            <span class="role-display-label">ROLE:</span>
+            <span class="role-display-value" id="topbarRoleBadge">Legal Admin / Lead Counsel</span>
           </div>
         </div>
 
         <div class="topbar-right">
-          <!-- Role Switcher -->
-          <div class="role-switcher-wrap">
-            <label for="userRoleSelect">Active Role:</label>
-            <select id="userRoleSelect" class="role-select" onchange="handleRoleChange()">
-              <option value="Employee">Employee / Associate</option>
-              <option value="Contributor">Contributor / Paralegal</option>
-              <option value="Admin" selected>Legal Admin / Lead Counsel</option>
-            </select>
+          <!-- Real-Time Corpus Status Badge (Synced with Knowledge Base) -->
+          <div class="topbar-corpus-badge" title="Live Indexed Legal Corpus Status">
+            <span class="pulse-live-emerald"></span>
+            <span class="corpus-badge-text"><strong id="topbarLiveDocCount">10</strong> Acts & Precedents Live</span>
           </div>
 
-          <div class="topbar-avatar-wrap" title="Aakash Das - Legal Admin">
-            <div class="topbar-avatar">AD</div>
-            <span class="topbar-online-dot"></span>
+          <!-- Verified Law Engine Badge -->
+          <div class="topbar-health-badge" title="AI Legal Search Engine Operational">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="health-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Verified Law Engine</span>
           </div>
+
+          <!-- Sign Out Button -->
+          <button class="btn-signout" onclick="handleLogout()" title="Sign Out of Session">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            <span>Sign Out</span>
+          </button>
         </div>
       </header>
 
@@ -120,59 +220,120 @@
     <!-- TAB 1: AI LEGAL SEARCH WORKSPACE -->
     <section id="pane-search-workspace" class="tab-pane active">
       <div class="module-header-banner">
-        <div class="module-header-tag">✨ Hybrid Vector & Semantic Retrieval</div>
         <h2 class="module-header-title">AI Legal Search & Research</h2>
-        <p class="module-header-subtitle">Ask complex legal questions across Central Acts, Supreme Court Precedents, Contracts & Video Webcasts.</p>
+        <p class="module-header-subtitle">Ask complex legal questions across Central Acts, Supreme Court Precedents, Contracts & Video Webcasts with verified statutory authority.</p>
       </div>
 
       <!-- Search Input Box -->
       <div class="search-box-wrap">
         <div class="search-inner">
-          <span class="search-icon">🔍</span>
+          <span class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </span>
           <input 
             type="text" 
             id="searchInput" 
             class="search-input" 
-            placeholder="e.g., What is the notice period required to terminate an employee under the Industrial Disputes Act?"
+            placeholder="Ask a legal question (e.g., notice period required to terminate employee under Industrial Disputes Act)..."
             onkeydown="if(event.key==='Enter') executeSearchQuery()"
           />
           <button id="btnSearchSubmit" class="btn-search" onclick="executeSearchQuery()">
-            <span>Ask AI</span> ➔
+            <span>ask UBG AI</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </button>
         </div>
       </div>
 
       <!-- Facet Filters Bar -->
       <div class="search-filters-bar">
-        <div class="filter-group">
-          <label>Document Type:</label>
-          <select id="filterDocType" class="filter-select" onchange="executeSearchQuery()">
-            <option value="All">All Types (Acts, Cases, Contracts, Videos)</option>
-            <option value="Act">Statutory Acts</option>
-            <option value="Judgement">Supreme Court / HC Judgements</option>
-            <option value="Contract">Corporate Contracts & MSAs</option>
-            <option value="YouTube Video">YouTube Video Transcripts</option>
-            <option value="Administrative Clarification">Admin Verified FAQ</option>
-          </select>
-        </div>
+        <div class="filters-left-group">
+          <div class="filter-group">
+            <label for="filterDocType">Document Type</label>
+            <div class="filter-select-wrap">
+              <select id="filterDocType" class="filter-select" onchange="executeSearchQuery()">
+                <option value="All">All Types (Acts, Cases, Contracts, Videos)</option>
+                <option value="Act">Statutory Acts</option>
+                <option value="Judgement">Supreme Court / HC Judgements</option>
+                <option value="Contract">Corporate Contracts & MSAs</option>
+                <option value="YouTube Video">YouTube Video Transcripts</option>
+                <option value="Administrative Clarification">Admin Verified FAQ</option>
+              </select>
+              <svg class="select-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
 
-        <div class="filter-group">
-          <label>Jurisdiction / Forum:</label>
-          <select id="filterJurisdiction" class="filter-select" onchange="executeSearchQuery()">
-            <option value="All">All Jurisdictions</option>
-            <option value="India (Central)">India (Central)</option>
-            <option value="Supreme Court of India">Supreme Court of India</option>
-            <option value="Urbangaon Corporate Legal">Corporate Legal</option>
-          </select>
+          <div class="filter-group">
+            <label for="filterJurisdiction">Jurisdiction / Forum</label>
+            <div class="filter-select-wrap">
+              <select id="filterJurisdiction" class="filter-select" onchange="executeSearchQuery()">
+                <option value="All">All Jurisdictions</option>
+                <option value="India (Central)">India (Central)</option>
+                <option value="Supreme Court of India">Supreme Court of India</option>
+                <option value="Urbangaon Corporate Legal">Corporate Legal</option>
+              </select>
+              <svg class="select-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
         </div>
 
         <div class="filter-actions">
-          <button class="btn-secondary-sm" onclick="saveCurrentSearch()">
-            ⭐ Save Query
+          <button class="btn-secondary-sm" onclick="saveCurrentSearch()" title="Save this search query to your bookmarks">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Save Query</span>
           </button>
-          <button class="btn-secondary-sm" onclick="exportResearchBrief()">
-            📄 Export Legal Brief
+          <button class="btn-secondary-sm" onclick="exportResearchBrief()" title="Export executive legal research brief as PDF">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+            <span>Export Legal Brief</span>
           </button>
+        </div>
+      </div>
+
+      <!-- Initial Showcase / Recommended Queries (Shown prior to search) -->
+      <div id="initialSearchRecommendations" class="initial-recommendations-wrapper">
+        <div class="recommendations-header">
+          <div class="recommendations-title-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rec-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span>Recommended Legal Inquiries across Indexed Corpus</span>
+          </div>
+          <span class="recommendations-subtitle">Select any high-priority statutory topic to run live hybrid retrieval</span>
+        </div>
+
+        <div class="recommendations-grid">
+          <div class="rec-card" onclick="setQuery('What is the notice period required to terminate an employee under the Industrial Disputes Act?')">
+            <div class="rec-card-top">
+              <span class="rec-tag tag-act">Statutory Act • Labour</span>
+              <span class="rec-action-hint">Query AI ➔</span>
+            </div>
+            <p class="rec-card-query">"What is the notice period required to terminate an employee under the Industrial Disputes Act?"</p>
+            <div class="rec-card-meta">Authority: Industrial Disputes Act 1947, Section 25F</div>
+          </div>
+
+          <div class="rec-card" onclick="setQuery('Can an arbitral tribunal grant interim relief under Section 9 or Section 17 of the Arbitration Act?')">
+            <div class="rec-card-top">
+              <span class="rec-tag tag-case">Precedents • Commercial</span>
+              <span class="rec-action-hint">Query AI ➔</span>
+            </div>
+            <p class="rec-card-query">"Can an arbitral tribunal grant interim relief under Section 9 or Section 17 of the Arbitration Act?"</p>
+            <div class="rec-card-meta">Authority: Arbitration & Conciliation Act 1996 & Supreme Court</div>
+          </div>
+
+          <div class="rec-card" onclick="setQuery('Is a post-termination non-compete clause enforceable under Section 27 of the Indian Contract Act?')">
+            <div class="rec-card-top">
+              <span class="rec-tag tag-contract">Contracts • Restraint of Trade</span>
+              <span class="rec-action-hint">Query AI ➔</span>
+            </div>
+            <p class="rec-card-query">"Is a post-termination non-compete clause enforceable under Section 27 of the Indian Contract Act?"</p>
+            <div class="rec-card-meta">Authority: Indian Contract Act 1872 & Percept D'Mark precedent</div>
+          </div>
+
+          <div class="rec-card" onclick="setQuery('What are the mandatory Corporate Social Responsibility (CSR) expenditure requirements under Companies Act 2013?')">
+            <div class="rec-card-top">
+              <span class="rec-tag tag-advisory">Compliance • Corporate</span>
+              <span class="rec-action-hint">Query AI ➔</span>
+            </div>
+            <p class="rec-card-query">"What are the mandatory Corporate Social Responsibility (CSR) expenditure requirements under Companies Act 2013?"</p>
+            <div class="rec-card-meta">Authority: Companies Act 2013, Section 135 & MCA Rules</div>
+          </div>
         </div>
       </div>
 
@@ -258,34 +419,59 @@
 
     <!-- TAB 2: KNOWLEDGE BASE & INGESTION REPOSITORY -->
     <section id="pane-knowledge-repo" class="tab-pane">
-      <div class="module-header-bar">
-        <div class="module-header-text">
-          <div class="module-header-tag">📚 Statutes, Precedents & Media Repo</div>
-          <h2 class="module-header-title">Knowledge Base & Ingestion</h2>
-          <p class="module-header-subtitle">
-            Central repository of Statutory Acts, Landmark Precedents, Corporate Agreements, and Timestamped YouTube Webinars.
-          </p>
-        </div>
+      <div class="module-header-banner">
+        <div class="module-header-tag">📚 Statutes, Precedents & Media Repo</div>
+        <h2 class="module-header-title">Knowledge Base & Ingestion</h2>
+        <p class="module-header-subtitle">
+          Central repository of Statutory Acts, Landmark Precedents, Corporate Agreements, and Timestamped YouTube Webinars.
+        </p>
 
-        <div class="module-header-actions">
+        <div class="repo-banner-actions">
           <div class="repo-stats-pills">
             <div class="repo-pill">Active Docs: <strong id="repoTotalDocs">10</strong></div>
             <div class="repo-pill">Indexed Chunks: <strong id="repoTotalChunks">28</strong></div>
           </div>
           <button class="btn-primary" onclick="openIngestionModal()">
-            ➕ Ingest New Content / Video
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span>Ingest Content / Video</span>
           </button>
         </div>
       </div>
 
-      <!-- Filter by category -->
-      <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-        <button class="query-pill" style="background: var(--accent-blue); color: #ffffff;" onclick="filterRepo('All')">All Categories</button>
-        <button class="query-pill" onclick="filterRepo('Labour & Employment Law')">Labour & Employment</button>
-        <button class="query-pill" onclick="filterRepo('Constitutional & Tech Law')">Cyber & Constitutional</button>
-        <button class="query-pill" onclick="filterRepo('Corporate Law')">Corporate & CSR</button>
-        <button class="query-pill" onclick="filterRepo('Commercial & Contract Law')">Contracts & Non-Compete</button>
-        <button class="query-pill" onclick="filterRepo('Video Lecture & Webinar')">Video Webinars</button>
+      <!-- Executive Filter Segmented Control Bar (Centered) -->
+      <div class="category-filter-wrapper">
+        <div class="category-filter-bar">
+          <div class="category-filter-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+            <span>Filter:</span>
+          </div>
+          <div class="category-filter-pills" id="categoryFilterPills">
+            <button type="button" class="cat-pill active" data-category="All" onclick="filterRepo('All', this)">
+              <span class="cat-pill-icon">🌐</span>
+              <span class="cat-pill-text">All Categories</span>
+            </button>
+            <button type="button" class="cat-pill" data-category="Labour & Employment Law" onclick="filterRepo('Labour & Employment Law', this)">
+              <span class="cat-pill-icon">⚖️</span>
+              <span class="cat-pill-text">Labour & Employment</span>
+            </button>
+            <button type="button" class="cat-pill" data-category="Constitutional & Tech Law" onclick="filterRepo('Constitutional & Tech Law', this)">
+              <span class="cat-pill-icon">🛡️</span>
+              <span class="cat-pill-text">Cyber & Constitutional</span>
+            </button>
+            <button type="button" class="cat-pill" data-category="Corporate Law" onclick="filterRepo('Corporate Law', this)">
+              <span class="cat-pill-icon">🏢</span>
+              <span class="cat-pill-text">Corporate & CSR</span>
+            </button>
+            <button type="button" class="cat-pill" data-category="Commercial & Contract Law" onclick="filterRepo('Commercial & Contract Law', this)">
+              <span class="cat-pill-icon">📑</span>
+              <span class="cat-pill-text">Contracts & Non-Compete</span>
+            </button>
+            <button type="button" class="cat-pill" data-category="Video Lecture & Webinar" onclick="filterRepo('Video Lecture & Webinar', this)">
+              <span class="cat-pill-icon">🎥</span>
+              <span class="cat-pill-text">Video Webinars</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Document Cards Grid -->
@@ -296,14 +482,12 @@
 
     <!-- TAB 3: ADMIN RESOLUTION DESK & FEEDBACK LOOP -->
     <section id="pane-admin-desk" class="tab-pane">
-      <div class="module-header-bar">
-        <div class="module-header-text">
-          <div class="module-header-tag">🛡️ Triage & Verified Knowledge Loops</div>
-          <h2 class="module-header-title">Admin Resolution Desk</h2>
-          <p class="module-header-subtitle">
-            Unanswered or low-confidence questions flagged automatically by the AI engine. Resolving queries injects verified answers into the knowledge base.
-          </p>
-        </div>
+      <div class="module-header-banner">
+        <div class="module-header-tag">🛡️ Triage & Verified Knowledge Loops</div>
+        <h2 class="module-header-title">Admin Resolution Desk</h2>
+        <p class="module-header-subtitle">
+          Unanswered or low-confidence questions flagged automatically by the AI engine. Resolving queries injects verified answers into the knowledge base.
+        </p>
       </div>
 
       <div class="unanswered-table-card">
@@ -327,14 +511,12 @@
 
     <!-- TAB 4: ANALYTICS & KNOWLEDGE GAP INSIGHTS -->
     <section id="pane-analytics-insights" class="tab-pane">
-      <div class="module-header-bar">
-        <div class="module-header-text">
-          <div class="module-header-tag">📊 Intelligence & Retrieval Diagnostics</div>
-          <h2 class="module-header-title">Analytics & Gap Insights</h2>
-          <p class="module-header-subtitle">
-            Real-time health, search query distribution, confidence scores, and knowledge base coverage analytics.
-          </p>
-        </div>
+      <div class="module-header-banner">
+        <div class="module-header-tag">📊 Intelligence & Retrieval Diagnostics</div>
+        <h2 class="module-header-title">Analytics & Gap Insights</h2>
+        <p class="module-header-subtitle">
+          Real-time health, search query distribution, confidence scores, and knowledge base coverage analytics.
+        </p>
       </div>
 
       <!-- Metric Cards Grid -->
@@ -383,14 +565,12 @@
 
     <!-- TAB 5: COMPLIANCE & IMMUTABLE AUDIT TRAIL -->
     <section id="pane-audit-compliance" class="tab-pane">
-      <div class="module-header-bar">
-        <div class="module-header-text">
-          <div class="module-header-tag">📜 Regulatory Governance & Records</div>
-          <h2 class="module-header-title">Compliance & Audit Trail</h2>
-          <p class="module-header-subtitle">
-            Immutable enterprise audit log tracking every user query, synthesized answer, retrieved source citations, and admin updates for regulatory compliance.
-          </p>
-        </div>
+      <div class="module-header-banner">
+        <div class="module-header-tag">📜 Regulatory Governance & Records</div>
+        <h2 class="module-header-title">Compliance & Audit Trail</h2>
+        <p class="module-header-subtitle">
+          Immutable enterprise audit log tracking every user query, synthesized answer, retrieved source citations, and admin updates for regulatory compliance.
+        </p>
       </div>
 
       <div class="unanswered-table-card">
@@ -547,11 +727,6 @@
           <textarea id="ingestRawContent" class="form-control" rows="6" placeholder="Paste full statutory text or transcript (e.g. [03:15] Section 25F Explanation: ...)" required></textarea>
         </div>
 
-        <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
-          <input type="checkbox" id="ingestSuperseded" />
-          <label for="ingestSuperseded" style="margin-bottom: 0; font-size: 0.85rem;">Mark as Superseded / Struck Down Law (Shows warning to users)</label>
-        </div>
-
         <div style="text-align: right; margin-top: 1.25rem;">
           <button type="button" class="btn-secondary-sm" onclick="closeModal('ingestionModal')" style="margin-right: 0.5rem;">Cancel</button>
           <button type="submit" class="btn-primary">Chunk & Ingest Document ➔</button>
@@ -617,6 +792,7 @@
   <div id="toastContainer" class="toast-container"></div>
 
   <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
