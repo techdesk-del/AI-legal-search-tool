@@ -7,7 +7,7 @@
   <meta name="description" content="AI-Powered enterprise legal search tool for Acts, Landmark Judgements, Contracts, and YouTube video lectures with exact citations, timestamp seeking, and admin feedback loop.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
   <link rel="icon" type="image/jpeg" href="images/favicon.jpg?v=2">
   <link rel="shortcut icon" href="images/favicon.jpg?v=2">
@@ -19,62 +19,67 @@
   <div class="app-layout">
     <!-- Left Sidebar Navbar -->
     <aside class="app-sidebar">
+      <!-- Top Brand Logo -->
       <div class="sidebar-brand">
-        <div class="brand-logo-wrap">
-          <img src="images/urbangaon-logo.jpg" alt="UrbanGaon" class="brand-logo-img" />
-        </div>
-        <div class="brand-text">
-          <h1>AI LEGAL SEARCH</h1>
-          <p>Enterprise Legal Intelligence</p>
-        </div>
+        <img src="images/urbangaon-logo.jpg" alt="UrbanGaon" class="brand-logo-img" />
       </div>
 
+      <!-- Navigation Section -->
       <div class="sidebar-nav-section">
-        <div class="sidebar-section-title">PLATFORM MODULES</div>
+        <div class="sidebar-section-title">
+          <span class="pulse-status-dot"></span>
+          <span>PLATFORM MODULES</span>
+        </div>
+
         <!-- Navigation Tabs -->
         <nav class="nav-tabs-container">
           <button class="nav-tab active" data-tab="search-workspace" onclick="switchTab('search-workspace')">
             <span class="nav-tab-left">
-              <span class="nav-tab-icon">🔍</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-tab-icon"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
               <span class="nav-tab-text">AI Legal Search & Research</span>
             </span>
           </button>
+
           <button class="nav-tab" data-tab="knowledge-repo" onclick="switchTab('knowledge-repo')">
             <span class="nav-tab-left">
-              <span class="nav-tab-icon">📚</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-tab-icon"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path><path d="M6 6h10"></path><path d="M6 10h10"></path></svg>
               <span class="nav-tab-text">Knowledge Base & Ingestion</span>
             </span>
             <span id="docCountBadge" class="badge-count">10</span>
           </button>
+
           <button class="nav-tab" data-tab="admin-desk" id="tabAdminDesk" onclick="switchTab('admin-desk')">
             <span class="nav-tab-left">
-              <span class="nav-tab-icon">🛡️</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-tab-icon"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
               <span class="nav-tab-text">Admin Resolution Desk</span>
             </span>
             <span id="adminPendingBadge" class="badge-count">3</span>
           </button>
+
           <button class="nav-tab" data-tab="analytics-insights" onclick="switchTab('analytics-insights')">
             <span class="nav-tab-left">
-              <span class="nav-tab-icon">📊</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-tab-icon"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
               <span class="nav-tab-text">Analytics & Gap Insights</span>
             </span>
           </button>
+
           <button class="nav-tab" data-tab="audit-compliance" onclick="switchTab('audit-compliance')">
             <span class="nav-tab-left">
-              <span class="nav-tab-icon">📜</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-tab-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
               <span class="nav-tab-text">Compliance & Audit Trail</span>
             </span>
           </button>
         </nav>
       </div>
 
-      <div class="sidebar-footer">
-        <div class="sidebar-status-card">
-          <div class="status-indicator-wrap">
-            <span class="pulsing-green-dot"></span>
-            <span class="status-label">RAG Engine Live</span>
+      <!-- Bottom User Profile Footer matching todo dashboard -->
+      <div class="sidebar-user-footer">
+        <div class="user-profile-card">
+          <div class="user-avatar-circle">AD</div>
+          <div class="user-details">
+            <span class="user-name">Aakash Das</span>
+            <span class="user-status-text"><span class="user-status-dot"></span> Active Session</span>
           </div>
-          <div class="status-detail">Central Acts • Precedents • Video</div>
         </div>
       </div>
     </aside>
@@ -85,7 +90,7 @@
       <header class="app-topbar">
         <div class="topbar-left">
           <div class="topbar-breadcrumb">
-            <span class="crumb-app">Urbangaon Legal</span>
+            <span class="crumb-pill"><img src="images/urbangaon-icon.jpg" alt="UrbanGaon" class="crumb-icon-img" /> Urbangaon Legal</span>
             <span class="crumb-separator">/</span>
             <span class="crumb-current" id="activeModuleTitle">AI Legal Search & Research</span>
           </div>
@@ -101,6 +106,11 @@
               <option value="Admin" selected>Legal Admin / Lead Counsel</option>
             </select>
           </div>
+
+          <div class="topbar-avatar-wrap" title="Aakash Das - Legal Admin">
+            <div class="topbar-avatar">AD</div>
+            <span class="topbar-online-dot"></span>
+          </div>
         </div>
       </header>
 
@@ -109,10 +119,10 @@
 
     <!-- TAB 1: AI LEGAL SEARCH WORKSPACE -->
     <section id="pane-search-workspace" class="tab-pane active">
-      <div class="search-hero">
-        <div class="hero-tag">✨ Hybrid Vector & Semantic Legal Retrieval Engine</div>
-        <h2>Natural Language Legal Intelligence</h2>
-        <p>Ask complex questions across Central Acts, Supreme Court Precedents, Contracts & Video Webcasts.</p>
+      <div class="module-header-banner">
+        <div class="module-header-tag">✨ Hybrid Vector & Semantic Retrieval</div>
+        <h2 class="module-header-title">AI Legal Search & Research</h2>
+        <p class="module-header-subtitle">Ask complex legal questions across Central Acts, Supreme Court Precedents, Contracts & Video Webcasts.</p>
       </div>
 
       <!-- Search Input Box -->
@@ -248,15 +258,16 @@
 
     <!-- TAB 2: KNOWLEDGE BASE & INGESTION REPOSITORY -->
     <section id="pane-knowledge-repo" class="tab-pane">
-      <div class="repo-header">
-        <div>
-          <h2>Legal Knowledge Base Repository</h2>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">
-            Central index of Statutes, Case Precedents, Corporate Agreements, and Timestamped YouTube Webinars.
+      <div class="module-header-bar">
+        <div class="module-header-text">
+          <div class="module-header-tag">📚 Statutes, Precedents & Media Repo</div>
+          <h2 class="module-header-title">Knowledge Base & Ingestion</h2>
+          <p class="module-header-subtitle">
+            Central repository of Statutory Acts, Landmark Precedents, Corporate Agreements, and Timestamped YouTube Webinars.
           </p>
         </div>
 
-        <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <div class="module-header-actions">
           <div class="repo-stats-pills">
             <div class="repo-pill">Active Docs: <strong id="repoTotalDocs">10</strong></div>
             <div class="repo-pill">Indexed Chunks: <strong id="repoTotalChunks">28</strong></div>
@@ -285,11 +296,12 @@
 
     <!-- TAB 3: ADMIN RESOLUTION DESK & FEEDBACK LOOP -->
     <section id="pane-admin-desk" class="tab-pane">
-      <div class="admin-desk-header">
-        <div>
-          <h2>Admin Resolution Desk & Feedback Queue</h2>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">
-            Unanswered or low-confidence questions flagged automatically by the AI search engine. Resolving a query injects verified answers directly into the knowledge base.
+      <div class="module-header-bar">
+        <div class="module-header-text">
+          <div class="module-header-tag">🛡️ Triage & Verified Knowledge Loops</div>
+          <h2 class="module-header-title">Admin Resolution Desk</h2>
+          <p class="module-header-subtitle">
+            Unanswered or low-confidence questions flagged automatically by the AI engine. Resolving queries injects verified answers into the knowledge base.
           </p>
         </div>
       </div>
@@ -315,9 +327,14 @@
 
     <!-- TAB 4: ANALYTICS & KNOWLEDGE GAP INSIGHTS -->
     <section id="pane-analytics-insights" class="tab-pane">
-      <div style="margin-bottom: 1.5rem;">
-        <h2>Executive Legal Intelligence & Gap Analytics</h2>
-        <p style="color: var(--text-secondary); font-size: 0.9rem;">Real-time health, search query distribution, confidence scores, and knowledge base coverage.</p>
+      <div class="module-header-bar">
+        <div class="module-header-text">
+          <div class="module-header-tag">📊 Intelligence & Retrieval Diagnostics</div>
+          <h2 class="module-header-title">Analytics & Gap Insights</h2>
+          <p class="module-header-subtitle">
+            Real-time health, search query distribution, confidence scores, and knowledge base coverage analytics.
+          </p>
+        </div>
       </div>
 
       <!-- Metric Cards Grid -->
@@ -366,11 +383,14 @@
 
     <!-- TAB 5: COMPLIANCE & IMMUTABLE AUDIT TRAIL -->
     <section id="pane-audit-compliance" class="tab-pane">
-      <div style="margin-bottom: 1.5rem;">
-        <h2>Compliance & Legal Search Audit Trail</h2>
-        <p style="color: var(--text-secondary); font-size: 0.9rem;">
-          Immutable audit log tracking every user query, synthesized answer, retrieved source citations, and admin updates for enterprise regulatory compliance.
-        </p>
+      <div class="module-header-bar">
+        <div class="module-header-text">
+          <div class="module-header-tag">📜 Regulatory Governance & Records</div>
+          <h2 class="module-header-title">Compliance & Audit Trail</h2>
+          <p class="module-header-subtitle">
+            Immutable enterprise audit log tracking every user query, synthesized answer, retrieved source citations, and admin updates for regulatory compliance.
+          </p>
+        </div>
       </div>
 
       <div class="unanswered-table-card">
