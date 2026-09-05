@@ -2131,6 +2131,20 @@
       "updatedAt": "2026-09-02T04:40:26.110Z"
     },
     {
+      "id": "unans-1788582432880",
+      "query": "elon musk",
+      "askedBy": "user_admin (Admin)",
+      "frequency": 2,
+      "firstAskedAt": "2026-09-05T04:27:12.880Z",
+      "lastAskedAt": "2026-09-05T10:07:28.042Z",
+      "status": "Pending Review",
+      "reason": "Low semantic match or missing legal document authority",
+      "category": "General Legal",
+      "adminAnswer": null,
+      "resolvedAt": null,
+      "confidenceScore": 0
+    },
+    {
       "id": "unans-1788599688928",
       "query": "What are the mandatory Corporate Social Responsibility (CSR) expenditure requirements under Companies Act 2013?",
       "askedBy": "user_admin (Admin)",
@@ -2179,20 +2193,6 @@
       "frequency": 1,
       "firstAskedAt": "2026-09-05T04:27:28.911Z",
       "lastAskedAt": "2026-09-05T04:27:28.911Z",
-      "status": "Pending Review",
-      "reason": "Low semantic match or missing legal document authority",
-      "category": "General Legal",
-      "adminAnswer": null,
-      "resolvedAt": null,
-      "confidenceScore": 0
-    },
-    {
-      "id": "unans-1788582432880",
-      "query": "elon musk",
-      "askedBy": "user_admin (Admin)",
-      "frequency": 1,
-      "firstAskedAt": "2026-09-05T04:27:12.880Z",
-      "lastAskedAt": "2026-09-05T04:27:12.880Z",
       "status": "Pending Review",
       "reason": "Low semantic match or missing legal document authority",
       "category": "General Legal",
@@ -2380,6 +2380,53 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "audit-1788602862290-334",
+      "timestamp": "2026-09-05T10:07:42.290Z",
+      "userId": "usr-admin-01",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "mark zuckerberg",
+      "confidenceScore": 0.87,
+      "confidenceTier": "High",
+      "citationsCount": 1,
+      "retrievedDocs": [
+        "Percept D'Mark (India) Pvt. Ltd. v. Zaheer Khan & Anr."
+      ],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788602848048-97",
+      "timestamp": "2026-09-05T10:07:28.048Z",
+      "userId": "usr-admin-01",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "UNANSWERED_ESCALATION",
+      "query": "elon musk",
+      "confidenceScore": 0,
+      "confidenceTier": "Low (Routed to Admin)",
+      "citationsCount": 0,
+      "retrievedDocs": [],
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "audit-1788602832073-196",
+      "timestamp": "2026-09-05T10:07:12.073Z",
+      "userId": "usr-admin-01",
+      "userName": "Adv. Rajesh Sharma (Lead Counsel)",
+      "userRole": "Admin",
+      "action": "SEARCH_QUERY",
+      "query": "hi",
+      "confidenceScore": 0.93,
+      "confidenceTier": "High",
+      "citationsCount": 2,
+      "retrievedDocs": [
+        "Shreya Singhal v. Union of India",
+        "Labour Law & Termination Masterclass: Retrenchment, Notice Periods & Compliance"
+      ],
+      "ipAddress": "127.0.0.1"
+    },
     {
       "id": "audit-1788602711122-850",
       "timestamp": "2026-09-05T10:05:11.122Z",
